@@ -8602,6 +8602,18 @@ sane@^2.0.0:
   optionalDependencies:
     fsevents "^1.2.3"
 
+sass-bem@^2.6.5:
+  version "2.6.5"
+  resolved "https://registry.yarnpkg.com/sass-bem/-/sass-bem-2.6.5.tgz#3f53128c6b2b539e4323dbcaaefcdfcb481f1d53"
+  integrity sha1-P1MSjGsrU55DI9vKrvzfy0gfHVM=
+  dependencies:
+    sass-config "^1.1.1"
+
+sass-config@^1.1.1:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/sass-config/-/sass-config-1.1.2.tgz#93037b4cd067caa5003ab94bfcd922ef2b92a759"
+  integrity sha1-kwN7TNBnyqUAOrlL/Nki7yuSp1k=
+
 sass-graph@^2.2.4:
   version "2.2.4"
   resolved "http://registry.npm.taobao.org/sass-graph/download/sass-graph-2.2.4.tgz#13fbd63cd1caf0908b9fd93476ad43a51d1e0b49"

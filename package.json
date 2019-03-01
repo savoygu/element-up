@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "element-ui": "^2.4.5",
+    "sass-bem": "^2.6.5",
     "vue": "^2.6.6"
   },
   "devDependencies": {
