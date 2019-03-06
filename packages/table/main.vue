@@ -35,11 +35,7 @@
           :width="widthColumns[key]"
         >
           <template slot-scope="props">
-            <slot
-              v-if="slotColumns.indexOf(key) > -1"
-              :name="key"
-              v-bind="{...props}"
-            >{{props.row[key]}}</slot>
+            <slot v-if="slotColumns.indexOf(key) > -1" :name="key" v-bind="props">{{props.row[key]}}</slot>
             <template v-else>{{props.row[key]}}</template>
           </template>
         </el-table-column>
@@ -80,7 +76,7 @@ export default {
     page: {
       type: Object,
       default: () => ({
-        header: [],
+        header: {},
         data: [],
         currentPage: 1,
         pageSize: 10,
