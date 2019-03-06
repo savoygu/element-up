@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <radio></radio>
+    <checkbox></checkbox>
+    <!-- <radio></radio> -->
     <div>
       <p>
         If Element is successfully added to this project, you'll see an
@@ -15,7 +16,7 @@
 </template>
 
 <script>
-import Radio from '@/views/radio'
+import Checkbox from '@/views/checkbox'
 import HelloWorld from './components/HelloWorld.vue'
 
 export default {
@@ -23,7 +24,7 @@ export default {
 
   components: {
     HelloWorld,
-    Radio
+    Checkbox
   }
 }
 </script>
