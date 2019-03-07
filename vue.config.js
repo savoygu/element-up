@@ -4,7 +4,9 @@ const resolve = (...dirs) => path.join(__dirname, ...dirs)
 module.exports = {
   chainWebpack: config => {
     // 增加 alias
-    config.resolve.alias.set('packages', resolve('packages')).set('examples', resolve('examples'))
+    config.resolve.alias
+      .set('packages', resolve('packages'))
+      .set('examples', resolve('examples'))
   },
   css: {
     loaderOptions: {

@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <checkbox></checkbox>
-    <!-- <radio></radio> -->
+    <up-select></up-select>
     <div>
       <p>
         If Element is successfully added to this project, you'll see an
@@ -11,12 +10,12 @@
       </p>
       <el-button>el-button</el-button>
     </div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
 
 <script>
-import Checkbox from '@/views/checkbox'
+import Select from '@/views/select'
 import HelloWorld from './components/HelloWorld.vue'
 
 export default {
@@ -24,7 +23,7 @@ export default {
 
   components: {
     HelloWorld,
-    Checkbox
+    'up-select': Select
   }
 }
 </script>
