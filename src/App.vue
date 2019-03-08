@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <timeline></timeline>
+    <steps></steps>
     <div>
       <p>
         If Element is successfully added to this project, you'll see an
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import Timeline from '@/views/timeline'
+import Steps from '@/views/steps'
 import HelloWorld from './components/HelloWorld.vue'
 
 export default {
@@ -23,7 +23,7 @@ export default {
 
   components: {
     HelloWorld,
-    Timeline
+    Steps
   }
 }
 </script>
