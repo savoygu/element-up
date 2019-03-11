@@ -1,5 +1,5 @@
 <template>
-  <el-dialog class="up-dialog" :visible.sync="dialogVisible" v-bind="$attrs" v-on="$listeners">
+  <el-dialog class="up-dialog" :visible.sync="visible" v-bind="$attrs" v-on="$listeners">
     <slot slot="title" name="title"></slot>
     <slot></slot>
     <slot slot="footer" name="footer">
@@ -13,16 +13,20 @@
 
 <script>
 import { Dialog } from 'element-ui'
+import createVModel from '@/mixins/createVModel'
 
 export default {
   name: 'UpDialog',
+
+  mixins: [
+    createVModel('visible')
+  ],
 
   components: {
     [Dialog.name]: Dialog
   },
 
   props: {
-    value: {},
     hasFooter: {
       type: Boolean,
       default: true
@@ -37,25 +41,9 @@ export default {
     }
   },
 
-  data () {
-    return {
-      dialogVisible: this.value
-    }
-  },
-
-  watch: {
-    value (val) {
-      this.dialogVisible = val
-    },
-    dialogVisible (val) {
-      this.$emit('input', val)
-      this.$emit('change', val)
-    }
-  },
-
   methods: {
     onCancel () {
-      this.dialogVisible = false
+      this.visible = false
     },
     onOk () {
       this.$emit('up:confirm')
