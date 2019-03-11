@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <steps></steps>
+    <collapse></collapse>
     <div>
       <p>
         If Element is successfully added to this project, you'll see an
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import Steps from '@/views/steps'
+import Collapse from '@/views/collapse'
 import HelloWorld from './components/HelloWorld.vue'
 
 export default {
@@ -23,7 +23,7 @@ export default {
 
   components: {
     HelloWorld,
-    Steps
+    Collapse
   }
 }
 </script>
