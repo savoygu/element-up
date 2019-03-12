@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <Dialog></Dialog>
+    <Dropdown></Dropdown>
     <div>
       <p>
         If Element is successfully added to this project, you'll see an
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import Dialog from '@/views/dialog'
+import Dropdown from '@/views/dropdown'
 import HelloWorld from './components/HelloWorld.vue'
 
 export default {
@@ -23,7 +23,7 @@ export default {
 
   components: {
     HelloWorld,
-    Dialog
+    Dropdown
   }
 }
 </script>
