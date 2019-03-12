@@ -4,7 +4,7 @@
       <template v-for="slot in slots">
         <template v-if="$slots[slot] || $scopedSlots[slot]" :slot="slot">
           <slot v-if="$slots[slot]" :name="slot"></slot>
-          <slot v-else :name="slot" v-bind="{ ...item, index }"></slot>
+          <slot v-else :name="slot" v-bind="{ item, index }"></slot>
         </template>
       </template>
     </el-step>

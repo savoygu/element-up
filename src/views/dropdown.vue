@@ -9,7 +9,7 @@
       @visible-change="handleVisibleChange"
       @command="handleCommand"
     >默认尺寸
-      <template slot="up:item" slot-scope="{ name }">{{ name }}</template>
+      <template slot="up:item" slot-scope="{ item }">{{ item }}</template>
     </up-dropdown>
   </div>
 </template>
@@ -29,11 +29,16 @@ export default {
   data () {
     return {
       data: [
-        { name: '黄金糕', command: 'a', disabled: false, divided: false },
-        { name: '狮子头', command: 'b', disabled: false, divided: false },
-        { name: '螺蛳粉', command: 'c', disabled: false, divided: false },
-        { name: '双皮奶', command: 'd', disabled: true, divided: false },
-        { name: '蚵仔煎', command: 'e', disabled: false, divided: true }
+        '黄金糕',
+        '狮子头',
+        '螺蛳粉',
+        '双皮奶',
+        '蚵仔煎'
+        // { name: '黄金糕', command: 'a', disabled: false, divided: false },
+        // { name: '狮子头', command: 'b', disabled: false, divided: false },
+        // { name: '螺蛳粉', command: 'c', disabled: false, divided: false },
+        // { name: '双皮奶', command: 'd', disabled: true, divided: false },
+        // { name: '蚵仔煎', command: 'e', disabled: false, divided: true }
       ]
     }
   },

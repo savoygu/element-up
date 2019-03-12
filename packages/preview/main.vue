@@ -16,8 +16,8 @@
         v-bind="$attrs"
         v-on="{
         ...$listeners,
-        change: handleCarouselChange
-      }"
+          change: handleCarouselChange
+        }"
       >
         <slot slot-scope="props" v-bind="props"></slot>
       </up-carousel>

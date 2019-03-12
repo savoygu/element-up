@@ -49,12 +49,12 @@
           ...item
         }"
         v-on="$listeners"
-        v-for="item in data"
+        v-for="(item, index) in data"
         :key="item[keyValue[1]]"
         :label="item[keyValue[0]]"
         :value="item[keyValue[1]]"
       >
-        <slot name="template" v-bind="item"></slot>
+        <slot name="template" v-bind="{ item, index }"></slot>
       </el-option>
     </slot>
   </el-select>

@@ -34,12 +34,12 @@ export default {
       const { keyValue } = $props
 
       return (
-        data.length && data.map(item => (
+        data.length && data.map((item, index) => (
           <el-option {...{ attrs: { ...$attrs, ...item }, on: $listeners }}
             key={item[keyValue[1]]}
             label={item[keyValue[0]]}
             value={item[keyValue[1]]}>
-            {$scopedSlots.template && $scopedSlots.template(item)}
+            {$scopedSlots.template && $scopedSlots.template({ item, index })}
           </el-option>
         ))
       )

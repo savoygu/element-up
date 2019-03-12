@@ -12,9 +12,9 @@
     <el-collapse-item v-bind="{ ...$attrs, ...item }" v-for="(item, index) in data" :key="index">
       <template v-if="$slots.title || $scopedSlots.title" slot="title">
         <slot v-if="$slots.title" name="title"></slot>
-        <slot v-else name="title" v-bind="{ ...item, index }"></slot>
+        <slot v-else name="title" v-bind="{ item, index }"></slot>
       </template>
-      <slot v-bind="{ ...item, index }"></slot>
+      <slot v-bind="{ item, index }"></slot>
     </el-collapse-item>
   </el-collapse>
 </template>

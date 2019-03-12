@@ -5,15 +5,15 @@
       <slot name="dropdown">
         <el-dropdown-menu>
           <el-dropdown-item
-            v-bind="{ ...$attrs, ...item }"
+            v-bind="{ ...$attrs, ...(typeof item === 'string' ? {} : item) }"
             v-on="$listeners"
             v-for="(item, index) in data"
             :key="index"
           >
             <template v-if="$scopedSlots['up:item']">
-              <slot name="up:item" v-bind="{ ...item, index }"></slot>
+              <slot name="up:item" v-bind="{ item, index }"></slot>
             </template>
-            <template v-else>{{ item[valueKey] }}</template>
+            <template v-else>{{ typeof item === 'string' ? item : item[valueKey] }}</template>
           </el-dropdown-item>
         </el-dropdown-menu>
       </slot>
