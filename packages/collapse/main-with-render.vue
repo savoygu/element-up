@@ -22,24 +22,14 @@ export default {
 
   methods: {
     renderCollapseItem (h, item, index) {
-      const self = this
-
       return h('el-collapse-item', {
         attrs: {
           ...this.$attrs,
           ...item
         },
         scopedSlots: {
-          title: function (...props) {
-            return self.$scopedSlots.title && self.$scopedSlots.title({
-              ...item, index
-            })
-          },
-          default: function () {
-            return self.$scopedSlots.default && self.$scopedSlots.default({
-              ...item, index
-            })
-          }
+          title: () => (this.$scopedSlots.title && this.$scopedSlots.title({ ...item, index })),
+          default: () => (this.$scopedSlots.default && this.$scopedSlots.default({ ...item, index }))
         }
       }, [
         h('template', { slot: 'title' }, [this.$slots.title])
@@ -48,7 +38,6 @@ export default {
   },
 
   render (h) {
-    const self = this
     return h('el-collapse', {
       domProps: {
         value: this.value
@@ -56,17 +45,13 @@ export default {
       attrs: this.$attrs,
       on: {
         ...this.$listeners,
-        change: function (value) {
-          self.$emit('up:collapse:change', value)
-          self.$emit('change', value)
+        change: value => {
+          this.$emit('up:collapse:change', value)
+          this.$emit('change', value)
         },
-        input: function (value) {
-          self.$emit('input', value)
-        }
+        input: value => this.$emit('input', value)
       }
-    }, this.data.map(function (item, index) {
-      return self.renderCollapseItem(h, item, index)
-    }))
+    }, this.data.map((item, index) => this.renderCollapseItem(h, item, index)))
   }
 }
 </script>
