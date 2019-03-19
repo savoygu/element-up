@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import Msg from 'packages/message/main'
 import Menu from '@/views/menu'
 import HelloWorld from './components/HelloWorld.vue'
 
@@ -24,6 +25,12 @@ export default {
   components: {
     HelloWorld,
     Menu
+  },
+
+  created () {
+    console.log(Msg.error.msgbox({
+
+    }))
   }
 }
 </script>
