@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <Menu></Menu>
+    <Progress></Progress>
     <div>
       <p>
         If Element is successfully added to this project, you'll see an
@@ -15,8 +15,7 @@
 </template>
 
 <script>
-import Msg from 'packages/message/main'
-import Menu from '@/views/menu'
+import Progress from '@/views/progress'
 import HelloWorld from './components/HelloWorld.vue'
 
 export default {
@@ -24,13 +23,10 @@ export default {
 
   components: {
     HelloWorld,
-    Menu
+    Progress
   },
 
   created () {
-    console.log(Msg.error.msgbox({
-
-    }))
   }
 }
 </script>
