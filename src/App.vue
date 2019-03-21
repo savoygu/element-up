@@ -1,29 +1,17 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <Progress></Progress>
-    <div>
-      <p>
-        If Element is successfully added to this project, you'll see an
-        <code v-text="'<el-button>'"></code>
-        below
-      </p>
-      <el-button>el-button</el-button>
-    </div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <FormItemInput></FormItemInput>
   </div>
 </template>
 
 <script>
-import Progress from '@/views/progress'
-import HelloWorld from './components/HelloWorld.vue'
+import FormItemInput from '@/views/form/input'
 
 export default {
   name: 'app',
 
   components: {
-    HelloWorld,
-    Progress
+    FormItemInput
   },
 
   created () {
@@ -37,7 +25,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   // text-align: center;
-  /* color: #2c3e50; */
+  color: #2c3e50;
   color: white;
   margin-top: 60px;
   background-color: darkcyan;
