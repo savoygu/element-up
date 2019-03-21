@@ -1,17 +1,17 @@
 <template>
   <div>
-    <FormItemInput></FormItemInput>
+    <Form></Form>
   </div>
 </template>
 
 <script>
-import FormItemInput from '@/views/form/input'
+import Form from '@/views/form'
 
 export default {
   name: 'app',
 
   components: {
-    FormItemInput
+    Form
   },
 
   created () {
