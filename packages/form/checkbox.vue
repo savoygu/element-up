@@ -20,6 +20,10 @@
       :data="data"
       :key-value="keyValue"
       v-bind="$attrs"
+      v-on="{
+        ...$listeners,
+        change: (value) => $emit('up:form:checkbox', value)
+      }"
       @up:checkbox-group:change="handleUpCheckboxGroupChange"
     ></up-checkbox>
     <template slot="error" slot-scope="props" v-if="$scopedSlots.error">
