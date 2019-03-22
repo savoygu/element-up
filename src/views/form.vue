@@ -10,7 +10,13 @@
     >
       <up-form-item-input label="活动名称" prop="name" v-model="ruleForm.name" ref="name"></up-form-item-input>
       <up-form-item-select label="活动区域" prop="region" v-model="ruleForm.region" :data="regions"></up-form-item-select>
-      <up-form-item-checkbox label="喜欢的城市" prop="cities" v-model="ruleForm.cities" :data="cities"></up-form-item-checkbox>
+      <up-form-item-checkbox
+        label="喜欢的城市"
+        component="el-checkbox-button"
+        prop="cities"
+        v-model="ruleForm.cities"
+        :data="cities"
+      ></up-form-item-checkbox>
       <up-form-item-radio
         label="水果😯"
         prop="wish"
