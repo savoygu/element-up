@@ -1,5 +1,11 @@
 <template>
-  <el-form-item class="up-form-item-checkbox" ref="elFormItem" v-bind="$attrs" v-on="$listeners">
+  <el-form-item
+    class="up-form-item-checkbox"
+    :class="{ 'is-inline': inline }"
+    ref="elFormItem"
+    v-bind="$attrs"
+    v-on="$listeners"
+  >
     <template slot="label" v-if="$slots.label">
       <slot name="label">{{$attrs.label}}</slot>
     </template>
@@ -46,6 +52,10 @@ export default {
     keyValue: {
       type: Array,
       default: () => ['name', 'value']
+    },
+    inline: {
+      type: Boolean,
+      default: true
     }
   },
 
@@ -90,4 +100,11 @@ export default {
 </script>
 
 <style lang="scss">
+@include b(up-form-item-checkbox) {
+  @include is(inline) {
+    .el-form-item__content {
+      display: flex;
+    }
+  }
+}
 </style>
