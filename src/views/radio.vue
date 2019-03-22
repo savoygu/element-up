@@ -38,8 +38,8 @@ export default {
     handleRadioGroupChange (value) {
       console.log('handleRadioGroupChange changed: ', value)
     },
-    handleRadioChange (value) {
-      console.log('handleRadioChange changed: ', value)
+    handleRadioChange (value, item) {
+      console.log('handleRadioChange changed: ', value, item)
     },
     handleUpRadioChange (value) {
       console.log('handleUpRadioChange changed: ', value)

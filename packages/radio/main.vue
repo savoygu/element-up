@@ -18,7 +18,7 @@
       }"
       v-on="{
         ...$listeners,
-        change: (value) => $emit('up:radio:change', value)
+        change: (value) => $emit('up:radio:change', value, item)
       }"
       v-for="(item, index) in data"
       :key="index"

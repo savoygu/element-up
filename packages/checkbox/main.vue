@@ -18,7 +18,7 @@
       }"
       v-on="{
         ...$listeners,
-        change: (value) => $emit('up:checkbox:change', value)
+        change: (value) => $emit('up:checkbox:change', value, item)
       }"
       v-for="(item, index) in data"
       :key="index"
