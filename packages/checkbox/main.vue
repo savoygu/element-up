@@ -32,7 +32,7 @@ import { Checkbox, CheckboxButton, CheckboxGroup } from 'element-ui'
 import createVModel from '@/mixins/createVModel'
 
 export default {
-  name: 'UpRadio',
+  name: 'UpCheckbox',
 
   mixins: [
     createVModel('currentValue')
