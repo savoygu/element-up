@@ -6,7 +6,7 @@
 
 <script>
 import { Menu } from 'element-ui'
-import UpSubmenu from './submenu'
+import UpSubmenu from './submenu.vue'
 
 export default {
   name: 'UpMenu',
