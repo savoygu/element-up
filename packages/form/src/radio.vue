@@ -21,7 +21,7 @@
 
 <script>
 import { Input } from 'element-ui'
-import UpRadio from '../radio/main'
+import UpRadio from '../../radio'
 import createVModel from '@/mixins/createVModel'
 import FormItemBase from './FormItemBase'
 

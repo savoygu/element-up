@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import UpCarousel from 'packages/carousel/main'
+import UpCarousel from 'packages/carousel'
 
 export default {
   name: 'Carousel',

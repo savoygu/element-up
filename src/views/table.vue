@@ -58,7 +58,7 @@
 
 <script>
 import { Table, TableColumn, Form, FormItem } from 'element-ui'
-import UpTable from 'packages/table/main'
+import UpTable from 'packages/table'
 
 const data = Array.from({ length: 100 }).map(() => [{
   id: '12987122',

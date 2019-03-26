@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import UpMenu from 'packages/menu/main'
+import UpMenu from 'packages/menu'
 
 export default {
   name: 'Menu',

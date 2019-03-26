@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import UpCheckbox from 'packages/checkbox/main'
+import UpCheckbox from 'packages/checkbox'
 
 export default {
   name: 'Checkbox',

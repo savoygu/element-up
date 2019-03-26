@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import UpBreadcrumb from 'packages/breadcrumb/main'
+import UpBreadcrumb from 'packages/breadcrumb'
 
 export default {
   name: 'Breadcrumb',

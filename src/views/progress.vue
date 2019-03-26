@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import UpProgress from 'packages/progress/main'
+import UpProgress from 'packages/progress'
 
 export default {
   name: 'Progress',

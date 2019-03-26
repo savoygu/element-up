@@ -32,8 +32,8 @@
 </template>
 
 <script>
-import UpSelect from 'packages/select/main'
-import UpSelectWithJsx from 'packages/select/main-with-jsx'
+import UpSelect from 'packages/select'
+import UpSelectWithJsx from 'packages/select/src/main-with-jsx'
 
 export default {
   name: 'Select',

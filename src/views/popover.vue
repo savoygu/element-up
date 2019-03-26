@@ -1,13 +1,14 @@
 <template>
   <div>
-    <up-popover v-model="visible" has-footer @up:confirm="confirm">确定要删除该按钮吗？
+    <up-popover v-model="visible" has-footer @up:confirm="confirm">
+      确定要删除该按钮吗？
       <el-button slot="reference">按钮</el-button>
     </up-popover>
   </div>
 </template>
 
 <script>
-import UpPopover from 'packages/popover/main'
+import UpPopover from 'packages/popover'
 
 export default {
   name: 'Popover',

@@ -44,7 +44,7 @@
 
 <script>
 import { Checkbox, CheckboxButton } from 'element-ui'
-import UpCheckbox from '../checkbox/main'
+import UpCheckbox from '../../checkbox'
 import createVModel from '@/mixins/createVModel'
 import FormItemBase from './FormItemBase'
 

@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import UpDialog from 'packages/dialog/main'
+import UpDialog from 'packages/dialog'
 
 export default {
   name: 'Dialog',

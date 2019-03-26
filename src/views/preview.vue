@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import UpPreview from 'packages/preview/main'
+import UpPreview from 'packages/preview'
 
 export default {
   name: 'Preview',

@@ -32,10 +32,10 @@
 
 <script>
 import { Input, Form, FormItem, Select, Option, Checkbox, CheckboxGroup } from 'element-ui'
-import UpFormItemInput from 'packages/form/input'
-import UpFormItemSelect from 'packages/form/select'
-import UpFormItemCheckbox from 'packages/form/checkbox'
-import UpFormItemRadio from 'packages/form/radio'
+import UpFormItemInput from 'packages/form-item-input'
+import UpFormItemSelect from 'packages/form-item-select'
+import UpFormItemCheckbox from 'packages/form-item-checkbox'
+import UpFormItemRadio from 'packages/form-item-radio'
 
 export default {
   name: 'Form',

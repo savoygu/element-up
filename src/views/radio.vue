@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import UpRadio from 'packages/radio/main'
+import UpRadio from 'packages/radio'
 
 export default {
   name: 'Radio',

@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import UpSteps from 'packages/steps/main'
+import UpSteps from 'packages/steps'
 
 export default {
   name: 'Step',

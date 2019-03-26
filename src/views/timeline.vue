@@ -10,7 +10,7 @@
 
 <script>
 import { Card } from 'element-ui'
-import UpTimeline from 'packages/timeline/main'
+import UpTimeline from 'packages/timeline'
 
 export default {
   name: 'Timeline',

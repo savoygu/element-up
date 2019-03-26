@@ -8,7 +8,8 @@
       @click="handleClick"
       @visible-change="handleVisibleChange"
       @command="handleCommand"
-    >默认尺寸
+    >
+      默认尺寸
       <template slot="up:item" slot-scope="{ item }">{{ item }}</template>
     </up-dropdown>
   </div>
@@ -16,7 +17,7 @@
 
 <script>
 import { DropdownMenu, DropdownItem } from 'element-ui'
-import UpDropdown from 'packages/dropdown/main'
+import UpDropdown from 'packages/dropdown'
 export default {
   name: 'Dropdown',
 

@@ -21,8 +21,8 @@
 </template>
 
 <script>
-import UpCollapseWithRender from 'packages/collapse/main-with-render'
-import UpCollapse from 'packages/collapse/main'
+import UpCollapseWithRender from 'packages/collapse/src/main-with-render'
+import UpCollapse from 'packages/collapse'
 
 export default {
   name: 'Collapse',
