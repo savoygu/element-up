@@ -9,10 +9,22 @@
     "test:unit": "vue-cli-service test:unit",
     "build:file": "node build/bin/build-entry.js"
   },
-  "dependencies": {
-    "element-ui": "^2.4.5",
-    "sass-bem": "^2.6.5",
-    "vue": "^2.6.6"
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "vue-cli-service lint",
+      "git add"
+    ],
+    "*.vue": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  },
+  "peerDependencies": {
+    "element-ui": "^2.6.3",
+    "vue": "^2.6.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.4.0",
@@ -30,22 +42,10 @@
     "json-templater": "^1.2.0",
     "lint-staged": "^8.1.0",
     "node-sass": "^4.9.0",
+    "sass-bem": "^2.6.5",
     "sass-loader": "^7.1.0",
     "uppercamelcase": "^3.0.0",
     "vue-cli-plugin-element": "^1.0.1",
     "vue-template-compiler": "^2.5.21"
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.js": [
-      "vue-cli-service lint",
-      "git add"
-    ],
-    "*.vue": [
-      "vue-cli-service lint",
-      "git add"
-    ]
   }
 }
