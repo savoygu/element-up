@@ -26,8 +26,8 @@
 </template>
 
 <script>
-import UpCarousel from '../carousel/main'
-import UpDialog from '../dialog/main'
+import UpCarousel from '../../carousel'
+import UpDialog from '../../dialog'
 import createVModel from '@/mixins/createVModel'
 
 export default {
