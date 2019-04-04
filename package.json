@@ -7,7 +7,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
-    "build:file": "node build/bin/build-entry.js"
+    "build:file": "node build/bin/build-entry.js",
+    "build:theme": "gulp build --gulpfile packages/theme-chalk/gulpfile.babel.js"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -22,11 +23,16 @@
       "git add"
     ]
   },
+  "dependencies": {
+    "element-ui": "^2.6.3"
+  },
   "peerDependencies": {
-    "element-ui": "^2.6.3",
     "vue": "^2.6.10"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/register": "^7.4.0",
     "@vue/cli-plugin-babel": "^3.4.0",
     "@vue/cli-plugin-eslint": "^3.4.0",
     "@vue/cli-plugin-unit-jest": "^3.4.0",
@@ -39,6 +45,10 @@
     "babel-plugin-component": "^1.1.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-sass": "^4.0.2",
     "json-templater": "^1.2.0",
     "lint-staged": "^8.1.0",
     "node-sass": "^4.9.0",
