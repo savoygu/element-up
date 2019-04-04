@@ -20,7 +20,7 @@
 
 <script>
 import { Input } from 'element-ui'
-import createVModel from '@/mixins/createVModel'
+import createVModel from 'element-up/src/mixins/createVModel'
 import FormItemBase from './FormItemBase'
 
 export default {

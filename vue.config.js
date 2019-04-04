@@ -7,6 +7,7 @@ module.exports = {
     config.resolve.alias
       .set('packages', resolve('packages'))
       .set('examples', resolve('examples'))
+      .set('element-up', resolve('./'))
   },
   css: {
     loaderOptions: {

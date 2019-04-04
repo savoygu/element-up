@@ -25,8 +25,8 @@
 
 <script>
 import { Input } from 'element-ui'
-import UpSelect from '../../select'
-import createVModel from '@/mixins/createVModel'
+import UpSelect from 'element-up/packages/select'
+import createVModel from 'element-up/src/mixins/createVModel'
 import FormItemBase from './FormItemBase'
 
 export default {

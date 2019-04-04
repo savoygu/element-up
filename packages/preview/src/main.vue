@@ -26,9 +26,9 @@
 </template>
 
 <script>
-import UpCarousel from '../../carousel'
-import UpDialog from '../../dialog'
-import createVModel from '@/mixins/createVModel'
+import UpCarousel from 'element-up/packages/carousel'
+import UpDialog from 'element-up/packages/dialog'
+import createVModel from 'element-up/src/mixins/createVModel'
 
 export default {
   name: 'UpPreview',

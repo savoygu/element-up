@@ -17,7 +17,7 @@
 
 <script>
 import { Popover, Button } from 'element-ui'
-import createVModel from '@/mixins/createVModel'
+import createVModel from 'element-up/src/mixins/createVModel'
 
 export default {
   name: 'UpPopover',

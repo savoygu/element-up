@@ -29,7 +29,7 @@
 
 <script>
 import { Radio, RadioButton, RadioGroup } from 'element-ui'
-import createVModel from '@/mixins/createVModel'
+import createVModel from 'element-up/src/mixins/createVModel'
 
 export default {
   name: 'UpRadio',

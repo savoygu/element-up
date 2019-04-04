@@ -1,6 +1,6 @@
 <script>
 import { Select, OptionGroup, Option } from 'element-ui'
-import createVModel from '@/mixins/createVModel'
+import createVModel from 'element-up/src/mixins/createVModel'
 
 export default {
   name: 'UpSelect',

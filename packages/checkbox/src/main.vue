@@ -29,7 +29,7 @@
 
 <script>
 import { Checkbox, CheckboxButton, CheckboxGroup } from 'element-ui'
-import createVModel from '@/mixins/createVModel'
+import createVModel from 'element-up/src/mixins/createVModel'
 
 export default {
   name: 'UpCheckbox',
