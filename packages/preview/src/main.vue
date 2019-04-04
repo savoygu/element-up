@@ -78,14 +78,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-@include b(up-preview) {
-  @include e(dialog) {
-    //body
-  }
-  @include e(carousel) {
-    //body
-  }
-}
-</style>

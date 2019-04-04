@@ -5,9 +5,7 @@ import createVModel from '@/mixins/createVModel'
 export default {
   name: 'UpSelect',
 
-  mixins: [
-    createVModel('currentValue')
-  ],
+  mixins: [createVModel('currentValue')],
 
   components: {
     [Select.name]: Select,
@@ -34,11 +32,14 @@ export default {
       const { keyValue } = $props
 
       return (
-        data.length && data.map((item, index) => (
-          <el-option {...{ attrs: { ...$attrs, ...item }, on: $listeners }}
+        data.length &&
+        data.map((item, index) => (
+          <el-option
+            {...{ attrs: { ...$attrs, ...item }, on: $listeners }}
             key={item[keyValue[1]]}
             label={item[keyValue[0]]}
-            value={item[keyValue[1]]}>
+            value={item[keyValue[1]]}
+          >
             {$scopedSlots.template && $scopedSlots.template({ item, index })}
           </el-option>
         ))
@@ -49,11 +50,14 @@ export default {
       const { $attrs, $listeners } = this
 
       return (
-        data.length && data.map(groupItem => (
-          <el-option-group {...{ attrs: { ...$attrs, ...groupItem }, on: $listeners }} key={groupItem.label} label={groupItem.label}>
-            {
-              groupItem.options.length && this.renderOption(groupItem.options)
-            }
+        data.length &&
+        data.map(groupItem => (
+          <el-option-group
+            {...{ attrs: { ...$attrs, ...groupItem }, on: $listeners }}
+            key={groupItem.label}
+            label={groupItem.label}
+          >
+            {groupItem.options.length && this.renderOption(groupItem.options)}
           </el-option-group>
         ))
       )
@@ -66,19 +70,27 @@ export default {
     const { prefix, empty } = $slots
 
     return (
-      <el-select class="up-select" vModel={this.currentValue} {...{ attrs: $attrs, on: $listeners }} disabled={disabled}>
-        {prefix && <template slot="prefix"><slot name="prefix"></slot></template>}
-        {empty && <template slot="empty"><slot name="empty"></slot></template>}
+      <el-select
+        class="up-select"
+        vModel={this.currentValue}
+        {...{ attrs: $attrs, on: $listeners }}
+        disabled={disabled}
+      >
+        {prefix && (
+          <template slot="prefix">
+            <slot name="prefix" />
+          </template>
+        )}
+        {empty && (
+          <template slot="empty">
+            <slot name="empty" />
+          </template>
+        )}
         <slot>
-          {
-            group ? this.renderOptionGroup(data) : this.renderOption(data)
-          }
+          {group ? this.renderOptionGroup(data) : this.renderOption(data)}
         </slot>
-      </el-select >
+      </el-select>
     )
   }
 }
 </script>
-
-<style lang="scss">
-</style>

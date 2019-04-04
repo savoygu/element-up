@@ -37,11 +37,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-@include b(up-carousel) {
-  @include e(item) {
-    //body
-  }
-}
-</style>

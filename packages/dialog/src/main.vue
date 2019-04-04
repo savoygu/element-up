@@ -51,9 +51,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-@include b(up-dialog) {
-  //body
-}
-</style>

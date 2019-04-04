@@ -15,6 +15,3 @@ export default {
   mixins: [FormItemBase]
 }
 </script>
-
-<style lang="scss">
-</style>

@@ -1,1 +1,65 @@
 @import "../../../node_modules/element-ui/packages/theme-chalk/src/form.scss";
+
+@include b(up-form-item-checkbox) {
+  @include e(all) {
+    margin-top: -1px;
+  }
+
+  @include when(inline) {
+    .el-form-item__content {
+      display: flex;
+    }
+  }
+
+  .el-checkbox-group {
+    @include when(checkbox-button) {
+      .el-checkbox-button {
+        &:first-child {
+          .el-checkbox-button__inner {
+            border-left-width: 0;
+            border-radius: 0;
+          }
+
+          @include when(checked) {
+            box-shadow: -1px 0 0 0 #8cc5ff !important;
+          }
+        }
+      }
+    }
+  }
+
+  @include when(separate) {
+    .el-checkbox-button {
+      @include when(checkbox-button) {
+        margin-right: 16px;
+
+        .el-checkbox-button__inner {
+          border-radius: 4px;
+        }
+      }
+    }
+
+    .el-checkbox {
+      @include when(checkbox) {
+        margin-right: 50px;
+      }
+    }
+
+    .el-checkbox-group {
+      @include when(checkbox-button) {
+        .el-checkbox-button {
+          &:first-child {
+            .el-checkbox-button__inner {
+              border-left-width: 1px;
+              border-radius: 4px 0 0 4px;
+            }
+
+            @include when(checked) {
+              box-shadow: none !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

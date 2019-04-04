@@ -141,14 +141,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-@include b(up-table) {
-  @include e(eltable) {
-    //body
-  }
-  @include e(elpagination) {
-    //body
-  }
-}
-</style>
