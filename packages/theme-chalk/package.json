@@ -1,0 +1,37 @@
+{
+  "name": "element-up-theme-chalk",
+  "version": "0.0.0",
+  "description": "Element-up component chalk theme",
+  "main": "lib/index.css",
+  "style": "lib/index.css",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/savoygu/element-up-theme-chalk.git"
+  },
+  "keywords": [
+    "element-up",
+    "theme"
+  ],
+  "author": "savoygu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/savoygu/element-up-theme-chalk/issues"
+  },
+  "homepage": "https://github.com/savoygu/element-up-theme-chalk#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/register": "^7.4.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-sass": "^4.0.2"
+  }
+}
