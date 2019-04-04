@@ -5,7 +5,7 @@
   "preview": "./packages/preview/index.js",
   "submenu": "./packages/submenu/index.js",
   "carousel": "./packages/carousel/index.js",
-  "form": "./packages/form/index.js",
+  "form-item-base": "./packages/form/index.js",
   "menu": "./packages/menu/index.js",
   "progress": "./packages/progress/index.js",
   "table": "./packages/table/index.js",

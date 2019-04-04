@@ -6,7 +6,7 @@ import FormItemSelect from '../packages/form-item-select/index.js'
 import Preview from '../packages/preview/index.js'
 import Submenu from '../packages/submenu/index.js'
 import Carousel from '../packages/carousel/index.js'
-import Form from '../packages/form/index.js'
+import FormItemBase from '../packages/form-item-base/index.js'
 import Menu from '../packages/menu/index.js'
 import Progress from '../packages/progress/index.js'
 import Table from '../packages/table/index.js'
@@ -31,7 +31,7 @@ const components = [
   Preview,
   Submenu,
   Carousel,
-  Form,
+  FormItemBase,
   Menu,
   Progress,
   Table,
@@ -70,7 +70,7 @@ export default {
   Preview,
   Submenu,
   Carousel,
-  Form,
+  FormItemBase,
   Menu,
   Progress,
   Table,
