@@ -10,7 +10,8 @@ module.exports = {
         },
         jsx: true
       }
-    ]
+    ],
+    '@babel/env'
   ],
   plugins: [
     // [

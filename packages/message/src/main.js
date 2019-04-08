@@ -1,4 +1,7 @@
-import { Message, MessageBox, Notification } from 'element-ui'
+// import { Message, MessageBox, Notification } from 'element-ui'
+import Message from 'element-ui/packages/message'
+import MessageBox from 'element-ui/packages/message-box'
+import Notification from 'element-ui/packages/notification'
 
 const methods = ['message', 'msgbox', 'alert', 'confirm', 'prompt', 'notify']
 const types = ['success', 'warning', 'info', 'error']

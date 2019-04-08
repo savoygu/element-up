@@ -9,7 +9,8 @@
     "test:unit": "vue-cli-service test:unit",
     "build:file": "node build/bin/build-entry.js",
     "build:theme": "node build/bin/gen-cssfile && gulp build --gulpfile packages/theme-chalk/gulpfile.babel.js && cpy packages/theme-chalk/lib lib/theme-chalk",
-    "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js"
+    "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
+    "dist": "npm run build:file && npm run lint &&  webpack --config build/webpack.conf.js && webpack --config build/webpack.common.js && webpack --config build/webpack.component.js && npm run build:utils && npm run build:theme"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -24,9 +25,10 @@
       "git add"
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+    "element-ui": "^2.7.2"
+  },
   "peerDependencies": {
-    "element-ui": "^2.7.2",
     "vue": "^2.6.10"
   },
   "devDependencies": {
@@ -59,11 +61,16 @@
     "gulp-sass": "^4.0.2",
     "json-templater": "^1.2.0",
     "lint-staged": "^8.1.0",
+    "minimist": "^1.2.0",
     "node-sass": "^4.9.0",
+    "progress-bar-webpack-plugin": "^1.12.1",
     "sass-bem": "^2.6.5",
     "sass-loader": "^7.1.0",
+    "terser-webpack-plugin": "^1.2.3",
     "uppercamelcase": "^3.0.0",
     "vue-cli-plugin-element": "^1.0.1",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "webpack-cli": "^3.3.0",
+    "webpack-node-externals": "^1.7.2"
   }
 }
