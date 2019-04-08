@@ -7,18 +7,19 @@ module.exports = {
         modules: false,
         targets: {
           browsers: ['> 1%', 'last 2 versions', 'not ie <= 8']
-        }
+        },
+        jsx: true
       }
     ]
   ],
   plugins: [
-    [
-      'component',
-      {
-        libraryName: 'element-ui',
-        styleLibraryName: 'theme-chalk'
-      }
-    ]
+    // [
+    //   'component',
+    //   {
+    //     libraryName: 'element-ui',
+    //     styleLibraryName: 'theme-chalk'
+    //   }
+    // ]
   ],
   env: {
     utils: {

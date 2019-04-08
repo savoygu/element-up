@@ -1,6 +1,7 @@
 <script>
-import { Progress } from 'element-ui'
-import { addClass } from 'element-ui/lib/utils/dom'
+// import { Progress } from 'element-ui'
+import Progress from 'element-ui/packages/progress'
+import { addClass } from 'element-ui/src/utils/dom'
 
 export default {
   name: 'UpProgress',

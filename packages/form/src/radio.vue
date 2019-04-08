@@ -20,7 +20,6 @@
 </template>
 
 <script>
-import { Input } from 'element-ui'
 import UpRadio from 'element-up/packages/radio'
 import createVModel from 'element-up/src/mixins/createVModel'
 import FormItemBase from './FormItemBase'
@@ -29,7 +28,6 @@ export default {
   name: 'UpFormItemRadio',
 
   components: {
-    [Input.name]: Input,
     UpRadio
   },
 

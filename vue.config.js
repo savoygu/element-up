@@ -1,13 +1,25 @@
 const path = require('path')
 const resolve = (...dirs) => path.join(__dirname, ...dirs)
+const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
+  transpileDependencies: ['element-ui'],
+  productionSourceMap: isProd,
+  configureWebpack: config => {
+    config.externals = {
+      'vue': 'Vue',
+      'element-ui': 'ELEMENT'
+    }
+  },
   chainWebpack: config => {
     // 增加 alias
     config.resolve.alias
       .set('packages', resolve('packages'))
       .set('examples', resolve('examples'))
       .set('element-up', resolve('./'))
+
+    // config.module.rule('js')
+    //   .exclude.clear().add(/node_modules\/(?!(element-ui)\/).*/)
   },
   css: {
     loaderOptions: {

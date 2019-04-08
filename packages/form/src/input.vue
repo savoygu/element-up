@@ -19,7 +19,8 @@
 </template>
 
 <script>
-import { Input } from 'element-ui'
+// import { Input } from 'element-ui'
+import Input from 'element-ui/packages/input'
 import createVModel from 'element-up/src/mixins/createVModel'
 import FormItemBase from './FormItemBase'
 

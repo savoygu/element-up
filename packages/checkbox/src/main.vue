@@ -28,7 +28,10 @@
 </template>
 
 <script>
-import { Checkbox, CheckboxButton, CheckboxGroup } from 'element-ui'
+// import { Checkbox, CheckboxButton, CheckboxGroup } from 'element-ui'
+import Checkbox from 'element-ui/packages/checkbox'
+import CheckboxButton from 'element-ui/packages/checkbox-button'
+import CheckboxGroup from 'element-ui/packages/checkbox-group'
 import createVModel from 'element-up/src/mixins/createVModel'
 
 export default {

@@ -28,7 +28,10 @@
 </template>
 
 <script>
-import { Radio, RadioButton, RadioGroup } from 'element-ui'
+// import { Radio, RadioButton, RadioGroup } from 'element-ui'
+import Radio from 'element-ui/packages/radio'
+import RadioButton from 'element-ui/packages/radio-button'
+import RadioGroup from 'element-ui/packages/radio-group'
 import createVModel from 'element-up/src/mixins/createVModel'
 
 export default {

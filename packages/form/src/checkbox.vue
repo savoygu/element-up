@@ -43,7 +43,6 @@
 </template>
 
 <script>
-import { Checkbox, CheckboxButton } from 'element-ui'
 import UpCheckbox from 'element-up/packages/checkbox'
 import createVModel from 'element-up/src/mixins/createVModel'
 import FormItemBase from './FormItemBase'
@@ -52,8 +51,6 @@ export default {
   name: 'UpFormItemCheckbox',
 
   components: {
-    [Checkbox.name]: Checkbox,
-    [CheckboxButton.name]: CheckboxButton,
     UpCheckbox
   },
 

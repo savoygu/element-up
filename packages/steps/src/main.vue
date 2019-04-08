@@ -12,7 +12,9 @@
 </template>
 
 <script>
-import { Steps, Step } from 'element-ui'
+// import { Steps, Step } from 'element-ui'
+import Steps from 'element-ui/packages/steps'
+import Step from 'element-ui/packages/step'
 import createVModel from 'element-up/src/mixins/createVModel'
 
 export default {

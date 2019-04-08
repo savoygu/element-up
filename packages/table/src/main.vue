@@ -59,7 +59,11 @@
 
 <script>
 import Vue from 'vue'
-import { Table, TableColumn, Pagination, Loading } from 'element-ui'
+// import { Table, TableColumn, Pagination, Loading } from 'element-ui'
+import Table from 'element-ui/packages/table'
+import TableColumn from 'element-ui/packages/table-column'
+import Pagination from 'element-ui/packages/pagination'
+import Loading from 'element-ui/packages/loading'
 
 Vue.use(Loading.directive)
 

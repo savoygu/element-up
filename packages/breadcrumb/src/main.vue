@@ -14,7 +14,9 @@
 </template>
 
 <script>
-import { Breadcrumb, BreadcrumbItem } from 'element-ui'
+// import { Breadcrumb, BreadcrumbItem } from 'element-ui'
+import Breadcrumb from 'element-ui/packages/breadcrumb'
+import BreadcrumbItem from 'element-ui/packages/breadcrumb-item'
 
 export default {
   name: 'UpBreadcrumb',

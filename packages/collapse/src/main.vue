@@ -20,7 +20,9 @@
 </template>
 
 <script>
-import { Collapse, CollapseItem } from 'element-ui'
+// import { Collapse, CollapseItem } from 'element-ui'
+import Collapse from 'element-ui/packages/collapse'
+import CollapseItem from 'element-ui/packages/collapse-item'
 import createVModel from 'element-up/src/mixins/createVModel'
 
 export default {

@@ -5,7 +5,8 @@
 </template>
 
 <script>
-import { Menu } from 'element-ui'
+// import { Menu } from 'element-ui'
+import Menu from 'element-ui/packages/menu'
 import UpSubmenu from './submenu.vue'
 
 export default {
