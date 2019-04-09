@@ -51,9 +51,10 @@
   },
   "unpkg": "lib/index.js",
   "style": "lib/theme-chalk/index.css",
-  "dependencies": {},
+  "dependencies": {
+    "element-ui": "^2.7.2"
+  },
   "peerDependencies": {
-    "element-ui": "^2.7.2",
     "vue": "^2.6.10"
   },
   "devDependencies": {
@@ -78,7 +79,6 @@
     "babel-plugin-module-resolver": "^3.2.0",
     "cpy-cli": "^2.0.0",
     "cross-env": "^5.2.0",
-    "element-ui": "^2.7.2",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
     "gulp": "^4.0.0",

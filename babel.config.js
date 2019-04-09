@@ -14,6 +14,13 @@ module.exports = {
     '@babel/env'
   ],
   plugins: [
+    ['module-resolver', {
+      root: ['node_modules/element-ui'],
+      alias: {
+        'element-ui/packages': 'element-ui/lib',
+        'element-ui/src': 'element-ui/lib'
+      }
+    }],
     [
       'component',
       {

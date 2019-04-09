@@ -1,10 +1,23 @@
+const path = require('path')
+const fs = require('fs')
 const nodeExternals = require('webpack-node-externals')
 const { resolve } = require('./utils')
+const Components = require('../components.json')
+
+var mixinsList = fs.readdirSync(resolve('../src/mixins'))
 let externals = {}
 
+Object.keys(Components).forEach(function (key) {
+  externals[`element-up/packages/${key}`] = `element-up/lib/${key}`
+})
+
+mixinsList.forEach(function (file) {
+  file = path.basename(file, '.js')
+  externals[`element-up/src/mixins/${file}`] = `element-up/lib/mixins/${file}`
+})
+
 externals = [Object.assign({
-  vue: 'vue',
-  'element-ui': 'element-ui'
+  vue: 'vue'
 }, externals), nodeExternals({
   whitelist: ['element-ui']
 })]
@@ -32,4 +45,4 @@ exports.vue = {
   amd: 'vue'
 }
 
-exports.jsexclude = /node_modules\/(?!(element-ui)\/).*|utils\/popper\.js|utils\/data\.js/
+exports.jsexclude = /node_modules\/(?!(element-ui)\/).*|node_modules\/element-ui\/src\/utils\/popper\.js|node_modules\/element-ui\/src\/utils\/date\.js/
