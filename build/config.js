@@ -5,7 +5,9 @@ let externals = {}
 externals = [Object.assign({
   vue: 'vue',
   'element-ui': 'element-ui'
-}, externals), nodeExternals()]
+}, externals), nodeExternals({
+  whitelist: ['element-ui']
+})]
 
 exports.externals = externals
 
@@ -30,4 +32,4 @@ exports.vue = {
   amd: 'vue'
 }
 
-exports.jsexclude = /node_modules\/(?!(element-ui)\/).*/
+exports.jsexclude = /node_modules\/(?!(element-ui)\/).*|utils\/popper\.js|utils\/data\.js/

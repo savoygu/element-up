@@ -12,6 +12,7 @@ const webpackConfig = {
   output: {
     path: resolve('../lib'),
     filename: '[name].js',
+    chunkFilename: '[id].js',
     libraryTarget: 'commonjs2'
   },
   resolve: {

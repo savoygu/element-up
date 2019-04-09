@@ -14,6 +14,7 @@ module.exports = {
   output: {
     path: resolve('../lib'),
     filename: 'index.js',
+    chunkFilename: '[id].js',
     libraryTarget: 'umd',
     libraryExport: 'default',
     library: 'ELEMENTUP',
@@ -26,7 +27,7 @@ module.exports = {
   },
   externals: {
     vue: config.vue,
-    element: config.element
+    'element-ui': config.element
   },
   optimization: {
     minimizer: [
