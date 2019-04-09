@@ -1,6 +1,6 @@
 @import "element-ui/packages/theme-chalk/src/form.scss";
 
-@include b(up-form-item-checkbox) {
+@include b(form-item-checkbox) {
   @include e(all) {
     margin-top: -1px;
   }

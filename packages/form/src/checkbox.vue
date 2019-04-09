@@ -1,6 +1,6 @@
 <template>
   <el-form-item
-    class="up-form-item-checkbox"
+    class="el-form-item-checkbox"
     :class="{ 'is-inline': inline, 'is-separate': separate }"
     ref="elFormItem"
     v-bind="$attrs"
@@ -10,7 +10,7 @@
       <slot name="label">{{$attrs.label}}</slot>
     </template>
     <component
-      class="up-form-item-checkbox__all"
+      class="el-form-item-checkbox__all"
       :is="component"
       :indeterminate="isIndeterminate"
       :class="{
