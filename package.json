@@ -15,7 +15,7 @@
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "build:file": "node build/bin/build-entry.js",
-    "build:theme": "node build/bin/gen-cssfile && gulp build --gulpfile packages/theme-chalk/gulpfile.babel.js && cpy packages/theme-chalk/lib lib/theme-chalk",
+    "build:theme": "node build/bin/gen-cssfile && gulp build --gulpfile packages/theme-chalk/gulpfile.babel.js && cp-cli packages/theme-chalk/lib lib/theme-chalk",
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
     "dist": "npm run build:file && npm run lint &&  webpack --config build/webpack.conf.js && webpack --config build/webpack.common.js && webpack --config build/webpack.component.js && npm run build:utils && npm run build:theme",
     "pub": "npm run bootstrap && sh build/git-release.sh && sh build/release.sh"
@@ -78,7 +78,7 @@
     "babel-plugin-component": "^1.1.1",
     "babel-plugin-istanbul": "^5.1.1",
     "babel-plugin-module-resolver": "^3.2.0",
-    "cpy-cli": "^2.0.0",
+    "cp-cli": "^2.0.0",
     "cross-env": "^5.2.0",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
