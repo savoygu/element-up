@@ -1,7 +1,13 @@
 {
   "name": "element-up",
   "version": "0.1.0",
-  "private": true,
+  "description": "Secondary packaging based on element",
+  "main": "lib/element-up.common.js",
+  "files": [
+    "lib",
+    "src",
+    "packages"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -25,6 +31,24 @@
       "git add"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:savoygu/element-up.git"
+  },
+  "homepage": "https://element-up.netlify.com/",
+  "keywords": [
+    "eleme",
+    "vue",
+    "element",
+    "element-ui",
+    "components"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/savoygu/element-up/issues"
+  },
+  "unpkg": "lib/index.js",
+  "style": "lib/theme-chalk/index.css",
   "dependencies": {
     "element-ui": "^2.7.2"
   },
