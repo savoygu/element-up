@@ -17,7 +17,8 @@
     "build:file": "node build/bin/build-entry.js",
     "build:theme": "node build/bin/gen-cssfile && gulp build --gulpfile packages/theme-chalk/gulpfile.babel.js && cpy packages/theme-chalk/lib lib/theme-chalk",
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
-    "dist": "npm run build:file && npm run lint &&  webpack --config build/webpack.conf.js && webpack --config build/webpack.common.js && webpack --config build/webpack.component.js && npm run build:utils && npm run build:theme"
+    "dist": "npm run build:file && npm run lint &&  webpack --config build/webpack.conf.js && webpack --config build/webpack.common.js && webpack --config build/webpack.component.js && npm run build:utils && npm run build:theme",
+    "pub": "npm run bootstrap && sh build/git-release.sh && sh build/release.sh"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -92,6 +93,7 @@
     "sass-bem": "^2.6.5",
     "sass-loader": "^7.1.0",
     "sass-module-importer": "^1.4.0",
+    "select-version-cli": "^0.0.2",
     "terser-webpack-plugin": "^1.2.3",
     "uppercamelcase": "^3.0.0",
     "vue": "^2.6.10",

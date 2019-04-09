@@ -13,6 +13,7 @@ module.exports = {
   output: {
     path: resolve('../lib'),
     filename: 'element-up.common.js',
+    chunkFilename: '[id].js',
     libraryExport: 'default',
     library: 'ELEMENTUP',
     libraryTarget: 'commonjs2'
