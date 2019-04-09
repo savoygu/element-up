@@ -62,7 +62,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '0.1.1-3',
+  version: '0.1.1-4',
   install,
   Breadcrumb,
   Dropdown,
