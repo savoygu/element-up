@@ -14,13 +14,13 @@ module.exports = {
     '@babel/env'
   ],
   plugins: [
-    // [
-    //   'component',
-    //   {
-    //     libraryName: 'element-ui',
-    //     styleLibraryName: 'theme-chalk'
-    //   }
-    // ]
+    [
+      'component',
+      {
+        libraryName: 'element-ui',
+        styleLibraryName: 'theme-chalk'
+      }
+    ]
   ],
   env: {
     utils: {
