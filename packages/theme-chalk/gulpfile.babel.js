@@ -2,11 +2,12 @@ import { series, src, dest } from 'gulp'
 import sass from 'gulp-sass'
 import autoprefixer from 'gulp-autoprefixer'
 import cssmin from 'gulp-cssmin'
+import moduleImporter from 'sass-module-importer'
 
 function compile () {
   return src('src/*.scss')
-    .pipe(sass.sync({
-      includePaths: ['node_modules']
+    .pipe(sass({
+      importer: moduleImporter()
     }))
     .pipe(autoprefixer({
       browsers: ['ie > 9', 'last 2 versions'],
