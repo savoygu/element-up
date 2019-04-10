@@ -10,14 +10,14 @@
   ],
   "scripts": {
     "bootstrap": "yarn || npm i",
-    "serve": "npm run bootstrap && npm run build:file && vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "npm run bootstrap && npm run build:file && cross-env BABEL_ENV=examples vue-cli-service serve",
+    "build": "cross-env BABEL_ENV=examples vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "build:file": "node build/bin/build-entry.js",
     "build:theme": "node build/bin/gen-cssfile && gulp build --gulpfile packages/theme-chalk/gulpfile.babel.js && cp-cli packages/theme-chalk/lib lib/theme-chalk",
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
-    "dist": "npm run build:file && npm run lint &&  webpack --config build/webpack.conf.js && webpack --config build/webpack.common.js && webpack --config build/webpack.component.js && npm run build:utils && npm run build:theme",
+    "dist": "npm run build:file && npm run lint &&  webpack --config build/webpack.conf.js && webpack --config build/webpack.common.js && webpack --config build/webpack.component.js && npm run build:utils && cross-env BABEL_ENV=theme npm run build:theme",
     "pub": "npm run bootstrap && sh build/git-release.sh && sh build/release.sh"
   },
   "gitHooks": {

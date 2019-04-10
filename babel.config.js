@@ -1,39 +1,30 @@
 module.exports = {
   presets: [
     [
-      '@vue/app',
+      '@babel/env',
       {
         loose: true,
         modules: false,
         targets: {
           browsers: ['> 1%', 'last 2 versions', 'not ie <= 8']
-        },
-        jsx: true
+        }
       }
     ],
-    '@babel/env'
+    '@vue/jsx'
   ],
   plugins: [
     ['module-resolver', {
-      root: ['node_modules/element-ui'],
       alias: {
         'element-ui/packages': 'element-ui/lib',
         'element-ui/src': 'element-ui/lib'
       }
-    }],
-    [
-      'component',
-      {
-        libraryName: 'element-ui',
-        styleLibraryName: 'theme-chalk'
-      }
-    ]
+    }]
   ],
   env: {
     utils: {
       presets: [
         [
-          '@vue/app',
+          '@babel/env',
           {
             loose: true,
             modules: 'commonjs',
@@ -54,6 +45,23 @@ module.exports = {
     },
     test: {
       plugins: ['istanbul']
+    },
+    examples: {
+      presets: [
+        '@vue/app'
+      ],
+      plugins: [
+        [
+          'component',
+          {
+            libraryName: 'element-ui',
+            styleLibraryName: 'theme-chalk'
+          }
+        ]
+      ]
+    },
+    theme: {
+      presets: ['@babel/env']
     }
   }
 }
