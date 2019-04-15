@@ -17,7 +17,8 @@
     "build:file": "node build/bin/build-entry.js",
     "build:theme": "node build/bin/gen-cssfile && gulp build --gulpfile packages/theme-chalk/gulpfile.babel.js && cp-cli packages/theme-chalk/lib lib/theme-chalk",
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
-    "dist": "npm run build:file && npm run lint &&  webpack --config build/webpack.conf.js && webpack --config build/webpack.common.js && webpack --config build/webpack.component.js && npm run build:utils && cross-env BABEL_ENV=theme npm run build:theme",
+    "build:umd": "node build/bin/build-locale.js",
+    "dist": "npm run build:file && npm run lint &&  webpack --config build/webpack.conf.js && webpack --config build/webpack.common.js && webpack --config build/webpack.component.js && npm run build:utils && npm run build:umd && cross-env BABEL_ENV=theme npm run build:theme",
     "pub": "npm run bootstrap && sh build/git-release.sh && sh build/release.sh"
   },
   "gitHooks": {
@@ -51,10 +52,9 @@
   },
   "unpkg": "lib/index.js",
   "style": "lib/theme-chalk/index.css",
-  "dependencies": {
-    "element-ui": "^2.7.2"
-  },
+  "dependencies": {},
   "peerDependencies": {
+    "element-ui": "^2.7.2",
     "vue": "^2.6.10"
   },
   "devDependencies": {
@@ -71,17 +71,21 @@
     "@vue/cli-service": "^3.4.0",
     "@vue/eslint-config-standard": "^4.0.0",
     "@vue/test-utils": "^1.0.0-beta.20",
-    "babel-core": "7.0.0-bridge.0",
+    "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.5",
+    "babel-plugin-add-module-exports": "^1.0.0",
     "babel-plugin-component": "^1.1.1",
     "babel-plugin-istanbul": "^5.1.1",
     "babel-plugin-module-resolver": "^3.2.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "cp-cli": "^2.0.0",
     "cross-env": "^5.2.0",
+    "element-ui": "^2.7.2",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
+    "file-save": "^0.2.0",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-cssmin": "^0.2.0",
