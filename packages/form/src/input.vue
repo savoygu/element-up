@@ -4,7 +4,7 @@
       <slot name="label">{{$attrs.label}}</slot>
     </template>
     <slot>
-      <template slot="prefix" v-if="$slots.prefix"></template>
+      <slot name="prefix" v-if="$slots.prefix"></slot>
       <el-input ref="elInput" v-model="currentValue" v-bind="$attrs" v-on="$listeners">
         <template v-for="slot in inputSlots">
           <template :slot="slot" v-if="$slots[`up:input:${slot}`]">
@@ -12,7 +12,7 @@
           </template>
         </template>
       </el-input>
-      <template slot="suffix" v-if="$slots.suffix"></template>
+      <slot name="suffix" v-if="$slots.suffix"></slot>
     </slot>
     <template slot="error" slot-scope="props" v-if="$scopedSlots.error">
       <slot name="error" v-bind="props"></slot>
