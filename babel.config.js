@@ -38,7 +38,8 @@ module.exports = {
         ['module-resolver', {
           root: ['element-up'],
           alias: {
-            'element-up/src': 'element-up/lib'
+            'element-up/src': 'element-up/lib',
+            'element-ui/src': 'element-ui/lib'
           }
         }]
       ]
