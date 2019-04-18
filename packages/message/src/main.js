@@ -30,11 +30,11 @@ export default function Msg (method, message, title, options) {
 function messageHandler (Constructor, method, type) {
   return function (message, title, options) {
     if (['message', 'notify'].includes(method)) {
-      if (typeof message !== 'object') {
+      if (typeof message !== 'object' && method === 'notify') {
         throw new Error(`消息类型为 ${method} 的参数类型只能是对象`)
       }
 
-      if (type) {
+      if (typeof message === 'object' && type) {
         message = { ...message, type }
       }
 
