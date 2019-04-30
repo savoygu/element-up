@@ -10,6 +10,7 @@
   ],
   "scripts": {
     "bootstrap": "yarn || npm i",
+    "new": "node build/bin/new.js",
     "serve": "npm run bootstrap && npm run build:file && cross-env BABEL_ENV=examples vue-cli-service serve",
     "build": "cross-env BABEL_ENV=examples vue-cli-service build",
     "lint": "vue-cli-service lint",
