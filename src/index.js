@@ -23,6 +23,7 @@ import Dialog from '../packages/dialog/index.js'
 import FormItemRadio from '../packages/form-item-radio/index.js'
 import Popover from '../packages/popover/index.js'
 import Steps from '../packages/steps/index.js'
+import Button from '../packages/button/index.js'
 import locale from 'element-up/src/locale'
 
 const components = [
@@ -46,7 +47,8 @@ const components = [
   Dialog,
   FormItemRadio,
   Popover,
-  Steps
+  Steps,
+  Button
 ]
 
 const install = function (Vue, opts = {}) {
@@ -97,5 +99,6 @@ export default {
   Dialog,
   FormItemRadio,
   Popover,
-  Steps
+  Steps,
+  Button
 }

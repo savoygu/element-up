@@ -21,5 +21,6 @@
   "dialog": "./packages/dialog/index.js",
   "form-item-radio": "./packages/form-item-radio/index.js",
   "popover": "./packages/popover/index.js",
-  "steps": "./packages/steps/index.js"
+  "steps": "./packages/steps/index.js",
+  "button": "./packages/button/index.js"
 }

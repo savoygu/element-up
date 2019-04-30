@@ -1,17 +1,17 @@
 <template>
   <div>
-    <Form></Form>
+    <Button>你好啊</Button>
   </div>
 </template>
 
 <script>
-import Form from 'examples/views/form'
+import Button from 'examples/views/button'
 
 export default {
   name: 'app',
 
   components: {
-    Form
+    Button
   },
 
   created () {
