@@ -22,5 +22,7 @@
   "form-item-radio": "./packages/form-item-radio/index.js",
   "popover": "./packages/popover/index.js",
   "steps": "./packages/steps/index.js",
-  "button": "./packages/button/index.js"
+  "button": "./packages/button/index.js",
+  "component": "./packages/component/index.js",
+  "link": "./packages/link/index.js"
 }

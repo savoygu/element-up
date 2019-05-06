@@ -1,17 +1,17 @@
 <template>
   <div>
-    <Button>你好啊</Button>
+    <UpComponent>你好啊</UpComponent>
   </div>
 </template>
 
 <script>
-import Button from 'examples/views/button'
+import UpComponent from 'examples/views/component'
 
 export default {
   name: 'app',
 
   components: {
-    Button
+    UpComponent
   },
 
   created () {
