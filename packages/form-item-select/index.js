@@ -1,7 +1,7 @@
-import UpFormItemSelect from '../form/src/select'
+import FormItemSelect from '../form/src/select'
 
-UpFormItemSelect.install = function (Vue) {
-  Vue.component(UpFormItemSelect.name, UpFormItemSelect)
+FormItemSelect.install = function (Vue) {
+  Vue.component(FormItemSelect.name, FormItemSelect)
 }
 
-export default UpFormItemSelect
+export default FormItemSelect

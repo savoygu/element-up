@@ -1,5 +1,4 @@
 <script>
-// import { Progress } from 'element-ui'
 import Progress from 'element-ui/packages/progress'
 import { addClass } from 'element-ui/src/utils/dom'
 

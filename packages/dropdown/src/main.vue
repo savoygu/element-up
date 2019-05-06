@@ -22,7 +22,6 @@
 </template>
 
 <script>
-// import { Dropdown, DropdownMenu, DropdownItem } from 'element-ui'
 import Dropdown from 'element-ui/packages/dropdown'
 import DropdownMenu from 'element-ui/packages/dropdown-menu'
 import DropdownItem from 'element-ui/packages/dropdown-item'

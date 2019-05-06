@@ -1,7 +1,7 @@
-import UpRadio from './src/main'
+import Radio from './src/main'
 
-UpRadio.install = function (Vue) {
-  Vue.component(UpRadio.name, UpRadio)
+Radio.install = function (Vue) {
+  Vue.component(Radio.name, Radio)
 }
 
-export default UpRadio
+export default Radio

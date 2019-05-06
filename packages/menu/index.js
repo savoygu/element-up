@@ -1,7 +1,7 @@
-import UpMenu from './src/main'
+import Menu from './src/main'
 
-UpMenu.install = function (Vue) {
-  Vue.component(UpMenu.name, UpMenu)
+Menu.install = function (Vue) {
+  Vue.component(Menu.name, Menu)
 }
 
-export default UpMenu
+export default Menu

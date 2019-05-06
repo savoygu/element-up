@@ -7,7 +7,6 @@
 </template>
 
 <script>
-// import { Carousel, CarouselItem } from 'element-ui'
 import Carousel from 'element-ui/packages/carousel'
 import CarouselItem from 'element-ui/packages/carousel-item'
 

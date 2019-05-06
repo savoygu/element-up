@@ -1,7 +1,7 @@
-import UpFormItemBase from './src/base'
+import FormItemBase from './src/base'
 
-UpFormItemBase.install = function (Vue) {
-  Vue.component(UpFormItemBase.name, UpFormItemBase)
+FormItemBase.install = function (Vue) {
+  Vue.component(FormItemBase.name, FormItemBase)
 }
 
-export default UpFormItemBase
+export default FormItemBase

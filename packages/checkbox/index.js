@@ -1,7 +1,7 @@
-import UpCheckbox from './src/main'
+import Checkbox from './src/main'
 
-UpCheckbox.install = function (Vue) {
-  Vue.component(UpCheckbox.name, UpCheckbox)
+Checkbox.install = function (Vue) {
+  Vue.component(Checkbox.name, Checkbox)
 }
 
-export default UpCheckbox
+export default Checkbox

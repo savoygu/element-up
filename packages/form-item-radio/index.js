@@ -1,7 +1,7 @@
-import UpFormItemRadio from '../form/src/radio'
+import FormItemRadio from '../form/src/radio'
 
-UpFormItemRadio.install = function (Vue) {
-  Vue.component(UpFormItemRadio.name, UpFormItemRadio)
+FormItemRadio.install = function (Vue) {
+  Vue.component(FormItemRadio.name, FormItemRadio)
 }
 
-export default UpFormItemRadio
+export default FormItemRadio

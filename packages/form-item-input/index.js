@@ -1,7 +1,7 @@
-import UpFormItemInput from '../form/src/input'
+import FormItemInput from '../form/src/input'
 
-UpFormItemInput.install = function (Vue) {
-  Vue.component(UpFormItemInput.name, UpFormItemInput)
+FormItemInput.install = function (Vue) {
+  Vue.component(FormItemInput.name, FormItemInput)
 }
 
-export default UpFormItemInput
+export default FormItemInput

@@ -1,7 +1,7 @@
-import UpBreadcrumb from './src/main'
+import Breadcrumb from './src/main'
 
-UpBreadcrumb.install = function (Vue) {
-  Vue.component(UpBreadcrumb.name, UpBreadcrumb)
+Breadcrumb.install = function (Vue) {
+  Vue.component(Breadcrumb.name, Breadcrumb)
 }
 
-export default UpBreadcrumb
+export default Breadcrumb

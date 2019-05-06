@@ -10,7 +10,6 @@
 </template>
 
 <script>
-// import { Timeline, TimelineItem } from 'element-ui'
 import Timeline from 'element-ui/packages/timeline'
 import TimelineItem from 'element-ui/packages/timeline-item'
 

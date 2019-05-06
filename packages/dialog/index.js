@@ -1,7 +1,7 @@
-import UpDialog from './src/main'
+import Dialog from './src/main'
 
-UpDialog.install = function (Vue) {
-  Vue.component(UpDialog.name, UpDialog)
+Dialog.install = function (Vue) {
+  Vue.component(Dialog.name, Dialog)
 }
 
-export default UpDialog
+export default Dialog

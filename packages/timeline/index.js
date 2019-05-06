@@ -1,7 +1,7 @@
-import UpTimeline from './src/main'
+import Timeline from './src/main'
 
-UpTimeline.install = function (Vue) {
-  Vue.component(UpTimeline.name, UpTimeline)
+Timeline.install = function (Vue) {
+  Vue.component(Timeline.name, Timeline)
 }
 
-export default UpTimeline
+export default Timeline

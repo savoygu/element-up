@@ -1,7 +1,7 @@
-import UpSelect from './src/main'
+import Select from './src/main'
 
-UpSelect.install = function (Vue) {
-  Vue.component(UpSelect.name, UpSelect)
+Select.install = function (Vue) {
+  Vue.component(Select.name, Select)
 }
 
-export default UpSelect
+export default Select

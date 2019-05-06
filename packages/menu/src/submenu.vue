@@ -28,7 +28,6 @@
 </template>
 
 <script>
-// import { Submenu, MenuItem, MenuItemGroup } from 'element-ui'
 import Submenu from 'element-ui/packages/submenu'
 import MenuItem from 'element-ui/packages/menu-item'
 import MenuItemGroup from 'element-ui/packages/menu-item-group'

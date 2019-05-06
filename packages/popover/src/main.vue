@@ -16,7 +16,6 @@
 </template>
 
 <script>
-// import { Popover, Button } from 'element-ui'
 import Popover from 'element-ui/packages/popover'
 import Button from 'element-ui/packages/button'
 import createVModel from 'element-up/src/mixins/createVModel'

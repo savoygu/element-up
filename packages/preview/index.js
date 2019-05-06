@@ -1,7 +1,7 @@
-import UpPreview from './src/main'
+import Preview from './src/main'
 
-UpPreview.install = function (Vue) {
-  Vue.component(UpPreview.name, UpPreview)
+Preview.install = function (Vue) {
+  Vue.component(Preview.name, Preview)
 }
 
-export default UpPreview
+export default Preview

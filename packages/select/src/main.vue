@@ -61,7 +61,6 @@
 </template>
 
 <script>
-// import { Select, OptionGroup, Option } from 'element-ui'
 import Select from 'element-ui/packages/select'
 import Option from 'element-ui/packages/option'
 import OptionGroup from 'element-ui/packages/option-group'

@@ -1,7 +1,7 @@
-import UpDropdown from './src/main'
+import Dropdown from './src/main'
 
-UpDropdown.install = function (Vue) {
-  Vue.component(UpDropdown.name, UpDropdown)
+Dropdown.install = function (Vue) {
+  Vue.component(Dropdown.name, Dropdown)
 }
 
-export default UpDropdown
+export default Dropdown

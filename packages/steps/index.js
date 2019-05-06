@@ -1,7 +1,7 @@
-import UpSteps from './src/main'
+import Steps from './src/main'
 
-UpSteps.install = function (Vue) {
-  Vue.component(UpSteps.name, UpSteps)
+Steps.install = function (Vue) {
+  Vue.component(Steps.name, Steps)
 }
 
-export default UpSteps
+export default Steps

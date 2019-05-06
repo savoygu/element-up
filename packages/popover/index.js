@@ -1,7 +1,7 @@
-import UpPopover from './src/main'
+import Popover from './src/main'
 
-UpPopover.install = function (Vue) {
-  Vue.component(UpPopover.name, UpPopover)
+Popover.install = function (Vue) {
+  Vue.component(Popover.name, Popover)
 }
 
-export default UpPopover
+export default Popover

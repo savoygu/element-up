@@ -1,7 +1,7 @@
-import UpTable from './src/main'
+import Table from './src/main'
 
-UpTable.install = function (Vue) {
-  Vue.component(UpTable.name, UpTable)
+Table.install = function (Vue) {
+  Vue.component(Table.name, Table)
 }
 
-export default UpTable
+export default Table

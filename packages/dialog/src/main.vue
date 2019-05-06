@@ -12,7 +12,6 @@
 </template>
 
 <script>
-// import { Dialog } from 'element-ui'
 import Dialog from 'element-ui/packages/dialog'
 import createVModel from 'element-up/src/mixins/createVModel'
 

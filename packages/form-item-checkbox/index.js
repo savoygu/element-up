@@ -1,7 +1,7 @@
-import UpFormItemCheckbox from '../form/src/checkbox'
+import FormItemCheckbox from '../form/src/checkbox'
 
-UpFormItemCheckbox.install = function (Vue) {
-  Vue.component(UpFormItemCheckbox.name, UpFormItemCheckbox)
+FormItemCheckbox.install = function (Vue) {
+  Vue.component(FormItemCheckbox.name, FormItemCheckbox)
 }
 
-export default UpFormItemCheckbox
+export default FormItemCheckbox

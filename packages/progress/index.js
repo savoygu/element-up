@@ -1,7 +1,7 @@
-import UpProgress from './src/main'
+import Progress from './src/main'
 
-UpProgress.install = function (Vue) {
-  Vue.component(UpProgress.name, UpProgress)
+Progress.install = function (Vue) {
+  Vue.component(Progress.name, Progress)
 }
 
-export default UpProgress
+export default Progress

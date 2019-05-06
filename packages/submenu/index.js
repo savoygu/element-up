@@ -1,7 +1,7 @@
-import UpSubmenu from '../menu/src/submenu'
+import Submenu from '../menu/src/submenu'
 
-UpSubmenu.install = function (Vue) {
-  Vue.component(UpSubmenu.name, UpSubmenu)
+Submenu.install = function (Vue) {
+  Vue.component(Submenu.name, Submenu)
 }
 
-export default UpSubmenu
+export default Submenu

@@ -1,7 +1,7 @@
-import UpCarousel from './src/main'
+import Carousel from './src/main'
 
-UpCarousel.install = function (Vue) {
-  Vue.component(UpCarousel.name, UpCarousel)
+Carousel.install = function (Vue) {
+  Vue.component(Carousel.name, Carousel)
 }
 
-export default UpCarousel
+export default Carousel

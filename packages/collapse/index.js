@@ -1,7 +1,7 @@
-import UpCollapse from './src/main'
+import Collapse from './src/main'
 
-UpCollapse.install = function (Vue) {
-  Vue.component(UpCollapse.name, UpCollapse)
+Collapse.install = function (Vue) {
+  Vue.component(Collapse.name, Collapse)
 }
 
-export default UpCollapse
+export default Collapse
