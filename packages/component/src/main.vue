@@ -56,8 +56,6 @@ export default {
   render (h) {
     const { $attrs, $listeners, $slots } = this
 
-    console.log($slots)
-
     return (
       <this.component vModel={this.currentValue} {...{
         class: [this.classes],
