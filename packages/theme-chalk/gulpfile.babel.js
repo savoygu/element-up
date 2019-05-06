@@ -17,10 +17,15 @@ function compile () {
     .pipe(dest('lib'))
 }
 
+function copyfontFromElement () {
+  return src('../../node_modules/element-ui/packages/theme-chalk/src/fonts')
+    .pipe(dest('src'))
+}
+
 function copyfont () {
   return src('src/fonts/**')
     .pipe(cssmin())
     .pipe(dest('lib/fonts'))
 }
 
-exports.build = series(compile, copyfont)
+exports.build = series(copyfontFromElement, compile, copyfont)

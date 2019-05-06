@@ -16,7 +16,7 @@
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "build:file": "node build/bin/build-entry.js",
-    "build:theme": "node build/bin/gen-cssfile && gulp build --gulpfile packages/theme-chalk/gulpfile.babel.js && cp-cli packages/theme-chalk/lib lib/theme-chalk",
+    "build:theme": "node build/bin/gen-cssfile && cross-env BABEL_ENV=theme gulp build --gulpfile packages/theme-chalk/gulpfile.babel.js && cp-cli packages/theme-chalk/lib lib/theme-chalk",
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js && babel node_modules/element-ui/src/locale --out-dir lib/locale",
     "build:umd": "node build/bin/build-locale.js",
     "dist": "npm run build:file && npm run lint &&  webpack --config build/webpack.conf.js && webpack --config build/webpack.common.js && webpack --config build/webpack.component.js && npm run build:utils && npm run build:umd && cross-env BABEL_ENV=theme npm run build:theme",
