@@ -18,8 +18,8 @@ function compile () {
 }
 
 function copyfontFromElement () {
-  return src('../../node_modules/element-ui/packages/theme-chalk/src/fonts')
-    .pipe(dest('src'))
+  return src('../../node_modules/element-ui/packages/theme-chalk/src/fonts/**')
+    .pipe(dest('src/fonts'))
 }
 
 function copyfont () {
