@@ -20,7 +20,8 @@
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js && babel node_modules/element-ui/src/locale --out-dir lib/locale",
     "build:umd": "node build/bin/build-locale.js",
     "dist": "npm run build:file && npm run lint &&  webpack --config build/webpack.conf.js && webpack --config build/webpack.common.js && webpack --config build/webpack.component.js && npm run build:utils && npm run build:umd && cross-env BABEL_ENV=theme npm run build:theme",
-    "pub": "npm run bootstrap && sh build/git-release.sh && sh build/release.sh"
+    "pub": "npm run bootstrap && sh build/git-release.sh && sh build/release.sh",
+    "test": "echo 'NO TEST'"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
