@@ -26,7 +26,44 @@
     <up-component component="el-radio" v-model="radio" label="1">备选项1</up-component>
     <up-component component="el-radio" v-model="radio" label="2">备选项2</up-component>
 
-    <up-component component="el-cascader" :options="options" v-model="selectedOptions" @change="handleChange">备选项2</up-component>
+    <up-component component="el-cascader" :options="options" v-model="selectedOptions" @change="handleChange"></up-component>
+
+    <up-component component="el-switch" v-model="on" active-color="#13ce66" inactive-color="#ff4949"></up-component>
+
+    <up-component component="el-date-picker" v-model="date" type="datetime" placeholder="选择日期"></up-component>
+
+    <up-component
+      component="el-upload"
+      action="https://jsonplaceholder.typicode.com/posts/"
+      list-type="picture-card"
+      :on-preview="handlePictureCardPreview"
+      :on-remove="handleRemove"
+    >
+      <i class="el-icon-plus"></i>
+    </up-component>
+
+    <up-component component="el-rate" v-model="rate" :colors="['#99A9BF', '#F7BA2A', '#FF9900']"></up-component>
+
+    <up-component component="el-color-picker" v-model="color"></up-component>
+    <up-component component="el-transfer" v-model="transfer" :data="data"></up-component>
+    <up-component component="el-tag" type="success">标签二</up-component>
+    <up-component
+      component="el-tree"
+      :data="treeData"
+      show-checkbox
+      node-key="id"
+      :default-expanded-keys="[2, 3]"
+      :default-checked-keys="[5]"
+      :props="defaultProps"
+    ></up-component>
+    <up-component component="el-pagination" :page-size="20" :pager-count="11" layout="prev, pager, next" :total="1000"></up-component>
+    <up-component component="el-badge" :value="12">
+      <el-button size="small">评论</el-button>
+    </up-component>
+
+    <up-tooltip effect="light" content="Top" placement="right">
+      <el-button>上边</el-button>
+    </up-tooltip>
   </div>
 </template>
 
@@ -34,18 +71,77 @@
 import Input from 'element-ui/packages/input'
 import UpComponent from 'packages/component'
 import UpLink from 'packages/link'
+import UpTooltip from 'packages/tooltip'
 
 export default {
   name: 'AWSComponent',
   components: {
     UpComponent,
     UpLink,
+    UpTooltip,
     [Input.name]: Input
   },
   data () {
+    const generateData = _ => {
+      const data = []
+      for (let i = 1; i <= 15; i++) {
+        data.push({
+          key: i,
+          label: `备选项 ${i}`,
+          disabled: i % 4 === 0
+        })
+      }
+      return data
+    }
     return {
       value: '',
       radio: '',
+      on: true,
+      date: '',
+      rate: null,
+      iconClasses: ['icon-rate-face-1', 'icon-rate-face-2', 'icon-rate-face-3'],
+      color: '',
+      data: generateData(),
+      transfer: [1, 4],
+      treeData: [{
+        id: 1,
+        label: '一级 1',
+        children: [{
+          id: 4,
+          label: '二级 1-1',
+          children: [{
+            id: 9,
+            label: '三级 1-1-1'
+          }, {
+            id: 10,
+            label: '三级 1-1-2'
+          }]
+        }]
+      }, {
+        id: 2,
+        label: '一级 2',
+        children: [{
+          id: 5,
+          label: '二级 2-1'
+        }, {
+          id: 6,
+          label: '二级 2-2'
+        }]
+      }, {
+        id: 3,
+        label: '一级 3',
+        children: [{
+          id: 7,
+          label: '二级 3-1'
+        }, {
+          id: 8,
+          label: '二级 3-2'
+        }]
+      }],
+      defaultProps: {
+        children: 'children',
+        label: 'label'
+      },
       selectedOptions: [],
       options: [{
         value: 'zhinan',
@@ -247,7 +343,9 @@ export default {
   methods: {
     handleChange (...args) {
       console.log(args)
-    }
+    },
+    handlePictureCardPreview () { },
+    handleRemove () { }
   }
 }
 </script>

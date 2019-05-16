@@ -25,5 +25,6 @@
   "button": "./packages/button/index.js",
   "component": "./packages/component/index.js",
   "link": "./packages/link/index.js",
-  "alert": "./packages/alert/index.js"
+  "alert": "./packages/alert/index.js",
+  "tooltip": "./packages/tooltip/index.js"
 }

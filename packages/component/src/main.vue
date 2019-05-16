@@ -32,7 +32,17 @@ export default {
     'el-link': () => import('element-ui/packages/link'),
     'el-input': () => import('element-ui/packages/input'),
     'el-input-number': () => import('element-ui/packages/input-number'),
-    'el-cascader': () => import('element-ui/packages/cascader')
+    'el-cascader': () => import('element-ui/packages/cascader'),
+    'el-switch': () => import('element-ui/packages/switch'),
+    'el-date-picker': () => import('element-ui/packages/date-picker'),
+    'el-upload': () => import('element-ui/packages/upload'),
+    'el-rate': () => import('element-ui/packages/rate'),
+    'el-color-picker': () => import('element-ui/packages/color-picker'),
+    'el-transfer': () => import('element-ui/packages/transfer'),
+    'el-tag': () => import('element-ui/packages/tag'),
+    'el-tree': () => import('element-ui/packages/tree'),
+    'el-pagination': () => import('element-ui/packages/pagination'),
+    'el-badge': () => import('element-ui/packages/badge')
   },
 
   props: {
