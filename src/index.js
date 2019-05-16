@@ -26,6 +26,7 @@ import Steps from '../packages/steps/index.js'
 import Button from '../packages/button/index.js'
 import Component from '../packages/component/index.js'
 import Link from '../packages/link/index.js'
+import Alert from '../packages/alert/index.js'
 import locale from 'element-up/src/locale'
 
 const components = [
@@ -52,7 +53,8 @@ const components = [
   Steps,
   Button,
   Component,
-  Link
+  Link,
+  Alert
 ]
 
 const install = function (Vue, opts = {}) {
@@ -106,5 +108,6 @@ export default {
   Steps,
   Button,
   Component,
-  Link
+  Link,
+  Alert
 }

@@ -10,9 +10,6 @@
 </template> -->
 
 <script>
-import Link from 'element-ui/packages/link'
-import Input from 'element-ui/packages/input'
-import InputNumber from 'element-ui/packages/input-number'
 import createVModel from 'element-up/src/mixins/createVModel'
 
 const kebabCase = function (str) {
@@ -29,21 +26,21 @@ export default {
   mixins: [createVModel('currentValue')],
 
   components: {
-    [Link.name]: Link,
-    [Input.name]: Input,
-    [InputNumber.name]: InputNumber
+    'el-alert': () => import('element-ui/packages/alert'),
+    'el-link': () => import('element-ui/packages/link'),
+    'el-input': () => import('element-ui/packages/input'),
+    'el-input-number': () => import('element-ui/packages/input-number')
   },
 
   props: {
     component: {
-      type: String,
       required: true
     }
   },
 
   computed: {
     classes () {
-      return kebabCase(this.component).replace(/^el/, 'up')
+      return typeof this.component === 'string' ? kebabCase(this.component).replace(/^el/, 'up') : ''
     }
   },
 

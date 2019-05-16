@@ -1,17 +1,17 @@
 <template>
   <div>
-    <UpComponent>你好啊</UpComponent>
+    <UpAlert>你好啊</UpAlert>
   </div>
 </template>
 
 <script>
-import UpComponent from 'examples/views/component'
+import UpAlert from 'examples/views/alert'
 
 export default {
   name: 'app',
 
   components: {
-    UpComponent
+    UpAlert
   },
 
   created () {
