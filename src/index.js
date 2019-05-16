@@ -27,6 +27,7 @@ import Button from '../packages/button/index.js'
 import Component from '../packages/component/index.js'
 import Link from '../packages/link/index.js'
 import Alert from '../packages/alert/index.js'
+import Tooltip from '../packages/tooltip/index.js'
 import locale from 'element-up/src/locale'
 
 const components = [
@@ -54,7 +55,8 @@ const components = [
   Button,
   Component,
   Link,
-  Alert
+  Alert,
+  Tooltip
 ]
 
 const install = function (Vue, opts = {}) {
@@ -79,7 +81,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '0.5.2',
+  version: '0.6.0',
   locale: locale.use,
   i18n: locale.i18n,
   install,
@@ -109,5 +111,6 @@ export default {
   Button,
   Component,
   Link,
-  Alert
+  Alert,
+  Tooltip
 }
