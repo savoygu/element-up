@@ -26,10 +26,13 @@ export default {
   mixins: [createVModel('currentValue')],
 
   components: {
+    'el-radio': () => import('element-ui/packages/radio'),
+    'el-checkbox': () => import('element-ui/packages/checkbox'),
     'el-alert': () => import('element-ui/packages/alert'),
     'el-link': () => import('element-ui/packages/link'),
     'el-input': () => import('element-ui/packages/input'),
-    'el-input-number': () => import('element-ui/packages/input-number')
+    'el-input-number': () => import('element-ui/packages/input-number'),
+    'el-cascader': () => import('element-ui/packages/cascader')
   },
 
   props: {
