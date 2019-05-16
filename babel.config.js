@@ -18,7 +18,8 @@ module.exports = {
         'element-ui/packages': 'element-ui/lib',
         'element-ui/src': 'element-ui/lib'
       }
-    }]
+    }],
+    '@babel/syntax-dynamic-import'
   ],
   env: {
     utils: {
