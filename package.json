@@ -1,6 +1,6 @@
 {
   "name": "element-up",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "description": "Secondary packaging based on element",
   "main": "lib/element-up.common.js",
   "files": [
