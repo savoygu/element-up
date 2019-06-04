@@ -1,17 +1,17 @@
 <template>
   <div>
-    <UpComponent>你好啊</UpComponent>
+    <UpRegionPicker></UpRegionPicker>
   </div>
 </template>
 
 <script>
-import UpComponent from 'examples/views/component'
+import UpRegionPicker from 'examples/views/region-picker'
 
 export default {
   name: 'app',
 
   components: {
-    UpComponent
+    UpRegionPicker
   },
 
   created () {

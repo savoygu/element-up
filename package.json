@@ -54,7 +54,9 @@
   },
   "unpkg": "lib/index.js",
   "style": "lib/theme-chalk/index.css",
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.11"
+  },
   "peerDependencies": {
     "element-ui": "^2.7.2",
     "vue": "^2.6.10"

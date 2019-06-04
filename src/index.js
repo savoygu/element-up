@@ -28,6 +28,7 @@ import Component from '../packages/component/index.js'
 import Link from '../packages/link/index.js'
 import Alert from '../packages/alert/index.js'
 import Tooltip from '../packages/tooltip/index.js'
+import RegionPicker from '../packages/region-picker/index.js'
 import locale from 'element-up/src/locale'
 
 const components = [
@@ -56,7 +57,8 @@ const components = [
   Component,
   Link,
   Alert,
-  Tooltip
+  Tooltip,
+  RegionPicker
 ]
 
 const install = function (Vue, opts = {}) {
@@ -112,5 +114,6 @@ export default {
   Component,
   Link,
   Alert,
-  Tooltip
+  Tooltip,
+  RegionPicker
 }
