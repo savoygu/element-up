@@ -1,52 +1,80 @@
 <template>
   <div class="up-region-picker">
-    {{selectedData}}
-    <up-region-panel :data="data" v-model="selectedData"></up-region-panel>
+    <up-region-picker-panel class="up-region-picker__panel" :data="data" :province="province" v-model="selectedData"></up-region-picker-panel>
+    <up-region-picker-selected class="up-region-picker__selected" v-model="selectedData" @selected="handleSelected"></up-region-picker-selected>
   </div>
 </template>
 
 <script>
-// import RegionPicker from 'element-ui/packages/region-picker'
-import RegionPanel from './panel'
-
-import provinces from './provinces'
-import cities from './cities'
-
-const handleMap = (map, label = 'label', value = 'value') => Object.keys(map).map(v => ({ [label]: map[v], [value]: v }))
-const regionData = handleMap(provinces)
-  .map(province => ({
-    ...province,
-    children: handleMap(cities[province.label])
-  }))
-  .map(item => item.children.length > 1 ? item : { ...item, children: [] })
-
-console.log(regionData)
+import RegionPickerPanel from './panel'
+import RegionPickerSelected from './selected'
 
 export default {
   name: 'UpRegionPicker',
 
   components: {
-    [RegionPanel.name]: RegionPanel
+    [RegionPickerPanel.name]: RegionPickerPanel,
+    [RegionPickerSelected.name]: RegionPickerSelected
   },
 
   props: {
     datasource: {
       type: Array,
       default: () => []
-    }
+    },
+    value: {}
   },
 
   data () {
     return {
-      data: regionData,
-      selectedData: {}
+      data: this.datasource,
+      province: '',
+      selectedData: this.value
+    }
+  },
+
+  watch: {
+    value (newVal) {
+      this.selectedData = newVal
+    },
+    selectedData: {
+      handler (newVal) {
+        this.$emit('input', newVal)
+        this.$emit('change', newVal)
+      },
+      deep: true
+    }
+  },
+
+  methods: {
+    handleSelected (item) {
+      this.province = item.province
     }
   }
 }
 </script>
 
-<style scoped lang="scss">
-@include b(up-region-picker) {
-  //body
-}
+<style lang="scss">
+// @include b(up-region-picker) {
+//   display: flex;
+
+//   @include e(header) {
+//     height: 36px;
+//     padding: 0 10px;
+//     line-height: 36px;
+//     font-size: 14px;
+//     color: #606266;
+//     border-bottom: 1px solid #eee;
+//   }
+
+//   @include e(panel) {
+//     // flex: 0 1 496px;
+//     width: 496px;
+//   }
+
+//   @include e(selected) {
+//     margin-left: 72px;
+//   }
+// }
+//
 </style>

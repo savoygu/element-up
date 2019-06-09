@@ -1,1 +1,15 @@
 @import "element-ui/packages/theme-chalk/src/common/var.scss";
+
+/* Transfer
+--------------------------*/
+$--region-picker-border-color: $--border-color-lighter !default;
+$--region-picker-border-radius: $--border-radius-base !default;
+
+$--region-picker-panel-width: 428px !default;
+$--region-picker-panel-header-height: 40px !default;
+$--region-picker-panel-header-background-color: $--background-color-base !default;
+$--region-picker-panel-footer-height: 40px !default;
+$--region-picker-panel-body-height: 300px !default;
+$--region-picker-item-height: 30px !default;
+$--region-picker-all-height: 36px !default;
+$--region-picker-selected-width: 208px !default;
