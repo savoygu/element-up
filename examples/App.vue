@@ -1,33 +1,28 @@
 <template>
-  <div>
-    <UpRegionPicker></UpRegionPicker>
+  <div id="app" :class="{ 'is-component': isComponent }">
+    <main-header></main-header>
+    <div class="main-cnt element-up-cnt">
+      <router-view></router-view>
+    </div>
+    <main-footer></main-footer>
   </div>
 </template>
 
 <script>
-import UpRegionPicker from 'examples/views/region-picker'
-
 export default {
   name: 'app',
 
-  components: {
-    UpRegionPicker
+  computed: {
+    lang () {
+      return this.$route.path.split('/')[1] || 'zh-CN'
+    },
+
+    isComponent () {
+      return /^component-/.test(this.$route.name || '')
+    }
   },
 
   created () {
   }
 }
 </script>
-
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  // text-align: center;
-  color: #2c3e50;
-  color: white;
-  margin-top: 60px;
-  background-color: darkcyan;
-}
-</style>
