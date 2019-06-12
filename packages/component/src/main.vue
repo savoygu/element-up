@@ -42,7 +42,11 @@ export default {
     'el-tag': () => import('element-ui/packages/tag'),
     'el-tree': () => import('element-ui/packages/tree'),
     'el-pagination': () => import('element-ui/packages/pagination'),
-    'el-badge': () => import('element-ui/packages/badge')
+    'el-badge': () => import('element-ui/packages/badge'),
+    'el-scrollbar': () => import('element-ui/packages/scrollbar'),
+    'el-row': () => import('element-ui/packages/row'),
+    'el-col': () => import('element-ui/packages/col'),
+    'el-icon': () => import('element-ui/packages/icon')
   },
 
   props: {
