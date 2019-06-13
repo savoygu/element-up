@@ -93,9 +93,9 @@ langs.forEach(lang => {
 })
 
 let userLanguage = localStorage.getItem('ELEMENT_UP_LANGUAGE') || window.navigator.language || 'zh-CN'
-let defaultPath = '/zh-CN'
+let defaultPath = '/zh-CN/component/installation'
 if (userLanguage.indexOf('zh-') !== -1) {
-  defaultPath = '/zh-CN'
+  defaultPath = '/zh-CN/component/installation'
 }
 
 route = route.concat([{
