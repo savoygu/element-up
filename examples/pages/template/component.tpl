@@ -108,7 +108,7 @@
 </style>
 
 <template>
-  <up-component component="el-scrollbar" class="element-up-component element-up-component__scroll">
+  <up-component component="el-scrollbar" class="page-component__scroll element-up-component element-up-component__scroll">
     <div class="page-container element-up-component__page">
       <up-component component="el-scrollbar" class="element-up-component__nav">
         <side-nav :data="navsData[lang]" :base="`/${lang}/component`"></side-nav>
