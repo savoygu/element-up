@@ -110,11 +110,65 @@
   <up-button type="primary" icon="el-icon-arrow-left">上一页</up-button>
   <up-button type="primary">下一页<i class="el-icon-arrow-right el-icon--right"></i></up-button>
 </up-button>
+
 <up-button component="el-button-group">
   <up-button type="primary" icon="el-icon-edit"></up-button>
   <up-button type="primary" icon="el-icon-share"></up-button>
   <up-button type="primary" icon="el-icon-delete"></up-button>
 </up-button>
+```
+:::
+
+### 按钮组 - 属性、事件、slot
+
+:::demo 可以统一为按钮组中所有按钮绑定事件，也可以在 `data` 中为每一个按钮绑定属性 `attrs` 及事件 `listeners`，在 `data` 中绑定的事件优先于按钮组中统一绑定的事件。提供默认插槽来覆盖默认的按钮组展示行为，同时提供 `up:item` 插槽来自定义按钮内容的展示，其中 `slot-scope` 返回 `{ item, index }` 供使用。
+
+```html
+<template>
+  <up-component component="el-row">
+    <up-button component="el-button-group" :data="data" @click="handleClick">
+      <!-- up:item 插槽 -->
+      <span slot="up:item" slot-scope="{ item, $index }">{{ item.name }}</span>
+    </up-button>
+  </up-component>
+
+  <!-- 默认插槽 -->
+  <up-component component="el-row">
+    <up-button component="el-button-group">
+      <up-button v-for="(item, index) in data" :type="item.type" :key="item.name" @click="event => handleClick(event, item, index, data)"> {{ item.name + '—' + index }} </up-button>
+    </up-button>
+  </up-component>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      data: [
+        {
+          name: '绑定事件',
+          type: 'default',
+          active: false,
+          listeners: {
+            click (event, item, index, data) {
+              console.log('FROM [BUTTON] handleClick: ', event, item, index, data)
+            }
+          }
+        },
+        { name: '绑定属性', type: 'default', active: false, attrs: { icon: 'el-icon-share' } },
+        { name: '默认', type: 'default', active: false },
+      ]
+    }
+  },
+  methods: {
+    handleClick (event, item, index, data) {
+      console.log('FROM [BUTTON GROUP] handleClick: ', event, item, index, data)
+      item.type = item.active ? 'default' : 'primary'
+      item.active = !item.active
+    }
+  }
+}
+</script>
 ```
 :::
 
@@ -126,6 +180,11 @@
 
 ```html
 <up-button type="primary" :loading="true">加载中</up-button>
+<up-button type="success" :loading="true">加载中</up-button>
+<up-button type="warning" :loading="true">加载中</up-button>
+<up-button type="danger" :loading="true">加载中</up-button>
+<up-button type="info" :loading="true">加载中</up-button>
+<up-button type="text" :loading="true">加载中</up-button>
 ```
 :::
 
@@ -136,31 +195,79 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
 :::demo 额外的尺寸：`medium`、`small`、`mini`，通过设置`size`属性来配置它们。
 
 ```html
-<up-component component="el-row">
-  <up-button>默认按钮</up-button>
-  <up-button size="medium">中等按钮</up-button>
-  <up-button size="small">小型按钮</up-button>
-  <up-button size="mini">超小按钮</up-button>
-</up-component>
-<up-component component="el-row">
-  <up-button round>默认按钮</up-button>
-  <up-button size="medium" round>中等按钮</up-button>
-  <up-button size="small" round>小型按钮</up-button>
-  <up-button size="mini" round>超小按钮</up-button>
-</up-component>
+<template>
+  <up-component component="el-row">
+    <up-component component="el-col" :span="3">
+      <up-button type="text">切换类型</up-button>
+    </up-component>
+    <up-component component="el-col" :span="15">
+      <up-button component="el-button-group" :data="data" @click="handleClick">
+        <span slot="up:item" slot-scope="{ item }">{{ item.name }}</span>
+      </up-button>
+    </up-component>
+  </up-component>
+  <up-component component="el-row">
+    <up-button :type="type">默认按钮</up-button>
+    <up-button :type="type" size="medium">中等按钮</up-button>
+    <up-button :type="type" size="small">小型按钮</up-button>
+    <up-button :type="type" size="mini">超小按钮</up-button>
+  </up-component>
+  <up-component component="el-row">
+    <up-button :type="type" round>默认按钮</up-button>
+    <up-button :type="type" size="medium" round>中等按钮</up-button>
+    <up-button :type="type" size="small" round>小型按钮</up-button>
+    <up-button :type="type" size="mini" round>超小按钮</up-button>
+  </up-component>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      data: [
+        { name: '主要', type: 'primary' },
+        { name: '成功', type: 'success' },
+        { name: '信息', type: 'info' },
+        { name: '警告', type: 'warning' },
+        { name: '危险', type: 'danger' },
+        { name: '默认', type: 'default' }
+      ],
+      type: ''
+    }
+  },
+  methods: {
+    handleClick (event, item, index, data) {
+      console.log('FROM BUTTON handleClick: ', event, item, index, data)
+      this.type = item.type
+    }
+  }
+}
+</script>
 ```
 :::
 
+### Button-group Attributes
+| 参数                                 | 说明     | 类型  | 可选值 | 默认值 |
+| ------------------------------------ | -------- | ----- | ------ | ------ |
+| data: [{ attrs: {}, listeners: {} }] | 按钮列表 | array | —      | []     |
+
+### Button-group Slot
+| 参数    | 说明                                      |
+| ------- | ----------------------------------------- |
+| —       | 自定义按钮列表                            |
+| up:item | 自定义按钮的内容，参数为 { item, $index } |
+
 ### Attributes
-| 参数        | 说明           | 类型    | 可选值                                             | 默认值 |
-| ----------- | -------------- | ------- | -------------------------------------------------- | ------ |
-| size        | 尺寸           | string  | medium / small / mini                              | —      |
-| type        | 类型           | string  | primary / success / warning / danger / info / text | —      |
-| plain       | 是否朴素按钮   | boolean | —                                                  | false  |
-| round       | 是否圆角按钮   | boolean | —                                                  | false  |
-| circle      | 是否圆形按钮   | boolean | —                                                  | false  |
-| loading     | 是否加载中状态 | boolean | —                                                  | false  |
-| disabled    | 是否禁用状态   | boolean | —                                                  | false  |
-| icon        | 图标类名       | string  | —                                                  | —      |
-| autofocus   | 是否默认聚焦   | boolean | —                                                  | false  |
-| native-type | 原生 type 属性 | string  | button / submit / reset                            | button |
+| 参数        | 说明           | 类型    | 可选值                                             | 默认值    |
+| ----------- | -------------- | ------- | -------------------------------------------------- | --------- |
+| component   | 组件名称       | string  | el-button / el-button-group                        | el-button |
+| size        | 尺寸           | string  | medium / small / mini                              | —         |
+| type        | 类型           | string  | primary / success / warning / danger / info / text | —         |
+| plain       | 是否朴素按钮   | boolean | —                                                  | false     |
+| round       | 是否圆角按钮   | boolean | —                                                  | false     |
+| circle      | 是否圆形按钮   | boolean | —                                                  | false     |
+| loading     | 是否加载中状态 | boolean | —                                                  | false     |
+| disabled    | 是否禁用状态   | boolean | —                                                  | false     |
+| icon        | 图标类名       | string  | —                                                  | —         |
+| autofocus   | 是否默认聚焦   | boolean | —                                                  | false     |
+| native-type | 原生 type 属性 | string  | button / submit / reset                            | button    |
