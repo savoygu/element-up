@@ -11,6 +11,7 @@
             class="up-region-picker-selected__item"
             v-for="item in selectedData"
             :key="item.value"
+            :class="{ 'is-active': item.value === currentValue }"
             @click="selectedItem(item)"
             @dblclick="removeItem(item)"
           >
@@ -38,7 +39,8 @@ export default {
 
   data () {
     return {
-      selectedData: this.formatData(this.value)
+      selectedData: this.formatData(this.value),
+      currentValue: ''
     }
   },
 
@@ -59,9 +61,12 @@ export default {
       ), [])
     },
     clearData () {
+      this.currentValue = ''
       this.$emit('input', [])
     },
     removeItem ({ value, parent }) {
+      if (this.currentValue === value) this.currentValue = ''
+
       const removedValue = parent
         ? this.value.map(
           item => {
@@ -82,6 +87,7 @@ export default {
       this.$emit('input', removedValue)
     },
     selectedItem ({ value, parent }) {
+      this.currentValue = this.currentValue === value ? '' : value
       this.$emit('selected', parent ? { type: 'city', province: parent, city: value } : { type: 'province', province: value })
     }
   }

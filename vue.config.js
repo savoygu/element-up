@@ -12,6 +12,7 @@ module.exports = {
   chainWebpack: config => {
     // 增加 alias
     config.resolve.alias
+      .set('main', resolve('src'))
       .set('packages', resolve('packages'))
       .set('examples', resolve('examples'))
       .set('element-up', resolve('./'))

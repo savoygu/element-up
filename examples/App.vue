@@ -1,5 +1,6 @@
 <template>
   <div id="app" :class="{ 'is-component': isComponent }">
+    <!-- <region-picker></region-picker> -->
     <main-header></main-header>
     <div class="main-cnt element-up-cnt">
       <router-view></router-view>
@@ -9,8 +10,14 @@
 </template>
 
 <script>
+// import RegionPicker from './views/region-picker'
+
 export default {
   name: 'app',
+
+  components: {
+    // RegionPicker
+  },
 
   computed: {
     lang () {

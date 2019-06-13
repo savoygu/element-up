@@ -120,11 +120,15 @@
 
   @include e(inner) {
     width: $--region-picker-selected-width;
-    height: $--region-picker-panel-body-height;
     border: 1px solid $--region-picker-border-color;
     box-sizing: border-box;
+  }
+
+  @include e(body) {
+    height: #{ $--region-picker-panel-body-height - $--region-picker-panel-header-height };
     overflow: auto;
   }
+
 
   @include e(list) {
     padding: 8px 12px;
@@ -139,6 +143,11 @@
     color: $--color-text-primary;
     background-color: $--background-color-base;
     cursor: pointer;
+
+    @include is(active) {
+      color: $--color-white;
+      background-color: $--color-primary;
+    }
 
     &:last-child {
       margin-bottom: 0;

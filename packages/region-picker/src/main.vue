@@ -1,6 +1,11 @@
 <template>
   <div class="up-region-picker">
-    <up-region-picker-panel class="up-region-picker__panel" :data="data" :province="province" v-model="selectedData"></up-region-picker-panel>
+    <up-region-picker-panel
+      class="up-region-picker__panel"
+      :data="datasource"
+      :province="province"
+      v-model="selectedData"
+    ></up-region-picker-panel>
     <up-region-picker-selected class="up-region-picker__selected" v-model="selectedData" @selected="handleSelected"></up-region-picker-selected>
   </div>
 </template>
@@ -22,12 +27,17 @@ export default {
       type: Array,
       default: () => []
     },
-    value: {}
+    value: {},
+    restore: Function,
+    format: Function,
+    formatedValue: {
+      type: Object,
+      default: () => ({})
+    }
   },
 
   data () {
     return {
-      data: this.datasource,
       province: '',
       selectedData: this.value
     }
@@ -37,10 +47,24 @@ export default {
     value (newVal) {
       this.selectedData = newVal
     },
+    datasource (newVal) {
+      this.selectedData = this.restoreData(this.formatedValue)
+    },
+    formatedValue: {
+      handler (newVal) {
+        this.selectedData = this.restoreData(newVal)
+        console.log(this.selectedData)
+      },
+      immediate: true
+    },
     selectedData: {
       handler (newVal) {
         this.$emit('input', newVal)
-        this.$emit('change', newVal)
+        console.log(JSON.stringify(this.formatData(newVal), null, 2))
+        this.$emit('change', {
+          value: newVal,
+          formatedValue: this.formatData(newVal)
+        })
       },
       deep: true
     }
@@ -49,6 +73,32 @@ export default {
   methods: {
     handleSelected (item) {
       this.province = item.province
+    },
+    restoreData (value) {
+      if (!this.datasource.length || !Object.keys(value).length) return []
+
+      return typeof this.restore === 'function' ? this.restore(this.datasource, value) : Object.keys(value).map(key => {
+        const province = this.datasource.find(item => item.value === key)
+
+        if (!province) return {}
+        if (!province.children || !province.children.length || province.children.length === value[key].length) {
+          return {
+            ...province,
+            isAll: true
+          }
+        }
+        return {
+          ...province,
+          children: province.children.filter(item => value[key].indexOf(item.value) > -1),
+          isAll: false
+        }
+      })
+    },
+    formatData (value) {
+      return typeof this.format === 'function' ? this.format(value) : value.reduce((acc, item) => {
+        acc[item.value] = (item.children && item.children.length) ? item.children.map(v => v.value) : [item.value]
+        return acc
+      }, {})
     }
   }
 }
