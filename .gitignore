@@ -2,6 +2,7 @@
 node_modules
 /dist
 /lib
+/examples/element-up
 
 # local env files
 .env.local

@@ -19,7 +19,7 @@
     "build:theme": "node build/bin/gen-cssfile && cross-env BABEL_ENV=theme gulp build --gulpfile packages/theme-chalk/gulpfile.babel.js && cp-cli packages/theme-chalk/lib lib/theme-chalk",
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js && babel node_modules/element-ui/src/locale --out-dir lib/locale",
     "build:umd": "node build/bin/build-locale.js",
-    "deploy:build": "npm run build:file && cross-env NODE_ENV=production webpack --config build/webpack.demo.js && echo element.eleme.io>>examples/element-ui/CNAME",
+    "deploy:build": "npm run build:file && cross-env NODE_ENV=production webpack --config build/webpack.demo.js && echo element-up.netlify.com>>examples/element-up/CNAME",
     "dev": "npm run bootstrap && npm run build:file && cross-env NODE_ENV=development webpack-dev-server --config build/webpack.demo.js & node build/bin/template.js",
     "dist": "npm run build:file && npm run lint &&  webpack --config build/webpack.conf.js && webpack --config build/webpack.common.js && webpack --config build/webpack.component.js && npm run build:utils && npm run build:umd && cross-env BABEL_ENV=theme npm run build:theme",
     "i18n": "node build/bin/i18n.js",

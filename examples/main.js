@@ -44,7 +44,6 @@ router.afterEach(route => {
     }
   }
   document.title = 'Element'
-  console.log(process.env.NODE_ENV)
   if (process.env.NODE_ENV === 'production') {
     ga('send', 'event', 'PageView', route.name)
   }
