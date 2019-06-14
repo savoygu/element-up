@@ -61,6 +61,14 @@ export default {
       isFade: false
     }
   },
+  watch: {
+    '$route.path' () {
+      this.handlePathChange()
+    },
+    isFade (val) {
+      bus.$emit('navFade', val)
+    }
+  },
   computed: {
     navStyle () {
       const style = {}
@@ -68,7 +76,7 @@ export default {
         style.paddingBottom = '60px'
       }
       style.opacity = this.isFade ? '0.5' : '1'
-      return this.style
+      return style
     },
     lang () {
       return this.$route.meta.lang

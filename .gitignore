@@ -3,6 +3,7 @@ node_modules
 /dist
 /lib
 /examples/element-up
+/build/bin/algolia-key.js
 
 # local env files
 .env.local
