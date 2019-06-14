@@ -53,14 +53,12 @@ export default {
     formatedValue: {
       handler (newVal) {
         this.selectedData = this.restoreData(newVal)
-        console.log(this.selectedData)
       },
       immediate: true
     },
     selectedData: {
       handler (newVal) {
         this.$emit('input', newVal)
-        console.log(JSON.stringify(this.formatData(newVal), null, 2))
         this.$emit('change', {
           value: newVal,
           formatedValue: this.formatData(newVal)
