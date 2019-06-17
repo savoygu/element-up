@@ -8,7 +8,7 @@
       v-for="(item, index) in data"
       :key="index"
     >
-      <slot v-bind="{ item, index }">{{ typeof item === 'string' ? item: item[valueKey] }}</slot>
+      <slot v-bind="{ item, $index: index }">{{ typeof item === 'string' ? item: item[valueKey] }}</slot>
     </el-breadcrumb-item>
   </el-breadcrumb>
 </template>

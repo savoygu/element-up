@@ -28,8 +28,8 @@ export default {
           ...item
         },
         scopedSlots: {
-          title: () => (this.$scopedSlots.title && this.$scopedSlots.title({ ...item, index })),
-          default: () => (this.$scopedSlots.default && this.$scopedSlots.default({ ...item, index }))
+          title: () => (this.$scopedSlots.title && this.$scopedSlots.title({ ...item, $index: index })),
+          default: () => (this.$scopedSlots.default && this.$scopedSlots.default({ ...item, $index: index }))
         }
       }, [
         h('template', { slot: 'title' }, [this.$slots.title])

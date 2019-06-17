@@ -11,7 +11,7 @@
             :key="index"
           >
             <template v-if="$scopedSlots['up:item']">
-              <slot name="up:item" v-bind="{ item, index }"></slot>
+              <slot name="up:item" v-bind="{ item, $index: index }"></slot>
             </template>
             <template v-else>{{ typeof item === 'string' ? item : item[valueKey] }}</template>
           </el-dropdown-item>

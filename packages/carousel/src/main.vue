@@ -1,7 +1,7 @@
 <template>
   <el-carousel ref="elCarousel" class="up-carousel" v-bind="$attrs" v-on="$listeners">
     <el-carousel-item v-for="(item, index) in data" v-bind="$attrs" v-on="$listeners" :key="index">
-      <slot v-bind="{ item, index }"></slot>
+      <slot v-bind="{ item, $index: index }"></slot>
     </el-carousel-item>
   </el-carousel>
 </template>
