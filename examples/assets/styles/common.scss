@@ -121,6 +121,13 @@ button, input, select, textarea {
     line-height: 1.5em;
   }
 
+  .emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
+  }
+
   .tip {
     padding: 8px 16px;
     background-color: #ECF8FF;
@@ -144,6 +151,14 @@ button, input, select, textarea {
     code {
       background-color: rgba(255, 255, 255, .7);
       color: #445368;
+    }
+  }
+
+  .el-badge {
+    .el-badge__content {
+      &.is-fixed {
+        right: 3px;
+      }
     }
   }
 }

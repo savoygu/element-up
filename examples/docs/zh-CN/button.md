@@ -1,13 +1,13 @@
 ## Button 按钮
 常用的操作按钮。
 
-#### 相对于 Element 所做的变动：
+#### :star::star::star:相对于 Element 所做的变动：
 
 :::tip
 
  1. 组件名称统一为 `up-button`，通过 `component` 属性，传入 `el-button` 和 `el-button-group` 来做控制。
  2. 当 `component` 为 `el-button-group`时， 可以传入 `data` 属性来展示按钮列表，`data` 中每一项 `item` 的属性都会应用到按钮上。
- 3. 在 `data` 中有两个特别的属性 `attrs` 和 `listeners`，分别为按钮组中的按钮添加属性和绑定事件。如果存在同名属性，则 `attrs` 中的属性优先于 `props` 及 `item` 中的属性；如果存在同名事件， 则 `listeners` 中的事件优先于在 `component` 为 `el-button-group` 的按钮组上绑定的事件。
+ 3. 在 `data` 中有两个特别的属性 `attrs` 和 `listeners`，分别为按钮组中的按钮添加属性和绑定事件。如果存在同名属性，则 `attrs` 中的属性优先于 `props` 及 `item` 中的属性；如果存在同名事件， 则 `listeners` 中的事件优先于在属性`component` 为 `el-button-group` 的按钮组上绑定的事件。
 :::
 
 ### 基础用法
@@ -128,7 +128,7 @@
 ```
 :::
 
-### 按钮组 - 属性、事件、slot
+### <up-component component="el-badge" value="new">按钮组 - 属性、事件、slot</up-component>
 
 :::demo 可以统一为按钮组中所有按钮绑定事件，也可以在 `data` 中为每一个按钮绑定属性 `attrs` 及事件 `listeners`，在 `data` 中绑定的事件优先于按钮组中统一绑定的事件。提供默认插槽来覆盖默认的按钮组展示行为，同时提供 `up:item` 插槽来自定义按钮内容的展示，其中 `slot-scope` 返回 `{ item, $index }` 供使用，`item` 表示 `data` 中的每一项。
 
@@ -197,7 +197,7 @@ export default {
 ```
 :::
 
-### 不同尺寸
+### <up-component component="el-badge" value="change">不同尺寸</up-component>
 
 Button 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的按钮尺寸。
 
@@ -255,28 +255,28 @@ export default {
 ```
 :::
 
-### Button-group Attributes
-| 参数                                 | 说明     | 类型  | 可选值 | 默认值 |
-| ------------------------------------ | -------- | ----- | ------ | ------ |
-| data: [{ attrs: {}, listeners: {} }] | 按钮列表 | array | —      | []     |
+### <up-component component="el-badge" value="new">Button-group Attributes</up-component>
+| 参数                                      | 说明     | 类型  | 可选值 | 默认值 |
+| ----------------------------------------- | -------- | ----- | ------ | ------ |
+| data: [{ ..., attrs: {}, listeners: {} }] | 按钮列表 | array | —      | []     |
 
-### Button-group Slot
+### <up-component component="el-badge" value="new">Button-group Slot</up-component>
 | 参数    | 说明                                      |
 | ------- | ----------------------------------------- |
 | —       | 自定义按钮列表                            |
 | up:item | 自定义按钮的内容，参数为 { item, $index } |
 
 ### Attributes
-| 参数        | 说明           | 类型    | 可选值                                             | 默认值    |
-| ----------- | -------------- | ------- | -------------------------------------------------- | --------- |
-| component   | 组件名称       | string  | el-button / el-button-group                        | el-button |
-| size        | 尺寸           | string  | medium / small / mini                              | —         |
-| type        | 类型           | string  | primary / success / warning / danger / info / text | —         |
-| plain       | 是否朴素按钮   | boolean | —                                                  | false     |
-| round       | 是否圆角按钮   | boolean | —                                                  | false     |
-| circle      | 是否圆形按钮   | boolean | —                                                  | false     |
-| loading     | 是否加载中状态 | boolean | —                                                  | false     |
-| disabled    | 是否禁用状态   | boolean | —                                                  | false     |
-| icon        | 图标类名       | string  | —                                                  | —         |
-| autofocus   | 是否默认聚焦   | boolean | —                                                  | false     |
-| native-type | 原生 type 属性 | string  | button / submit / reset                            | button    |
+| 参数                                                                    | 说明           | 类型    | 可选值                                             | 默认值    |
+| ----------------------------------------------------------------------- | -------------- | ------- | -------------------------------------------------- | --------- |
+| <up-component component="el-badge" value="new">component</up-component> | 组件名称       | string  | el-button / el-button-group                        | el-button |
+| size                                                                    | 尺寸           | string  | medium / small / mini                              | —         |
+| type                                                                    | 类型           | string  | primary / success / warning / danger / info / text | —         |
+| plain                                                                   | 是否朴素按钮   | boolean | —                                                  | false     |
+| round                                                                   | 是否圆角按钮   | boolean | —                                                  | false     |
+| circle                                                                  | 是否圆形按钮   | boolean | —                                                  | false     |
+| loading                                                                 | 是否加载中状态 | boolean | —                                                  | false     |
+| disabled                                                                | 是否禁用状态   | boolean | —                                                  | false     |
+| icon                                                                    | 图标类名       | string  | —                                                  | —         |
+| autofocus                                                               | 是否默认聚焦   | boolean | —                                                  | false     |
+| native-type                                                             | 原生 type 属性 | string  | button / submit / reset                            | button    |

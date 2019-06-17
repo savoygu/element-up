@@ -35,6 +35,10 @@
           "level": "basic",
           "list": [
             {
+              "path": "/container",
+              "title": "Container 布局容器"
+            },
+            {
               "path": "/button",
               "title": "Button 按钮"
             }
