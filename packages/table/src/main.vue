@@ -93,10 +93,7 @@ export default {
       type: String,
       default: 'total,sizes,prev,pager,next,jumper'
     },
-    pagination: {
-      type: Boolean,
-      default: true
-    },
+    pagination: Boolean,
     fixedColumns: {
       type: Object,
       default: () => ({})
