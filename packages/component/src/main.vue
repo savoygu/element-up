@@ -10,28 +10,49 @@
 </template> -->
 
 <script>
+// Basic
+import Row from 'element-ui/packages/row'
+import Col from 'element-ui/packages/col'
+import Container from 'element-ui/packages/container'
+import Header from 'element-ui/packages/header'
+import Main from 'element-ui/packages/main'
+import Aside from 'element-ui/packages/aside'
+import Footer from 'element-ui/packages/footer'
+import Icon from 'element-ui/packages/icon'
+import Link from 'element-ui/packages/link'
+
+// Form
 import Radio from 'element-ui/packages/radio'
 import Checkbox from 'element-ui/packages/checkbox'
-import Alert from 'element-ui/packages/alert'
-import Link from 'element-ui/packages/link'
 import Input from 'element-ui/packages/input'
 import InputNumber from 'element-ui/packages/input-number'
 import Cascader from 'element-ui/packages/cascader'
 import Switch from 'element-ui/packages/switch'
+import Slider from 'element-ui/packages/slider'
 import DatePicker from 'element-ui/packages/date-picker'
 import Upload from 'element-ui/packages/upload'
 import Rate from 'element-ui/packages/rate'
 import ColorPicker from 'element-ui/packages/color-picker'
 import Transfer from 'element-ui/packages/transfer'
+
+// Data
 import Tag from 'element-ui/packages/tag'
 import Tree from 'element-ui/packages/tree'
 import Pagination from 'element-ui/packages/pagination'
 import Badge from 'element-ui/packages/badge'
+
+// Notice
+import Alert from 'element-ui/packages/alert'
+
+// Other
+import Card from 'element-ui/packages/card'
+import Divider from 'element-ui/packages/divider'
+import Calendar from 'element-ui/packages/calendar'
+import Image from 'element-ui/packages/image'
+import Backtop from 'element-ui/packages/backtop'
 import Scrollbar from 'element-ui/packages/scrollbar'
-import Row from 'element-ui/packages/row'
-import Col from 'element-ui/packages/col'
-import Icon from 'element-ui/packages/icon'
 import createVModel from 'element-up/src/mixins/createVModel'
+import rewroteContainer from './container'
 
 const kebabCase = function (str) {
   const hyphenateRE = /([^-])([A-Z])/g
@@ -47,27 +68,42 @@ export default {
   mixins: [createVModel('currentValue')],
 
   components: {
+    [Row.name]: Row,
+    [Col.name]: Col,
+    [Container.name]: rewroteContainer(Container),
+    [Header.name]: Header,
+    [Main.name]: Main,
+    [Aside.name]: Aside,
+    [Footer.name]: Footer,
+    [Icon.name]: Icon,
+    [Link.name]: Link,
+
     [Radio.name]: Radio,
     [Checkbox.name]: Checkbox,
-    [Alert.name]: Alert,
-    [Link.name]: Link,
     [Input.name]: Input,
     [InputNumber.name]: InputNumber,
     [Cascader.name]: Cascader,
     [Switch.name]: Switch,
+    [Slider.name]: Slider,
     [DatePicker.name]: DatePicker,
     [Upload.name]: Upload,
     [Rate.name]: Rate,
     [ColorPicker.name]: ColorPicker,
     [Transfer.name]: Transfer,
+
+    [Alert.name]: Alert,
+
     [Tag.name]: Tag,
     [Tree.name]: Tree,
     [Pagination.name]: Pagination,
     [Badge.name]: Badge,
-    [Scrollbar.name]: Scrollbar,
-    [Row.name]: Row,
-    [Col.name]: Col,
-    [Icon.name]: Icon
+
+    [Card.name]: Card,
+    [Divider.name]: Divider,
+    [Calendar.name]: Calendar,
+    [Image.name]: Image,
+    [Backtop.name]: Backtop,
+    [Scrollbar.name]: Scrollbar
     // 'el-radio': () => import('element-ui/packages/radio'),
     // 'el-checkbox': () => import('element-ui/packages/checkbox'),
     // 'el-alert': () => import('element-ui/packages/alert'),
@@ -92,14 +128,16 @@ export default {
   },
 
   props: {
-    component: {
-      required: true
-    }
+    component: {},
+    c: {}
   },
 
   computed: {
+    comp () {
+      return this.component || this.c
+    },
     classes () {
-      return typeof this.component === 'string' ? kebabCase(this.component).replace(/^el/, 'up') : ''
+      return typeof this.comp === 'string' ? kebabCase(this.comp).replace(/^el/, 'up') : ''
     }
   },
 
@@ -113,7 +151,7 @@ export default {
     const { $attrs, $listeners, $slots } = this
 
     return (
-      <this.component vModel={this.currentValue} {...{
+      <this.comp vModel={this.currentValue} {...{
         class: [this.classes],
         attrs: $attrs,
         on: { ...$listeners, input: this.sync, change: this.sync }
@@ -128,7 +166,7 @@ export default {
               )
           ))
         }
-      </this.component>
+      </this.comp>
     )
   }
 }
