@@ -8,7 +8,7 @@ Element 内应用在部分组件的过渡动画，你也可以直接使用。在
 ```html
 <template>
   <div>
-    <el-button @click="show = !show">Click Me</el-button>
+    <up-button @click="show = !show">Click Me</up-button>
 
     <div style="display: flex; margin-top: 20px; height: 100px;">
       <transition name="el-fade-in-linear">
@@ -22,7 +22,7 @@ Element 内应用在部分组件的过渡动画，你也可以直接使用。在
 </template>
 
 <script>
-    export default {
+  export default {
     data: () => ({
       show: true
     })
@@ -52,7 +52,7 @@ Element 内应用在部分组件的过渡动画，你也可以直接使用。在
 ```html
 <template>
   <div>
-    <el-button @click="show2 = !show2">Click Me</el-button>
+    <up-button @click="show2 = !show2">Click Me</up-button>
 
     <div style="display: flex; margin-top: 20px; height: 100px;">
       <transition name="el-zoom-in-center">
@@ -71,7 +71,7 @@ Element 内应用在部分组件的过渡动画，你也可以直接使用。在
 </template>
 
 <script>
-    export default {
+  export default {
     data: () => ({
       show2: true
     })
@@ -98,27 +98,27 @@ Element 内应用在部分组件的过渡动画，你也可以直接使用。在
 
 ### collapse 展开折叠
 
-使用 `el-collapse-transition` 组件实现折叠展开效果。
+使用 `up-collapse-transition` 组件实现折叠展开效果。
 
 :::demo
 ```html
 <template>
   <div>
-    <el-button @click="show3 = !show3">Click Me</el-button>
+    <up-button @click="show3 = !show3">Click Me</up-button>
 
     <div style="margin-top: 20px; height: 200px;">
-      <el-collapse-transition>
+      <up-collapse-transition>
         <div v-show="show3">
-          <div class="transition-box">el-collapse-transition</div>
-          <div class="transition-box">el-collapse-transition</div>
+          <div class="transition-box">up-collapse-transition</div>
+          <div class="transition-box">up-collapse-transition</div>
         </div>
-      </el-collapse-transition>
+      </up-collapse-transition>
     </div>
   </div>
 </template>
 
 <script>
-    export default {
+  export default {
     data: () => ({
       show3: true
     })
@@ -146,9 +146,9 @@ Element 内应用在部分组件的过渡动画，你也可以直接使用。在
 
 ```js
 // fade/zoom 等
-import 'element-ui/lib/theme-chalk/base.css';
+import 'element-up/lib/theme-chalk/base.css';
 // collapse 展开折叠
-import CollapseTransition from 'element-ui/lib/transitions/collapse-transition';
+import CollapseTransition from 'element-up/lib/transitions/collapse-transition';
 import Vue from 'vue'
 
 Vue.component(CollapseTransition.name, CollapseTransition)
