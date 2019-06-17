@@ -30,6 +30,7 @@ import Alert from '../packages/alert/index.js'
 import Tooltip from '../packages/tooltip/index.js'
 import RegionPicker from '../packages/region-picker/index.js'
 import locale from 'element-up/src/locale'
+import CollapseTransition from 'element-up/src/transitions/collapse-transition'
 
 const components = [
   Breadcrumb,
@@ -58,7 +59,8 @@ const components = [
   Link,
   Alert,
   Tooltip,
-  RegionPicker
+  RegionPicker,
+  CollapseTransition
 ]
 
 const install = function (Vue, opts = {}) {
@@ -87,6 +89,7 @@ export default {
   locale: locale.use,
   i18n: locale.i18n,
   install,
+  CollapseTransition,
   Breadcrumb,
   Dropdown,
   FormItemSelect,

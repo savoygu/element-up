@@ -5,15 +5,22 @@ const { resolve } = require('./utils')
 const Components = require('../components.json')
 
 var mixinsList = fs.readdirSync(resolve('../src/mixins'))
+var transitionList = fs.readdirSync(path.resolve(__dirname, '../src/transitions'))
 let externals = {}
 
 Object.keys(Components).forEach(function (key) {
   externals[`element-up/packages/${key}`] = `element-up/lib/${key}`
 })
 
+externals['element-up/src/locale'] = 'element-up/lib/locale'
 mixinsList.forEach(function (file) {
   file = path.basename(file, '.js')
   externals[`element-up/src/mixins/${file}`] = `element-up/lib/mixins/${file}`
+})
+
+transitionList.forEach(function (file) {
+  file = path.basename(file, '.js')
+  externals[`element-up/src/transitions/${file}`] = `element-up/lib/transitions/${file}`
 })
 
 externals = [Object.assign({
