@@ -4,12 +4,14 @@
       <el-submenu
         v-if="(item.children && item.children.length > 0 || item.groups && item.groups.length > 0)"
         :key="index"
+        :index="item.index"
         v-bind="{ ...$attrs, ...item }"
       >
         <template slot="title">
           <i v-if="item.icon" :class="[iconClass, item.icon]"></i>
           <span slot="title">{{ item.title }}</span>
         </template>
+        <up-submenu v-if="item.prev" :data="item.prev"></up-submenu>
         <up-submenu v-if="item.children" :data="item.children"></up-submenu>
         <el-menu-item-group v-else v-for="(groupItem, groupIndex) in item.groups" :key="groupIndex">
           <template slot="title">
@@ -18,6 +20,7 @@
           </template>
           <up-submenu :data="groupItem.children"></up-submenu>
         </el-menu-item-group>
+        <up-submenu v-if="item.next" :data="item.next"></up-submenu>
       </el-submenu>
       <el-menu-item v-else :key="index" v-bind="{ route: { path: item.path }, ...item }">
         <i v-if="item.icon" :class="[iconClass, item.icon]"></i>
