@@ -17,8 +17,8 @@ function fileExists (filePath) {
 
 themes.forEach((theme) => {
   var isSCSS = theme !== 'theme-default'
-  // var indexContent = isSCSS ? '@import "./base.scss";\n' : '@import "./base.css";\n'
-  var indexContent = ''
+  var indexContent = isSCSS ? '@import "./base.scss";\n' : '@import "./base.css";\n'
+  // var indexContent = ''
   Components.forEach(function (key) {
     if (['submenu', 'page'].indexOf(key) > -1) return
     var fileName = key + (isSCSS ? '.scss' : '.css')

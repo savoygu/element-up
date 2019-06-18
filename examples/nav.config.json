@@ -35,6 +35,10 @@
           "level": "basic",
           "list": [
             {
+              "path": "/layout",
+              "title": "Layout 布局"
+            },
+            {
               "path": "/container",
               "title": "Container 布局容器"
             },

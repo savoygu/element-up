@@ -20,6 +20,15 @@
   .grid-content {
     border-radius: 4px;
     min-height: 36px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 18px;
+    color: #5e6d82;
+
+    &.is-stretch {
+      min-height: 100%;
+      line-height: 80px;
+    }
   }
   .row-bg {
     padding: 10px 0;

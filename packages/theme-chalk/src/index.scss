@@ -1,3 +1,4 @@
+@import "./base.scss";
 @import "./breadcrumb.scss";
 @import "./dropdown.scss";
 @import "./form-item-select.scss";
@@ -8,9 +9,11 @@
 @import "./progress.scss";
 @import "./table.scss";
 @import "./checkbox.scss";
+@import "./checkbox-group.scss";
 @import "./form-item-checkbox.scss";
 @import "./message.scss";
 @import "./radio.scss";
+@import "./radio-group.scss";
 @import "./timeline.scss";
 @import "./collapse.scss";
 @import "./form-item-input.scss";
@@ -25,3 +28,6 @@
 @import "./alert.scss";
 @import "./tooltip.scss";
 @import "./region-picker.scss";
+@import "./scrollbar.scss";
+@import "./row.scss";
+@import "./col.scss";

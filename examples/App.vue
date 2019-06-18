@@ -1,5 +1,6 @@
 <template>
   <div id="app" :class="{ 'is-component': isComponent }">
+    <up-col></up-col>
     <main-header></main-header>
     <div class="main-cnt element-up-cnt">
       <router-view></router-view>
