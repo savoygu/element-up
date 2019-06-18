@@ -108,17 +108,17 @@
 </style>
 
 <template>
-  <up-component component="el-scrollbar" class="page-component__scroll element-up-component element-up-component__scroll" ref="componentScrollBar">
+  <up-scrollbar class="page-component__scroll element-up-component element-up-component__scroll" ref="componentScrollBar">
     <div class="page-container element-up-component__page">
-      <up-component component="el-scrollbar" class="element-up-component__nav">
+      <up-scrollbar class="element-up-component__nav">
         <side-nav :data="navsData[lang]" :base="`/${lang}/component`"></side-nav>
-      </up-component>
+      </up-scrollbar>
       <div class="element-up-component__content">
         <router-view class="content"></router-view>
         <footer-nav></footer-nav>
       </div>
     </div>
-  </up-component>
+  </up-scrollbar>
 </template>
 
 <script>

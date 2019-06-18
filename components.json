@@ -29,5 +29,6 @@
   "link": "./packages/link/index.js",
   "alert": "./packages/alert/index.js",
   "tooltip": "./packages/tooltip/index.js",
-  "region-picker": "./packages/region-picker/index.js"
+  "region-picker": "./packages/region-picker/index.js",
+  "scrollbar": "./packages/scrollbar/index.js"
 }

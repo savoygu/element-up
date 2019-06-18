@@ -50,7 +50,6 @@ import Divider from 'element-ui/packages/divider'
 import Calendar from 'element-ui/packages/calendar'
 import Image from 'element-ui/packages/image'
 import Backtop from 'element-ui/packages/backtop'
-import Scrollbar from 'element-ui/packages/scrollbar'
 import createVModel from 'element-up/src/mixins/createVModel'
 import rewroteContainer from './container'
 
@@ -102,8 +101,7 @@ export default {
     [Divider.name]: Divider,
     [Calendar.name]: Calendar,
     [Image.name]: Image,
-    [Backtop.name]: Backtop,
-    [Scrollbar.name]: Scrollbar
+    [Backtop.name]: Backtop
     // 'el-radio': () => import('element-ui/packages/radio'),
     // 'el-checkbox': () => import('element-ui/packages/checkbox'),
     // 'el-alert': () => import('element-ui/packages/alert'),
@@ -148,10 +146,10 @@ export default {
   },
 
   render (h) {
-    const { $attrs, $listeners, $slots } = this
+    const { $attrs, $listeners, $slots, comp } = this
 
     return (
-      <this.comp vModel={this.currentValue} {...{
+      <comp vModel={this.currentValue} {...{
         class: [this.classes],
         attrs: $attrs,
         on: { ...$listeners, input: this.sync, change: this.sync }
@@ -166,7 +164,7 @@ export default {
               )
           ))
         }
-      </this.comp>
+      </comp>
     )
   }
 }
