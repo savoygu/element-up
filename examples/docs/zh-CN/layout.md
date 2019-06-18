@@ -597,6 +597,12 @@
   <up-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple"></div></up-col>
   <up-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple-light"></div></up-col>
 </up-row>
+<up-row :gutter="16" class="row-bg">
+  <up-col :xs="{ span: 6, offset: 2, pull: 1 }" :sm="{ span: 4, push: 2 }" :md="{ span: 2, offset: 2 }" :lg="3"><div class="grid-content bg-purple">1</div></up-col>
+  <up-col :xs="{ span:  2, offset: 2, pull: 1 }" :sm="{ span: 4, push: 2 }" :md="{ span: 6, offset: 2 }" :lg="9"><div class="grid-content bg-purple-light">2</div></up-col>
+  <up-col :xs="{ span:  2, offset: 2, pull: 1 }" :sm="{ span: 4, push: 2 }" :md="{ span: 6, offset: 2 }" :lg="9"><div class="grid-content bg-purple">3</div></up-col>
+  <up-col :xs="{ span: 6, offset: 2, pull: 1 }" :sm="{ span: 4, push: 2 }" :md="{ span: 2, offset: 2 }" :lg="3"><div class="grid-content bg-purple-light">4</div></up-col>
+</up-row>
 
 <style>
   .up-col {
