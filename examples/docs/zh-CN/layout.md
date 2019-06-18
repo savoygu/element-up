@@ -2,6 +2,16 @@
 
 通过基础的 24 分栏，迅速简便地创建布局。
 
+#### :star::star::star:相对于 Element 所做的变动：
+
+:::tip
+
+ 1. 重写了 `Row`, `Col` 的 `render` 函数。
+ 2. 当 `type = flex` 时，提供对 flex 相关 CSS 属性的全支持，可以查阅相关 props: `direction`、`wrap`、`content`。
+ 3. 为 `Col` 提供了 props `order` 属性，用来改变栅格排列顺序。
+ 4. 响应式布局中支持 `Number` 与 `Object` 的混合使用。
+:::
+
 ### 基础布局
 
 使用单一分栏创建基础的栅格布局。
@@ -585,9 +595,9 @@
 ```
 :::
 
-### 响应式布局
+### <up-component c="el-badge" value="change">响应式布局</up-component>
 
-参照了 Bootstrap 的 响应式设计，预设了五个响应尺寸：`xs`、`sm`、`md`、`lg` 和 `xl`。
+参照了 Bootstrap 的 响应式设计，预设了五个响应尺寸：`xs`、`sm`、`md`、`lg` 和 `xl`。 支持响应尺寸属性值为 `number` 或 `object` 类型的任意组合。
 
 :::demo
 ```html
