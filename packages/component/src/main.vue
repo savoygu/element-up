@@ -11,8 +11,6 @@
 
 <script>
 // Basic
-import Row from 'element-ui/packages/row'
-import Col from 'element-ui/packages/col'
 import Container from 'element-ui/packages/container'
 import Header from 'element-ui/packages/header'
 import Main from 'element-ui/packages/main'
@@ -67,8 +65,6 @@ export default {
   mixins: [createVModel('currentValue')],
 
   components: {
-    [Row.name]: Row,
-    [Col.name]: Col,
     [Container.name]: rewroteContainer(Container),
     [Header.name]: Header,
     [Main.name]: Main,

@@ -18,41 +18,41 @@
 :::demo 使用`type`、`plain`、`round`和`circle`属性来定义 Button 的样式。
 
 ```html
-<up-component component="el-row">
+<up-row>
   <up-button>默认按钮</up-button>
   <up-button type="primary">主要按钮</up-button>
   <up-button type="success">成功按钮</up-button>
   <up-button type="info">信息按钮</up-button>
   <up-button type="warning">警告按钮</up-button>
   <up-button type="danger">危险按钮</up-button>
-</up-component>
+</up-row>
 
-<up-component component="el-row">
+<up-row>
   <up-button plain>朴素按钮</up-button>
   <up-button type="primary" plain>主要按钮</up-button>
   <up-button type="success" plain>成功按钮</up-button>
   <up-button type="info" plain>信息按钮</up-button>
   <up-button type="warning" plain>警告按钮</up-button>
   <up-button type="danger" plain>危险按钮</up-button>
-</up-component>
+</up-row>
 
-<up-component component="el-row">
+<up-row>
   <up-button round>圆角按钮</up-button>
   <up-button type="primary" round>主要按钮</up-button>
   <up-button type="success" round>成功按钮</up-button>
   <up-button type="info" round>信息按钮</up-button>
   <up-button type="warning" round>警告按钮</up-button>
   <up-button type="danger" round>危险按钮</up-button>
-</up-component>
+</up-row>
 
-<up-component component="el-row">
+<up-row>
   <up-button icon="el-icon-search" circle></up-button>
   <up-button type="primary" icon="el-icon-edit" circle></up-button>
   <up-button type="success" icon="el-icon-check" circle></up-button>
   <up-button type="info" icon="el-icon-message" circle></up-button>
   <up-button type="warning" icon="el-icon-star-off" circle></up-button>
   <up-button type="danger" icon="el-icon-delete" circle></up-button>
-</up-component>
+</up-row>
 ```
 :::
 
@@ -63,23 +63,23 @@
 :::demo 你可以使用`disabled`属性来定义按钮是否可用，它接受一个`Boolean`值。
 
 ```html
-<up-component component="el-row">
+<up-row>
   <up-button disabled>默认按钮</up-button>
   <up-button type="primary" disabled>主要按钮</up-button>
   <up-button type="success" disabled>成功按钮</up-button>
   <up-button type="info" disabled>信息按钮</up-button>
   <up-button type="warning" disabled>警告按钮</up-button>
   <up-button type="danger" disabled>危险按钮</up-button>
-</up-component>
+</up-row>
 
-<up-component component="el-row">
+<up-row>
   <up-button plain disabled>朴素按钮</up-button>
   <up-button type="primary" plain disabled>主要按钮</up-button>
   <up-button type="success" plain disabled>成功按钮</up-button>
   <up-button type="info" plain disabled>信息按钮</up-button>
   <up-button type="warning" plain disabled>警告按钮</up-button>
   <up-button type="danger" plain disabled>危险按钮</up-button>
-</up-component>
+</up-row>
 ```
 :::
 
@@ -135,19 +135,19 @@
 
 ```html
 <template>
-  <up-component component="el-row">
+  <up-row>
     <up-button component="el-button-group" :data="data" @click="handleClick">
       <!-- up:item 插槽 -->
       <span slot="up:item" slot-scope="{ item, $index }">{{ item.name }}</span>
     </up-button>
-  </up-component>
+  </up-row>
 
-  <up-component component="el-row">
+  <up-row>
     <up-button component="el-button-group">
       <!-- 默认插槽 -->
       <up-button v-for="(item, index) in data" :type="item.type" :key="item.name" @click="event => handleClick(event, item, index, data)"> {{ item.name + '—' + index }} </up-button>
     </up-button>
-  </up-component>
+  </up-row>
 </template>
 
 <script>
@@ -206,28 +206,28 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
 
 ```html
 <template>
-  <up-component component="el-row">
-    <up-component component="el-col" :span="3">
+  <up-row>
+    <up-col :span="3">
       <up-button type="text">切换类型</up-button>
-    </up-component>
-    <up-component component="el-col" :span="15">
+    </up-col>
+    <up-col :span="15">
       <up-button component="el-button-group" :data="data" @click="handleClick">
         <span slot="up:item" slot-scope="{ item }">{{ item.name }}</span>
       </up-button>
-    </up-component>
-  </up-component>
-  <up-component component="el-row">
+    </up-col>
+  </up-row>
+  <up-row>
     <up-button :type="type">默认按钮</up-button>
     <up-button :type="type" size="medium">中等按钮</up-button>
     <up-button :type="type" size="small">小型按钮</up-button>
     <up-button :type="type" size="mini">超小按钮</up-button>
-  </up-component>
-  <up-component component="el-row">
+  </up-row>
+  <up-row>
     <up-button :type="type" round>默认按钮</up-button>
     <up-button :type="type" size="medium" round>中等按钮</up-button>
     <up-button :type="type" size="small" round>小型按钮</up-button>
     <up-button :type="type" size="mini" round>超小按钮</up-button>
-  </up-component>
+  </up-row>
 </template>
 
 <script>

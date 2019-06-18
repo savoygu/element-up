@@ -32,11 +32,9 @@
 
 :::demo
 ```html
-<up-component c="el-row">
-  <up-component component="el-container">
-    <up-component component="el-header">Header</up-component>
-    <up-component component="el-main">Main</up-component>
-  </up-component>
+<up-component component="el-container">
+  <up-component component="el-header">Header</up-component>
+  <up-component component="el-main">Main</up-component>
 </up-component>
 
 <up-component component="el-container">
