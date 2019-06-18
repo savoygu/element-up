@@ -1,0 +1,48 @@
+@import "element-ui/packages/theme-chalk/src/col.scss";
+@import "sass-bem/_bem.scss";
+
+@for $i from 0 through 24 {
+  .el-col-order-#{$i} {
+    order: $i;
+  }
+}
+
+@include res(xs) {
+  @for $i from 0 through 24 {
+    .el-col-xs-order-#{$i} {
+      order: $i;
+    }
+  }
+}
+
+@include res(sm) {
+  @for $i from 0 through 24 {
+    .el-col-sm-order-#{$i} {
+      order: $i;
+    }
+  }
+}
+
+@include res(md) {
+  @for $i from 0 through 24 {
+    .el-col-md-order-#{$i} {
+      order: $i;
+    }
+  }
+}
+
+@include res(lg) {
+  @for $i from 0 through 24 {
+    .el-col-lg-order-#{$i} {
+      order: $i;
+    }
+  }
+}
+
+@include res(xl) {
+  @for $i from 0 through 24 {
+    .el-col-xl-order-#{$i} {
+      order: $i;
+    }
+  }
+}

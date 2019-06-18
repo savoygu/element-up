@@ -30,5 +30,7 @@
   "alert": "./packages/alert/index.js",
   "tooltip": "./packages/tooltip/index.js",
   "region-picker": "./packages/region-picker/index.js",
-  "scrollbar": "./packages/scrollbar/index.js"
+  "scrollbar": "./packages/scrollbar/index.js",
+  "row": "./packages/row/index.js",
+  "col": "./packages/col/index.js"
 }

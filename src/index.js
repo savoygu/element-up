@@ -32,6 +32,8 @@ import Alert from '../packages/alert/index.js'
 import Tooltip from '../packages/tooltip/index.js'
 import RegionPicker from '../packages/region-picker/index.js'
 import Scrollbar from '../packages/scrollbar/index.js'
+import Row from '../packages/row/index.js'
+import Col from '../packages/col/index.js'
 import locale from 'element-up/src/locale'
 import CollapseTransition from 'element-up/src/transitions/collapse-transition'
 
@@ -66,6 +68,8 @@ const components = [
   Tooltip,
   RegionPicker,
   Scrollbar,
+  Row,
+  Col,
   CollapseTransition
 ]
 
@@ -127,5 +131,7 @@ export default {
   Alert,
   Tooltip,
   RegionPicker,
-  Scrollbar
+  Scrollbar,
+  Row,
+  Col
 }

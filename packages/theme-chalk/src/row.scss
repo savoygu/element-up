@@ -1,0 +1,59 @@
+@import "element-ui/packages/theme-chalk/src/row.scss";
+@import "sass-bem/_bem.scss";
+
+@include b(el-row) {
+
+  @include m(flex) {
+    @include is(direction-row-reverse) {
+      flex-direction: row-reverse;
+    }
+
+    @include is(direction-column) {
+      flex-direction: column;
+    }
+
+    @include is(direction-column-reverse) {
+      flex-direction: column-reverse;
+    }
+
+    @include is(wrap-wrap) {
+      flex-wrap: wrap;
+    }
+
+    @include is(wrap-wrap-reverse) {
+      flex-wrap: wrap-reverse;
+    }
+
+    @include is(align-baseline) {
+      align-items: baseline;
+    }
+
+    @include is(align-stretch) {
+      align-items: stretch;
+    }
+
+    @include is(content-start) {
+      align-content: flex-start;
+    }
+
+    @include is(content-center) {
+      align-content: center;
+    }
+
+    @include is(content-end) {
+      align-content: flex-end;
+    }
+
+    @include is(content-space-between) {
+      align-content: space-between;
+    }
+
+    @include is(content-space-around) {
+      align-content: space-around;
+    }
+
+    @include is(content-stretch) {
+      align-content: stretch;
+    }
+  }
+}
