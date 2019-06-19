@@ -15,6 +15,7 @@ import 'packages/theme-chalk/src/index.scss'
 import './demo-styles/index.scss'
 import './assets/styles/common.scss'
 import './assets/styles/fonts/style.css'
+import icon from './icon.json'
 
 Vue.use(VueRouter)
 Vue.use(ElementUp)
@@ -24,6 +25,8 @@ Vue.component('side-nav', SideNav)
 Vue.component('footer-nav', FooterNav)
 Vue.component('demo-block', DemoBlock)
 Vue.config.productionTip = false
+
+Vue.prototype.$icon = icon // Icon 列表页用
 
 const router = new VueRouter({
   mode: 'hash',

@@ -109,7 +109,7 @@
 
 <template>
   <up-scrollbar class="page-component__scroll element-up-component element-up-component__scroll" ref="componentScrollBar">
-    <div class="page-container element-up-component__page">
+    <div class="page-container page-component element-up-component__page">
       <up-scrollbar class="element-up-component__nav">
         <side-nav :data="navsData[lang]" :base="`/${lang}/component`"></side-nav>
       </up-scrollbar>
