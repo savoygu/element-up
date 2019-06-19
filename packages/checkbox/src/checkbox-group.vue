@@ -24,7 +24,7 @@
       :key="index"
       :label="item[keyValue[1]]"
     >
-      <slot name="up:item" :slot-scope="{ item, $index: index }">{{item[keyValue[0]]}}</slot>
+      <slot name="up:item" v-bind="{ item, $index: index }">{{item[keyValue[0]]}}</slot>
     </component>
   </el-checkbox-group>
 </template>

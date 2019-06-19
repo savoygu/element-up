@@ -10,22 +10,24 @@
     :size="size"
     :disabled="disabled"
   >
-    <component
-      :is="component"
-      v-bind="{
+    <slot>
+      <component
+        :is="component"
+        v-bind="{
         ...$attrs,
         ...item
       }"
-      v-on="{
+        v-on="{
         ...$listeners,
-        change: (value) => $emit('up:radio:change', value, item)
+        change: (value) => $emit('up:radio:change', value, item, index, data)
       }"
-      v-for="(item, index) in data"
-      :key="index"
-      :label="item[keyValue[1]]"
-    >
-      <slot name="up:item" :slot-scope="{ item, $index: index }">{{item[keyValue[0]]}}</slot>
-    </component>
+        v-for="(item, index) in data"
+        :key="index"
+        :label="item[keyValue[1]]"
+      >
+        <slot name="up:item" v-bind="{ item, $index: index }">{{item[keyValue[0]]}}</slot>
+      </component>
+    </slot>
   </el-radio-group>
 </template>
 
