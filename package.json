@@ -15,7 +15,7 @@
     "build": "cross-env BABEL_ENV=examples vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
-    "build:file": "node build/bin/build-entry.js & node build/bin/i18n.js & node build/bin/version.js",
+    "build:file": "node build/bin/iconInit.js & node build/bin/build-entry.js & node build/bin/i18n.js & node build/bin/version.js",
     "build:theme": "node build/bin/gen-cssfile && cross-env BABEL_ENV=theme gulp build --gulpfile packages/theme-chalk/gulpfile.babel.js && cp-cli packages/theme-chalk/lib lib/theme-chalk",
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js && babel node_modules/element-ui/src/locale --out-dir lib/locale",
     "build:umd": "node build/bin/build-locale.js",
