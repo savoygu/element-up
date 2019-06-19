@@ -38,7 +38,7 @@
             :label="item[keyValue[0]]"
             :value="item[keyValue[1]]"
           >
-            <slot name="template" v-bind="{ item, index }"></slot>
+            <slot name="template" v-bind="{ item, $index: index }"></slot>
           </el-option>
         </el-option-group>
       </template>
