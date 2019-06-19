@@ -11,10 +11,12 @@ import Menu from '../packages/menu/index.js'
 import Progress from '../packages/progress/index.js'
 import Table from '../packages/table/index.js'
 import Checkbox from '../packages/checkbox/index.js'
+import CheckboxButton from '../packages/checkbox-button/index.js'
 import CheckboxGroup from '../packages/checkbox-group/index.js'
 import FormItemCheckbox from '../packages/form-item-checkbox/index.js'
 import Message from '../packages/message/index.js'
 import Radio from '../packages/radio/index.js'
+import RadioButton from '../packages/radio-button/index.js'
 import RadioGroup from '../packages/radio-group/index.js'
 import Timeline from '../packages/timeline/index.js'
 import Collapse from '../packages/collapse/index.js'
@@ -49,9 +51,11 @@ const components = [
   Progress,
   Table,
   Checkbox,
+  CheckboxButton,
   CheckboxGroup,
   FormItemCheckbox,
   Radio,
+  RadioButton,
   RadioGroup,
   Timeline,
   Collapse,
@@ -111,10 +115,12 @@ export default {
   Progress,
   Table,
   Checkbox,
+  CheckboxButton,
   CheckboxGroup,
   FormItemCheckbox,
   Message,
   Radio,
+  RadioButton,
   RadioGroup,
   Timeline,
   Collapse,
