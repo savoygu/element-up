@@ -10,6 +10,13 @@
     text-align: center;
   }
 
+  .up-form-item-checkbox {
+    width: 820px;
+    .el-checkbox-group {
+      width: auto;
+    }
+  }
+
   .el-checkbox-group {
     width: 320px;
     margin: 0;
