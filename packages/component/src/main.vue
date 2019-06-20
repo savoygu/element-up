@@ -17,12 +17,8 @@ import Main from 'element-ui/packages/main'
 import Aside from 'element-ui/packages/aside'
 import Footer from 'element-ui/packages/footer'
 import Icon from 'element-ui/packages/icon'
-import Link from 'element-ui/packages/link'
 
 // Form
-import Radio from 'element-ui/packages/radio'
-import Checkbox from 'element-ui/packages/checkbox'
-import Input from 'element-ui/packages/input'
 import InputNumber from 'element-ui/packages/input-number'
 import Cascader from 'element-ui/packages/cascader'
 import Switch from 'element-ui/packages/switch'
@@ -71,11 +67,7 @@ export default {
     [Aside.name]: Aside,
     [Footer.name]: Footer,
     [Icon.name]: Icon,
-    [Link.name]: Link,
 
-    [Radio.name]: Radio,
-    [Checkbox.name]: Checkbox,
-    [Input.name]: Input,
     [InputNumber.name]: InputNumber,
     [Cascader.name]: Cascader,
     [Switch.name]: Switch,

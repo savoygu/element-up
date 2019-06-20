@@ -36,6 +36,9 @@ import RegionPicker from '../packages/region-picker/index.js'
 import Scrollbar from '../packages/scrollbar/index.js'
 import Row from '../packages/row/index.js'
 import Col from '../packages/col/index.js'
+import Input from '../packages/input/index.js'
+import Autocomplete from '../packages/autocomplete/index.js'
+import InputNumber from '../packages/input-number/index.js'
 import locale from 'element-up/src/locale'
 import CollapseTransition from 'element-up/src/transitions/collapse-transition'
 
@@ -74,6 +77,9 @@ const components = [
   Scrollbar,
   Row,
   Col,
+  Input,
+  Autocomplete,
+  InputNumber,
   CollapseTransition
 ]
 
@@ -139,5 +145,8 @@ export default {
   RegionPicker,
   Scrollbar,
   Row,
-  Col
+  Col,
+  Input,
+  Autocomplete,
+  InputNumber
 }

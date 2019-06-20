@@ -34,5 +34,8 @@
   "region-picker": "./packages/region-picker/index.js",
   "scrollbar": "./packages/scrollbar/index.js",
   "row": "./packages/row/index.js",
-  "col": "./packages/col/index.js"
+  "col": "./packages/col/index.js",
+  "input": "./packages/input/index.js",
+  "autocomplete": "./packages/autocomplete/index.js",
+  "input-number": "./packages/input-number/index.js"
 }
