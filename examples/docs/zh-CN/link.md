@@ -5,10 +5,7 @@
 #### :star::star::star:相对于 Element 所做的变动：
 
 :::tip
-组件书写形式发生变化：
-
-`<el-link>` 可用的书写形式有 `<up-link>`、`<up-component component="el-link">` 或 `<up-component c="el-link">`
-
+组件书写形式发生变化：`<el-link>`修改为`<up-link>`
 :::
 
 ### 基础用法

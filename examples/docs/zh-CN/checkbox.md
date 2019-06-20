@@ -143,6 +143,17 @@
         ],
         checkList: ['选中且禁用','复选框 A']
       };
+    },
+    methods: {
+      handleChange (value) {
+        console.log('FROM handleChange: ', value)
+      },
+      handleUpCheckboxChange (value, item, index, data) {
+        console.log('FROM [RADIO] handleUpCheckboxChange: ', value, item, index, data)
+      },
+      handleUpCheckboxGroupChange (value) {
+        console.log('FROM [RADIO GROUP] handleUpCheckboxGroupChange: ', value)
+      }
     }
   };
 </script>
