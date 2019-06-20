@@ -4,7 +4,7 @@
 
 ### 使用方法
 
-直接通过设置类名为 `el-icon-iconName` 来使用即可。例如：
+直接通过设置类名为`el-icon-iconName`来使用即可。例如：
 
 :::demo
 ```html

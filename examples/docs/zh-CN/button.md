@@ -6,9 +6,9 @@
 
 :::tip
 
- 1. 组件名称统一为 `up-button`，通过 `component` 属性，传入 `el-button` 和 `el-button-group` 来做控制。
- 2. 当 `component` 为 `el-button-group`时， 可以传入 `data` 属性来展示按钮列表，`data` 中每一项 `item` 的属性都会应用到按钮上。
- 3. 在 `data` 中有两个特别的属性 `attrs` 和 `listeners`，分别为按钮组中的按钮添加属性和绑定事件。如果存在同名属性，则 `attrs` 中的属性优先于 `props` 及 `item` 中的属性；如果存在同名事件， 则 `listeners` 中的事件优先于在属性`component` 为 `el-button-group` 的按钮组上绑定的事件。
+ 1. 组件名称统一为`up-button`，通过`component`属性，传入`el-button`和`el-button-group`来做控制。
+ 2. 当`component`为`el-button-group`时， 可以传入`data`属性来展示按钮列表，`data`中每一项 `item` 的属性都会应用到按钮上。
+ 3. 在`data`中有两个特别的属性`attrs`和`listeners`，分别为按钮组中的按钮添加属性和绑定事件。如果存在同名属性，则`attrs`中的属性优先于`props`及`item`中的属性；如果存在同名事件，则`listeners`中的事件优先于在属性`component`为`el-button-group`的按钮组上绑定的事件。
 :::
 
 ### 基础用法
@@ -113,7 +113,7 @@
 
 以按钮组的方式出现，常用于多项类似操作。
 
-:::demo 使用`<up-button>`标签配合 `component="el-button-group"` 来嵌套你的按钮。
+:::demo 使用`<up-button>`标签配合`component="el-button-group"`来嵌套你的按钮。
 
 ```html
 <up-button component="el-button-group">
@@ -131,7 +131,7 @@
 
 ### <up-component component="el-badge" value="new">按钮组 - 属性、事件、slot</up-component>
 
-:::demo 可以统一为按钮组中所有按钮绑定事件，也可以在 `data` 中为每一个按钮绑定属性 `attrs` 及事件 `listeners`，在 `data` 中绑定的事件优先于按钮组中统一绑定的事件。提供默认插槽来覆盖默认的按钮组展示行为，同时提供 `up:item` 插槽来自定义按钮内容的展示，其中 `slot-scope` 返回 `{ item, $index }` 供使用，`item` 表示 `data` 中的每一项。
+:::demo 可以统一为按钮组中所有按钮绑定事件，也可以在`data`中为每一个按钮绑定属性`attrs`及事件`listeners`，在`data`中绑定的事件优先于按钮组中统一绑定的事件。提供默认插槽来覆盖默认的按钮组展示行为，同时提供`up:item`插槽来自定义按钮内容的展示，其中`slot-scope`返回`{ item, $index }`供使用，`item`表示`data`中的每一项。
 
 ```html
 <template>

@@ -2,6 +2,16 @@
 
 在一组备选项中进行单选
 
+#### :star::star::star:相对于 Element 所做的变动：
+
+:::tip
+
+ 1. 组件书写形式发生变化：`<el-radio>`修改为`<up-radio>`，`<el-radio-group>`修改为`<up-radio-group>`
+ 2. `up-radio-group`可以传入 `data` 属性来展示Radio列表，`data`中每一项 `item`的属性都会应用到Radio上。
+ 3. 可以在`up-radio-group`上指定`component="el-radio-button"`来展示Radio Button列表。
+ 4. 还提供了插槽`up:item`，用来自定义每一项的介绍，其中`slot-scope`接收`item, $index`属性。
+:::
+
 ### 基础用法
 
 由于选项默认可见，不宜过多，若选项过多，建议使用 Select 选择器。
@@ -80,7 +90,7 @@
 
 适用于在多个互斥的选项中选择的场景
 
-:::demo 结合`up-radio-group`元素和 `data` 也可以实现单选组，在`up-radio-group`中绑定`v-model`，`data`中`name`和`value` 分别表示`up-button`的内容和`label`。你可以通过 `keyValue`来更改`data`中每一项的键值，还可以通过`slot=up:item`来自定义`up-button`的内容展示，另外，还提供了自定义事件`up:radio:change`和`up:radio-group:change`事件来响应变化，它们分别会传入参数`value, item, index, data`和`value`。
+:::demo 结合`up-radio-group`元素和 `data` 也可以实现单选组，在`up-radio-group`中绑定`v-model`，`data`中`name`和`value` 分别表示`up-button`的内容和`label`。可以通过 `keyValue`来更改`data`中每一项的键值，还可以通过`slot=up:item`来自定义`up-radio`的介绍，另外，还提供了自定义事件`up:radio:change`和`up:radio-group:change`事件来响应变化，它们分别会传入参数`value, item, index, data`和`value`。
 
 ```html
 <template>
@@ -287,7 +297,6 @@
 | ------- | ------------------------------------------ |
 | —       | 自定义Radio列表                            |
 | up:item | 自定义Radio的内容，参数为 { item, $index } |
-
 
 ### Radio-button Attributes
 | 参数     | 说明           | 类型            | 可选值 | 默认值 |

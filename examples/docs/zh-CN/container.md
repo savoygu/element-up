@@ -7,14 +7,14 @@
 :::tip
 组件书写形式发生变化：
 
- - `<el-container>` 修改为 `<up-component component="el-container">` 或 `<up-component c="el-container">`
- - `<el-header>` 修改为 `<up-component component="el-header">` 或 `<up-component c="el-header">`
- - `<el-aside>` 修改为 `<up-component component="el-aside">` 或 `<up-component c="el-aside">`
- - `<el-main>` 修改为 `<up-component component="el-main">` 或 `<up-component c="el-main">`
- - `<el-footer>` 修改为 `<up-component component="el-footer">` 或 `<up-component c="el-footer">`
+ - `<el-container>`修改为`<up-component component="el-container">`或`<up-component c="el-container">`
+ - `<el-header>`修改为`<up-component component="el-header">`或`<up-component c="el-header">`
+ - `<el-aside>`修改为`<up-component component="el-aside">`或`<up-component c="el-aside">`
+ - `<el-main>`修改为`<up-component component="el-main">`或`<up-component c="el-main">`
+ - `<el-footer>`修改为`<up-component component="el-footer">`或`<up-component c="el-footer">`
 :::
 
-`<up-component>`：外层容器。当子元素中包含 `<up-component component="el-header">` 或 `<up-component component="el-footer">` 时，全部子元素会垂直上下排列，否则会水平左右排列。
+`<up-component>`：外层容器。当子元素中包含`<up-component component="el-header">`或`<up-component component="el-footer">`时，全部子元素会垂直上下排列，否则会水平左右排列。
 
 `<up-component component="el-header">`：顶栏容器。
 
