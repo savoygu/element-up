@@ -19,7 +19,6 @@ import Footer from 'element-ui/packages/footer'
 import Icon from 'element-ui/packages/icon'
 
 // Form
-import InputNumber from 'element-ui/packages/input-number'
 import Cascader from 'element-ui/packages/cascader'
 import Switch from 'element-ui/packages/switch'
 import Slider from 'element-ui/packages/slider'
@@ -68,7 +67,6 @@ export default {
     [Footer.name]: Footer,
     [Icon.name]: Icon,
 
-    [InputNumber.name]: InputNumber,
     [Cascader.name]: Cascader,
     [Switch.name]: Switch,
     [Slider.name]: Slider,

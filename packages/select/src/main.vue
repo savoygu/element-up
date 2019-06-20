@@ -24,8 +24,8 @@
           }"
           v-on="$listeners"
           v-for="groupItem in data"
-          :key="groupItem.label"
-          :label="groupItem.label"
+          :key="groupItem[groupLabel]"
+          :label="groupItem[groupLabel]"
         >
           <el-option
             v-bind="{
@@ -38,7 +38,7 @@
             :label="item[keyValue[0]]"
             :value="item[keyValue[1]]"
           >
-            <slot name="template" v-bind="{ item, $index: index }"></slot>
+            <slot name="up:item" v-bind="{ item, $index: index }"></slot>
           </el-option>
         </el-option-group>
       </template>
@@ -54,7 +54,7 @@
         :label="item[keyValue[0]]"
         :value="item[keyValue[1]]"
       >
-        <slot name="template" v-bind="{ item, index }"></slot>
+        <slot name="up:item" v-bind="{ item, $index: index }"></slot>
       </el-option>
     </slot>
   </el-select>
@@ -89,7 +89,11 @@ export default {
       default: () => ['name', 'value']
     },
     disabled: Boolean,
-    group: Boolean
+    group: Boolean,
+    groupLabel: {
+      type: String,
+      default: 'label'
+    }
   }
 }
 </script>
