@@ -37,5 +37,18 @@
   "col": "./packages/col/index.js",
   "input": "./packages/input/index.js",
   "autocomplete": "./packages/autocomplete/index.js",
-  "input-number": "./packages/input-number/index.js"
+  "input-number": "./packages/input-number/index.js",
+  "cascader": "./packages/cascader/index.js",
+  "cascader-panel": "./packages/cascader-panel/index.js",
+  "switch": "./packages/switch/index.js",
+  "slider": "./packages/slider/index.js",
+  "date-picker": "./packages/date-picker/index.js",
+  "upload": "./packages/upload/index.js",
+  "rate": "./packages/rate/index.js",
+  "color-picker": "./packages/color-picker/index.js",
+  "transfer": "./packages/transfer/index.js",
+  "time-select": "./packages/time-select/index.js",
+  "time-picker": "./packages/time-picker/index.js",
+  "form": "./packages/form/index.js",
+  "form-item": "./packages/form-item/index.js"
 }

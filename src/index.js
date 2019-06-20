@@ -39,6 +39,19 @@ import Col from '../packages/col/index.js'
 import Input from '../packages/input/index.js'
 import Autocomplete from '../packages/autocomplete/index.js'
 import InputNumber from '../packages/input-number/index.js'
+import Cascader from '../packages/cascader/index.js'
+import CascaderPanel from '../packages/cascader-panel/index.js'
+import Switch from '../packages/switch/index.js'
+import Slider from '../packages/slider/index.js'
+import DatePicker from '../packages/date-picker/index.js'
+import Upload from '../packages/upload/index.js'
+import Rate from '../packages/rate/index.js'
+import ColorPicker from '../packages/color-picker/index.js'
+import Transfer from '../packages/transfer/index.js'
+import TimeSelect from '../packages/time-select/index.js'
+import TimePicker from '../packages/time-picker/index.js'
+import Form from '../packages/form/index.js'
+import FormItem from '../packages/form-item/index.js'
 import locale from 'element-up/src/locale'
 import CollapseTransition from 'element-up/src/transitions/collapse-transition'
 
@@ -80,6 +93,19 @@ const components = [
   Input,
   Autocomplete,
   InputNumber,
+  Cascader,
+  CascaderPanel,
+  Switch,
+  Slider,
+  DatePicker,
+  Upload,
+  Rate,
+  ColorPicker,
+  Transfer,
+  TimeSelect,
+  TimePicker,
+  Form,
+  FormItem,
   CollapseTransition
 ]
 
@@ -148,5 +174,18 @@ export default {
   Col,
   Input,
   Autocomplete,
-  InputNumber
+  InputNumber,
+  Cascader,
+  CascaderPanel,
+  Switch,
+  Slider,
+  DatePicker,
+  Upload,
+  Rate,
+  ColorPicker,
+  Transfer,
+  TimeSelect,
+  TimePicker,
+  Form,
+  FormItem
 }

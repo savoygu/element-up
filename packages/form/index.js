@@ -1,7 +1,7 @@
-import FormItemBase from './src/base'
+import Form from './src/main'
 
-FormItemBase.install = function (Vue) {
-  Vue.component(FormItemBase.name, FormItemBase)
+Form.install = function (Vue) {
+  Vue.component(Form.name, Form)
 }
 
-export default FormItemBase
+export default Form

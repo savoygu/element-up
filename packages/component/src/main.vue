@@ -18,16 +18,6 @@ import Aside from 'element-ui/packages/aside'
 import Footer from 'element-ui/packages/footer'
 import Icon from 'element-ui/packages/icon'
 
-// Form
-import Cascader from 'element-ui/packages/cascader'
-import Switch from 'element-ui/packages/switch'
-import Slider from 'element-ui/packages/slider'
-import DatePicker from 'element-ui/packages/date-picker'
-import Upload from 'element-ui/packages/upload'
-import Rate from 'element-ui/packages/rate'
-import ColorPicker from 'element-ui/packages/color-picker'
-import Transfer from 'element-ui/packages/transfer'
-
 // Data
 import Tag from 'element-ui/packages/tag'
 import Tree from 'element-ui/packages/tree'
@@ -66,15 +56,6 @@ export default {
     [Aside.name]: Aside,
     [Footer.name]: Footer,
     [Icon.name]: Icon,
-
-    [Cascader.name]: Cascader,
-    [Switch.name]: Switch,
-    [Slider.name]: Slider,
-    [DatePicker.name]: DatePicker,
-    [Upload.name]: Upload,
-    [Rate.name]: Rate,
-    [ColorPicker.name]: ColorPicker,
-    [Transfer.name]: Transfer,
 
     [Alert.name]: Alert,
 

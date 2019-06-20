@@ -3,7 +3,7 @@
     <template slot="label" v-if="$slots.label">
       <slot name="label">{{$attrs.label}}</slot>
     </template>
-    <up-radio
+    <up-radio-group
       v-model="currentValue"
       v-bind="$attrs"
       v-on="{
@@ -12,7 +12,7 @@
       }"
       :key-value="keyValue"
       :data="data"
-    ></up-radio>
+    ></up-radio-group>
     <template slot="error" slot-scope="props" v-if="$scopedSlots.error">
       <slot name="error" v-bind="props"></slot>
     </template>
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import UpRadio from 'element-up/packages/radio'
+import UpRadioGroup from 'element-up/packages/radio-group'
 import createVModel from 'element-up/src/mixins/createVModel'
 import FormItemBase from './FormItemBase'
 
@@ -28,7 +28,7 @@ export default {
   name: 'UpFormItemRadio',
 
   components: {
-    UpRadio
+    UpRadioGroup
   },
 
   mixins: [createVModel('currentValue'), FormItemBase],

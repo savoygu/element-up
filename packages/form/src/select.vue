@@ -11,8 +11,8 @@
         <template slot="empty" v-if="$slots['up:select:empty']">
           <slot name="up:select:empty"></slot>
         </template>
-        <template slot="template" slot-scope="props" v-if="$scopedSlots['up:select:template']">
-          <slot name="up:select:template" v-bind="props"></slot>
+        <template slot="up:item" slot-scope="props" v-if="$scopedSlots['up:select:item']">
+          <slot name="up:select:item" v-bind="props"></slot>
         </template>
         <slot name="up:select"></slot>
       </up-select>

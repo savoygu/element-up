@@ -1,7 +1,7 @@
 <template>
   <el-form-item
-    class="el-form-item-checkbox"
-    :class="{ 'is-inline': inline, 'is-separate': separate }"
+    class="up-form-item-checkbox el-form-item-checkbox"
+    :class="{ 'is-inline': inline, 'is-separate': separate, 'is-with-all': !withAll }"
     ref="elFormItem"
     v-bind="$attrs"
     v-on="$listeners"
@@ -10,6 +10,7 @@
       <slot name="label">{{$attrs.label}}</slot>
     </template>
     <component
+      v-if="withAll"
       class="el-form-item-checkbox__all"
       :is="component"
       :indeterminate="isIndeterminate"
@@ -21,7 +22,7 @@
       v-bind="$attrs"
       @change="handleCheckAllChange"
     >{{ checkAllLabel }}</component>
-    <up-checkbox
+    <up-checkbox-group
       v-model="currentValue"
       :class="{
         'is-checkbox-button': isCheckboxButton
@@ -35,7 +36,7 @@
         change: (value) => $emit('up:form:checkbox', value)
       }"
       @up:checkbox-group:change="handleUpCheckboxGroupChange"
-    ></up-checkbox>
+    ></up-checkbox-group>
     <template slot="error" slot-scope="props" v-if="$scopedSlots.error">
       <slot name="error" v-bind="props"></slot>
     </template>
@@ -45,7 +46,7 @@
 <script>
 import Checkbox from 'element-ui/packages/checkbox'
 import CheckboxButton from 'element-ui/packages/checkbox-button'
-import UpCheckbox from 'element-up/packages/checkbox'
+import UpCheckboxGroup from 'element-up/packages/checkbox-group'
 import createVModel from 'element-up/src/mixins/createVModel'
 import FormItemBase from './FormItemBase'
 
@@ -55,7 +56,7 @@ export default {
   components: {
     [Checkbox.name]: Checkbox,
     [CheckboxButton.name]: CheckboxButton,
-    UpCheckbox
+    UpCheckboxGroup
   },
 
   mixins: [createVModel('currentValue'), FormItemBase],
@@ -73,6 +74,8 @@ export default {
       type: Boolean,
       default: true
     },
+    separate: Boolean,
+    withAll: Boolean,
     checkAllLabel: {
       type: String,
       default: '全部'
@@ -80,8 +83,7 @@ export default {
     component: {
       type: String,
       default: 'el-checkbox'
-    },
-    separate: Boolean
+    }
   },
 
   data () {
