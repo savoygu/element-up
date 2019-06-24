@@ -52,6 +52,8 @@ import TimeSelect from '../packages/time-select/index.js'
 import TimePicker from '../packages/time-picker/index.js'
 import Form from '../packages/form/index.js'
 import FormItem from '../packages/form-item/index.js'
+import TableColumn from '../packages/table-column/index.js'
+import Tag from '../packages/tag/index.js'
 import locale from 'element-up/src/locale'
 import CollapseTransition from 'element-up/src/transitions/collapse-transition'
 
@@ -106,6 +108,8 @@ const components = [
   TimePicker,
   Form,
   FormItem,
+  TableColumn,
+  Tag,
   CollapseTransition
 ]
 
@@ -187,5 +191,7 @@ export default {
   TimeSelect,
   TimePicker,
   Form,
-  FormItem
+  FormItem,
+  TableColumn,
+  Tag
 }

@@ -50,5 +50,7 @@
   "time-select": "./packages/time-select/index.js",
   "time-picker": "./packages/time-picker/index.js",
   "form": "./packages/form/index.js",
-  "form-item": "./packages/form-item/index.js"
+  "form-item": "./packages/form-item/index.js",
+  "table-column": "./packages/table-column/index.js",
+  "tag": "./packages/tag/index.js"
 }
