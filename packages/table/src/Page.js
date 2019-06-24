@@ -18,7 +18,7 @@ export default class Page {
     this.loading = loading
   }
 
-  setData ({ header = {}, data = [], currentPage, pageSize, total = 0, loading = false } = {}) {
+  setData ({ header = this.header, data = this.data, currentPage, pageSize, total = 0, loading = false } = {}) {
     this.header = header
     this.data = data
     if (currentPage) this.currentPage = currentPage

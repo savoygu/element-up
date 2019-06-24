@@ -137,6 +137,36 @@
               "title": "Form 表单"
             }
           ]
+        },
+        {
+          "groupName": "Data",
+          "level": "data",
+          "list": [
+            {
+              "path": "/table",
+              "title": "Table 表格"
+            },
+            {
+              "path": "/tag",
+              "title": "Tag 标签"
+            },
+            {
+              "path": "/progress",
+              "title": "Progress 进度条"
+            },
+            {
+              "path": "/tree",
+              "title": "Tree 树形控件"
+            },
+            {
+              "path": "/pagination",
+              "title": "Pagination 分页"
+            },
+            {
+              "path": "/badge",
+              "title": "Badge 标记"
+            }
+          ]
         }
       ]
     }
