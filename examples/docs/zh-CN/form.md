@@ -2,11 +2,21 @@
 
 由输入框、选择器、单选框、多选框等控件组成，用以收集、校验、提交数据
 
+#### :star::star::star:相对于 Element 所做的变动：
+
+:::tip
+
+- 组件书写形式发生变化：`<el-form>`修改为`<up-form>`，`<el-form-item>`修改为`<up-form-item>`
+- 新增组件：`up-form-item-input`，`up-form-item-radio`，`up-form-item-checkbox`，`up-form-item-select`
+
+:::
+
 ### 典型表单
 
 包括各种表单项，比如输入框、选择器、开关、单选框、多选框等。
 
 :::demo 在 Form 组件中，每一个表单域由一个 Form-Item 组件构成，表单域中可以放置各种类型的表单控件，包括 Input、Select、Checkbox、Radio、Switch、DatePicker、TimePicker
+
 ```html
 <up-form ref="form" :model="form" label-width="80px">
   <up-form-item-input label="活动名称" v-model="form.name"></up-form-item-input>
@@ -20,7 +30,8 @@
     :data="[
       { name: '区域一', value: 'shanghai' },
       { name: '区域二', value: 'beijing' }
-    ]">
+    ]"
+  >
   </up-form-item-select>
   <!-- <up-form-item label="活动区域">
     <up-select
@@ -34,11 +45,20 @@
   </up-form-item> -->
   <up-form-item label="活动时间">
     <up-col :span="11">
-      <up-date-picker type="date" placeholder="选择日期" v-model="form.date1" style="width: 100%;"></up-date-picker>
+      <up-date-picker
+        type="date"
+        placeholder="选择日期"
+        v-model="form.date1"
+        style="width: 100%;"
+      ></up-date-picker>
     </up-col>
     <up-col class="line" :span="2">-</up-col>
     <up-col :span="11">
-      <up-time-picker placeholder="选择时间" v-model="form.date2" style="width: 100%;"></up-time-picker>
+      <up-time-picker
+        placeholder="选择时间"
+        v-model="form.date2"
+        style="width: 100%;"
+      ></up-time-picker>
     </up-col>
   </up-form-item>
   <up-form-item label="即时配送">
@@ -142,7 +162,11 @@
       <up-radio label="线下场地免费"></up-radio>
     </up-radio-group>
   </up-form-item> -->
-  <up-form-item-input type="textarea" label="活动形式" v-model="form.desc"></up-form-item-input>
+  <up-form-item-input
+    type="textarea"
+    label="活动形式"
+    v-model="form.desc"
+  ></up-form-item-input>
   <!-- <up-form-item label="活动形式">
     <up-input type="textarea" v-model="form.desc"></up-input>
   </up-form-item> -->
@@ -165,20 +189,22 @@
           resource: '',
           desc: ''
         }
-      }
+      };
     },
     methods: {
       onSubmit() {
         console.log('submit!');
       }
     }
-  }
+  };
 </script>
 ```
+
 :::
 
 :::tip
 W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.html#SEC8.2)：
+
 > <i>When there is only one single-line text input field in a form, the user agent should accept Enter in that field as a request to submit the form.</i>
 
 即：当一个 form 元素中只有一个输入框时，在该输入框中按下回车应提交该表单。如果希望阻止这一默认行为，可以在 `<up-form>` 标签上添加 `@submit.native.prevent`。
@@ -189,6 +215,7 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 当垂直方向空间受限且表单较简单时，可以在一行内放置表单。
 
 :::demo 设置 `inline` 属性可以让表单域变为行内的表单域
+
 ```html
 <up-form :inline="true" :model="formInline" class="demo-form-inline">
   <up-form-item label="审批人">
@@ -201,7 +228,8 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
       :data="[
         { name: '区域一', value: 'shanghai' },
         { name: '区域二', value: 'beijing' }
-      ]">
+      ]"
+    >
     </up-select>
   </up-form-item>
   <up-form-item>
@@ -216,16 +244,17 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
           user: '',
           region: ''
         }
-      }
+      };
     },
     methods: {
       onSubmit() {
         console.log('submit!');
       }
     }
-  }
+  };
 </script>
 ```
+
 :::
 
 ### 对齐方式
@@ -233,6 +262,7 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 根据具体目标和制约因素，选择最佳的标签对齐方式。
 
 :::demo 通过设置 `label-position` 属性可以改变表单域标签的位置，可选值为 `top`、`left`，当设为 `top` 时标签会置于表单域的顶部
+
 ```html
 <up-radio-group v-model="labelPosition" size="small">
   <up-radio-button label="left">左对齐</up-radio-button>
@@ -240,7 +270,11 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
   <up-radio-button label="top">顶部对齐</up-radio-button>
 </up-radio-group>
 <div style="margin: 20px;"></div>
-<up-form :label-position="labelPosition" label-width="80px" :model="formLabelAlign">
+<up-form
+  :label-position="labelPosition"
+  label-width="80px"
+  :model="formLabelAlign"
+>
   <up-form-item label="名称">
     <up-input v-model="formLabelAlign.name"></up-input>
   </up-form-item>
@@ -263,9 +297,10 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
         }
       };
     }
-  }
+  };
 </script>
 ```
+
 :::
 
 ### 表单验证
@@ -273,8 +308,15 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 在防止用户犯错的前提下，尽可能让用户更早地发现并纠正错误。
 
 :::demo Form 组件提供了表单验证的功能，只需要通过 `rules` 属性传入约定的验证规则，并将 Form-Item 的 `prop` 属性设置为需校验的字段名即可。校验规则参见 [async-validator](https://github.com/yiminghe/async-validator)
+
 ```html
-<up-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+<up-form
+  :model="ruleForm"
+  :rules="rules"
+  ref="ruleForm"
+  label-width="100px"
+  class="demo-ruleForm"
+>
   <up-form-item label="活动名称" prop="name">
     <up-input v-model="ruleForm.name"></up-input>
   </up-form-item>
@@ -285,19 +327,29 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
       :data="[
         { name: '区域一', value: 'shanghai' },
         { name: '区域二', value: 'beijing' }
-      ]">
+      ]"
+    >
     </up-select>
   </up-form-item>
   <up-form-item label="活动时间" required>
     <up-col :span="11">
       <up-form-item prop="date1">
-        <up-date-picker type="date" placeholder="选择日期" v-model="ruleForm.date1" style="width: 100%;"></up-date-picker>
+        <up-date-picker
+          type="date"
+          placeholder="选择日期"
+          v-model="ruleForm.date1"
+          style="width: 100%;"
+        ></up-date-picker>
       </up-form-item>
     </up-col>
     <up-col class="line" :span="2">-</up-col>
     <up-col :span="11">
       <up-form-item prop="date2">
-        <up-time-picker placeholder="选择时间" v-model="ruleForm.date2" style="width: 100%;"></up-time-picker>
+        <up-time-picker
+          placeholder="选择时间"
+          v-model="ruleForm.date2"
+          style="width: 100%;"
+        ></up-time-picker>
       </up-form-item>
     </up-col>
   </up-form-item>
@@ -322,7 +374,9 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
     <up-input type="textarea" v-model="ruleForm.desc"></up-input>
   </up-form-item>
   <up-form-item>
-    <up-button type="primary" @click="submitForm('ruleForm')">立即创建</up-button>
+    <up-button type="primary" @click="submitForm('ruleForm')"
+      >立即创建</up-button
+    >
     <up-button @click="resetForm('ruleForm')">重置</up-button>
   </up-form-item>
 </up-form>
@@ -349,26 +403,39 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
             { required: true, message: '请选择活动区域', trigger: 'change' }
           ],
           date1: [
-            { type: 'date', required: true, message: '请选择日期', trigger: 'change' }
+            {
+              type: 'date',
+              required: true,
+              message: '请选择日期',
+              trigger: 'change'
+            }
           ],
           date2: [
-            { type: 'date', required: true, message: '请选择时间', trigger: 'change' }
+            {
+              type: 'date',
+              required: true,
+              message: '请选择时间',
+              trigger: 'change'
+            }
           ],
           type: [
-            { type: 'array', required: true, message: '请至少选择一个活动性质', trigger: 'change' }
+            {
+              type: 'array',
+              required: true,
+              message: '请至少选择一个活动性质',
+              trigger: 'change'
+            }
           ],
           resource: [
             { required: true, message: '请选择活动资源', trigger: 'change' }
           ],
-          desc: [
-            { required: true, message: '请填写活动形式', trigger: 'blur' }
-          ]
+          desc: [{ required: true, message: '请填写活动形式', trigger: 'blur' }]
         }
       };
     },
     methods: {
       submitForm(formName) {
-        this.$refs[formName].validate((valid) => {
+        this.$refs[formName].validate(valid => {
           if (valid) {
             alert('submit!');
           } else {
@@ -381,9 +448,10 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
         this.$refs[formName].resetFields();
       }
     }
-  }
+  };
 </script>
 ```
+
 :::
 
 ### 自定义校验规则
@@ -391,13 +459,29 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 这个例子中展示了如何使用自定义验证规则来完成密码的二次验证。
 
 :::demo 本例还使用`status-icon`属性为输入框添加了表示校验结果的反馈图标。
+
 ```html
-<up-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+<up-form
+  :model="ruleForm"
+  status-icon
+  :rules="rules"
+  ref="ruleForm"
+  label-width="100px"
+  class="demo-ruleForm"
+>
   <up-form-item label="密码" prop="pass">
-    <up-input type="password" v-model="ruleForm.pass" autocomplete="off"></up-input>
+    <up-input
+      type="password"
+      v-model="ruleForm.pass"
+      autocomplete="off"
+    ></up-input>
   </up-form-item>
   <up-form-item label="确认密码" prop="checkPass">
-    <up-input type="password" v-model="ruleForm.checkPass" autocomplete="off"></up-input>
+    <up-input
+      type="password"
+      v-model="ruleForm.checkPass"
+      autocomplete="off"
+    ></up-input>
   </up-form-item>
   <up-form-item label="年龄" prop="age">
     <up-input v-model.number="ruleForm.age"></up-input>
@@ -452,21 +536,15 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
           age: ''
         },
         rules: {
-          pass: [
-            { validator: validatePass, trigger: 'blur' }
-          ],
-          checkPass: [
-            { validator: validatePass2, trigger: 'blur' }
-          ],
-          age: [
-            { validator: checkAge, trigger: 'blur' }
-          ]
+          pass: [{ validator: validatePass, trigger: 'blur' }],
+          checkPass: [{ validator: validatePass2, trigger: 'blur' }],
+          age: [{ validator: checkAge, trigger: 'blur' }]
         }
       };
     },
     methods: {
       submitForm(formName) {
-        this.$refs[formName].validate((valid) => {
+        this.$refs[formName].validate(valid => {
           if (valid) {
             alert('submit!');
           } else {
@@ -479,9 +557,10 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
         this.$refs[formName].resetFields();
       }
     }
-  }
+  };
 </script>
 ```
+
 :::
 
 :::tip
@@ -491,8 +570,14 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 ### 动态增减表单项
 
 :::demo 除了在 Form 组件上一次性传递所有的验证规则外还可以在单个的表单域上传递属性的验证规则
+
 ```html
-<up-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px" class="demo-dynamic">
+<up-form
+  :model="dynamicValidateForm"
+  ref="dynamicValidateForm"
+  label-width="100px"
+  class="demo-dynamic"
+>
   <up-form-item
     prop="email"
     label="邮箱"
@@ -512,10 +597,13 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
       required: true, message: '域名不能为空', trigger: 'blur'
     }"
   >
-    <up-input v-model="domain.value"></up-input><up-button @click.prevent="removeDomain(domain)">删除</up-button>
+    <up-input v-model="domain.value"></up-input
+    ><up-button @click.prevent="removeDomain(domain)">删除</up-button>
   </up-form-item>
   <up-form-item>
-    <up-button type="primary" @click="submitForm('dynamicValidateForm')">提交</up-button>
+    <up-button type="primary" @click="submitForm('dynamicValidateForm')"
+      >提交</up-button
+    >
     <up-button @click="addDomain">新增域名</up-button>
     <up-button @click="resetForm('dynamicValidateForm')">重置</up-button>
   </up-form-item>
@@ -525,16 +613,18 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
     data() {
       return {
         dynamicValidateForm: {
-          domains: [{
-            value: ''
-          }],
+          domains: [
+            {
+              value: ''
+            }
+          ],
           email: ''
         }
       };
     },
     methods: {
       submitForm(formName) {
-        this.$refs[formName].validate((valid) => {
+        this.$refs[formName].validate(valid => {
           if (valid) {
             alert('submit!');
           } else {
@@ -547,9 +637,9 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
         this.$refs[formName].resetFields();
       },
       removeDomain(item) {
-        var index = this.dynamicValidateForm.domains.indexOf(item)
+        var index = this.dynamicValidateForm.domains.indexOf(item);
         if (index !== -1) {
-          this.dynamicValidateForm.domains.splice(index, 1)
+          this.dynamicValidateForm.domains.splice(index, 1);
         }
       },
       addDomain() {
@@ -559,16 +649,23 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
         });
       }
     }
-  }
+  };
 </script>
 ```
+
 :::
 
 ### 数字类型验证
 
 :::demo 数字类型的验证需要在 `v-model` 处加上 `.number` 的修饰符，这是 `Vue` 自身提供的用于将绑定值转化为 `number` 类型的修饰符。
+
 ```html
-<up-form :model="numberValidateForm" ref="numberValidateForm" label-width="100px" class="demo-ruleForm">
+<up-form
+  :model="numberValidateForm"
+  ref="numberValidateForm"
+  label-width="100px"
+  class="demo-ruleForm"
+>
   <up-form-item
     label="年龄"
     prop="age"
@@ -577,10 +674,16 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
       { type: 'number', message: '年龄必须为数字值'}
     ]"
   >
-    <up-input type="age" v-model.number="numberValidateForm.age" autocomplete="off"></up-input>
+    <up-input
+      type="age"
+      v-model.number="numberValidateForm.age"
+      autocomplete="off"
+    ></up-input>
   </up-form-item>
   <up-form-item>
-    <up-button type="primary" @click="submitForm('numberValidateForm')">提交</up-button>
+    <up-button type="primary" @click="submitForm('numberValidateForm')"
+      >提交</up-button
+    >
     <up-button @click="resetForm('numberValidateForm')">重置</up-button>
   </up-form-item>
 </up-form>
@@ -595,7 +698,7 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
     },
     methods: {
       submitForm(formName) {
-        this.$refs[formName].validate((valid) => {
+        this.$refs[formName].validate(valid => {
           if (valid) {
             alert('submit!');
           } else {
@@ -608,9 +711,10 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
         this.$refs[formName].resetFields();
       }
     }
-  }
+  };
 </script>
 ```
+
 :::
 
 :::tip
@@ -622,6 +726,7 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 通过设置 Form 上的 `size` 属性可以使该表单内所有可调节大小的组件继承该尺寸。Form-Item 也具有该属性。
 
 :::demo 如果希望某个表单项或某个表单组件的尺寸不同于 Form 上的`size`属性，直接为这个表单项或表单组件设置自己的`size`即可。
+
 ```html
 <up-form ref="form" :model="sizeForm" label-width="80px" size="mini">
   <up-form-item label="活动名称">
@@ -634,21 +739,34 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
       :data="[
         { name: '区域一', value: 'shanghai' },
         { name: '区域二', value: 'beijing' }
-      ]">
+      ]"
+    >
     </up-select>
   </up-form-item>
   <up-form-item label="活动时间">
     <up-col :span="11">
-      <up-date-picker type="date" placeholder="选择日期" v-model="sizeForm.date1" style="width: 100%;"></up-date-picker>
+      <up-date-picker
+        type="date"
+        placeholder="选择日期"
+        v-model="sizeForm.date1"
+        style="width: 100%;"
+      ></up-date-picker>
     </up-col>
     <up-col class="line" :span="2">-</up-col>
     <up-col :span="11">
-      <up-time-picker placeholder="选择时间" v-model="sizeForm.date2" style="width: 100%;"></up-time-picker>
+      <up-time-picker
+        placeholder="选择时间"
+        v-model="sizeForm.date2"
+        style="width: 100%;"
+      ></up-time-picker>
     </up-col>
   </up-form-item>
   <up-form-item label="活动性质">
     <up-checkbox-group v-model="sizeForm.type">
-      <up-checkbox-button label="美食/餐厅线上活动" name="type"></up-checkbox-button>
+      <up-checkbox-button
+        label="美食/餐厅线上活动"
+        name="type"
+      ></up-checkbox-button>
       <up-checkbox-button label="地推活动" name="type"></up-checkbox-button>
       <up-checkbox-button label="线下主题活动" name="type"></up-checkbox-button>
     </up-checkbox-group>
@@ -689,6 +807,7 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
   };
 </script>
 ```
+
 :::
 
 ### Form Attributes
@@ -719,6 +838,7 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 | clearValidate | 移除表单项的校验结果。传入待移除的表单项的 prop 属性或者 prop 组成的数组，如不传则移除整个表单的校验结果                                                             | Function(props: array \| string)                                           |
 
 ### Form Events
+
 | 事件名称 | 说明                   | 回调参数                                                   |
 | -------- | ---------------------- | ---------------------------------------------------------- |
 | validate | 任一表单项被校验后触发 | 被校验的表单项 prop 值，校验是否通过，错误消息（如果存在） |
@@ -738,12 +858,14 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 | size           | 用于控制该表单域下组件的尺寸                                                 | string  | medium / small / mini             | -      |
 
 ### Form-Item Slot
+
 | name  | 说明             |
 | ----- | ---------------- |
 | —     | Form Item 的内容 |
 | label | 标签文本的内容   |
 
 ### Form-Item Scoped Slot
+
 | name  | 说明                                           |
 | ----- | ---------------------------------------------- |
 | error | 自定义表单校验信息的显示方式，参数为 { error } |

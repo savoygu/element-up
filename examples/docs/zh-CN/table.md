@@ -2347,7 +2347,7 @@
 ```
 :::
 
-### <up-component component="el-badge" value="new">UpTable Attributes</up-component>
+### <up-badge value="new">UpTable Attributes</up-badge>
 | 参数            | 说明                                 | 类型                      | 可选值                | 默认值 |
 | --------------- | ------------------------------------ | ------------------------- | --------------------- | ------ |
 | page             | 显示的内容                           | object                     | —                     | —      |
@@ -2363,14 +2363,14 @@
 | sortColumns     | 设置拍序列                            | array                     | —                     | []     |
 | options         | 为列设置特有的属性                      | object                     | —                     | {}     |
 
-### <up-component component="el-badge" value="new">UpTable Events</up-component>
+### <up-badge value="new">UpTable Events</up-badge>
 | 事件名 | 说明 | 参数 |
 | ---- | ---- | ---- |
 | up:current-change | currentPage 改变时会触发 | currentPage, pageSize |
 | up:size-change | pageSize 改变时会触发 | currentPage, pageSize |
 | up:selection-change | 当选择项发生变化时会触发该事件 | selection, selectAll |
 
-### <up-component component="el-badge" value="new">UpTable Slot</up-component>
+### <up-badge value="new">UpTable Slot</up-badge>
 | name | 说明 |
 |------|--------|
 | up:selection | 增加多选列 |

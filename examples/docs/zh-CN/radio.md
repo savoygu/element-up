@@ -6,11 +6,11 @@
 
 :::tip
 
- 1. 组件书写形式发生变化：`<el-radio>`修改为`<up-radio>`，`<el-radio-group>`修改为`<up-radio-group>`
- 2. `up-radio-group`可以传入`data`属性来展示Radio列表，`data`中每一项 `item`的属性都会应用到Radio上。
- 3. 可以在`up-radio-group`上指定`component="el-radio-button"`来展示Radio Button列表。
- 4. 还提供了插槽`up:item`，用来自定义每一项的介绍，其中`slot-scope`接收`item, $index`属性。
-:::
+1.  组件书写形式发生变化：`<el-radio>`修改为`<up-radio>`，`<el-radio-group>`修改为`<up-radio-group>`
+2.  `up-radio-group`可以传入`data`属性来展示 Radio 列表，`data`中每一项 `item`的属性都会应用到 Radio 上。
+3.  可以在`up-radio-group`上指定`component="el-radio-button"`来展示 Radio Button 列表。
+4.  还提供了插槽`up:item`，用来自定义每一项的介绍，其中`slot-scope`接收`item, $index`属性。
+    :::
 
 ### 基础用法
 
@@ -26,14 +26,15 @@
 
 <script>
   export default {
-    data () {
+    data() {
       return {
         radio: '1'
       };
     }
-  }
+  };
 </script>
 ```
+
 :::
 
 ### 禁用状态
@@ -41,6 +42,7 @@
 单选框不可用的状态。
 
 :::demo 只要在`up-radio`元素中设置`disabled`属性即可，它接受一个`Boolean`，`true`为禁用。
+
 ```html
 <template>
   <up-radio disabled v-model="radio" label="禁用">备选项</up-radio>
@@ -49,14 +51,15 @@
 
 <script>
   export default {
-    data () {
+    data() {
       return {
         radio: '选中且禁用'
       };
     }
-  }
+  };
 </script>
 ```
+
 :::
 
 ### 单选框组
@@ -76,17 +79,18 @@
 
 <script>
   export default {
-    data () {
+    data() {
       return {
         radio: 3
       };
     }
-  }
+  };
 </script>
 ```
+
 :::
 
-### <up-component c="el-badge" value="new">单选框组 - 属性、事件、slot</up-component>
+### <up-badge value="new">单选框组 - 属性、事件、slot</up-badge>
 
 适用于在多个互斥的选项中选择的场景
 
@@ -100,7 +104,8 @@
       :data="data"
       @change="handleChange"
       @up:radio:change="handleUpRadioChange"
-      @up:radio-group:change="handleUpRadioGroupChange">
+      @up:radio-group:change="handleUpRadioGroupChange"
+    >
     </up-radio-group>
   </div>
 
@@ -110,9 +115,12 @@
       :data="data"
       @change="handleChange"
       @up:radio:change="handleUpRadioChange"
-      @up:radio-group:change="handleUpRadioGroupChange">
+      @up:radio-group:change="handleUpRadioGroupChange"
+    >
       <!-- 自定义插槽 up:item -->
-      <template slot="up:item" slot-scope="{ item, $index }">{{item.name}} = {{item.value}}</template>
+      <template slot="up:item" slot-scope="{ item, $index }"
+        >{{item.name}} = {{item.value}}</template
+      >
     </up-radio-group>
   </div>
 
@@ -123,47 +131,57 @@
       component="el-radio-button"
       @change="handleChange"
       @up:radio:change="handleUpRadioChange"
-      @up:radio-group:change="handleUpRadioGroupChange">
+      @up:radio-group:change="handleUpRadioGroupChange"
+    >
       <!-- 自定义插槽 up:item -->
-      <template slot="up:item" slot-scope="{ item, $index }">{{item.name}} = {{item.value}}</template>
+      <template slot="up:item" slot-scope="{ item, $index }"
+        >{{item.name}} = {{item.value}}</template
+      >
     </up-radio-group>
   </div>
 </template>
 
 <script>
   export default {
-    data () {
+    data() {
       return {
         radio: 3,
         data: [
           { name: '备选项', value: 3 },
           { name: '备选项', value: 6 },
-          { name: '备选项', value: 9 },
+          { name: '备选项', value: 9 }
         ]
       };
     },
     methods: {
-      handleChange (value) {
-        console.log('FROM handleChange: ', value)
+      handleChange(value) {
+        console.log('FROM handleChange: ', value);
       },
-      handleUpRadioChange (value, item, index, data) {
-        console.log('FROM [RADIO] handleUpRadioChange: ', value, item, index, data)
+      handleUpRadioChange(value, item, index, data) {
+        console.log(
+          'FROM [RADIO] handleUpRadioChange: ',
+          value,
+          item,
+          index,
+          data
+        );
       },
-      handleUpRadioGroupChange (value) {
-        console.log('FROM [RADIO GROUP] handleUpRadioGroupChange: ', value)
+      handleUpRadioGroupChange(value) {
+        console.log('FROM [RADIO GROUP] handleUpRadioGroupChange: ', value);
       }
     }
-  }
+  };
 </script>
 ```
-:::
 
+:::
 
 ### 按钮样式
 
 按钮样式的单选组合。
 
 :::demo 只需要把`up-radio`元素换成`up-radio-button`元素即可，此外，Element 还提供了`size`属性。
+
 ```html
 <template>
   <div>
@@ -176,7 +194,7 @@
   </div>
   <div style="margin-top: 20px">
     <up-radio-group v-model="radio2" size="medium">
-      <up-radio-button label="上海" ></up-radio-button>
+      <up-radio-button label="上海"></up-radio-button>
       <up-radio-button label="北京"></up-radio-button>
       <up-radio-button label="广州"></up-radio-button>
       <up-radio-button label="深圳"></up-radio-button>
@@ -185,7 +203,7 @@
   <div style="margin-top: 20px">
     <up-radio-group v-model="radio3" size="small">
       <up-radio-button label="上海"></up-radio-button>
-      <up-radio-button label="北京" disabled ></up-radio-button>
+      <up-radio-button label="北京" disabled></up-radio-button>
       <up-radio-button label="广州"></up-radio-button>
       <up-radio-button label="深圳"></up-radio-button>
     </up-radio-group>
@@ -202,7 +220,7 @@
 
 <script>
   export default {
-    data () {
+    data() {
       return {
         radio1: '上海',
         radio2: '上海',
@@ -210,14 +228,16 @@
         radio4: '上海'
       };
     }
-  }
+  };
 </script>
 ```
+
 :::
 
 ### 带有边框
 
 :::demo 设置`border`属性可以渲染为带有边框的单选框。
+
 ```html
 <template>
   <div>
@@ -244,7 +264,7 @@
 
 <script>
   export default {
-    data () {
+    data() {
       return {
         radio1: '1',
         radio2: '1',
@@ -252,12 +272,14 @@
         radio4: '1'
       };
     }
-  }
+  };
 </script>
 ```
+
 :::
 
 ### Radio Attributes
+
 | 参数            | 说明                                 | 类型                      | 可选值                | 默认值 |
 | --------------- | ------------------------------------ | ------------------------- | --------------------- | ------ |
 | value / v-model | 绑定值                               | string / number / boolean | —                     | —      |
@@ -268,37 +290,41 @@
 | name            | 原生 name 属性                       | string                    | —                     | —      |
 
 ### Radio Events
+
 | 事件名称 | 说明                   | 回调参数              |
 | -------- | ---------------------- | --------------------- |
 | change   | 绑定值变化时触发的事件 | 选中的 Radio label 值 |
 
 ### Radio-group Attributes
-| 参数                                                            | 说明                                                       | 类型                      | 可选值                   | 默认值            |
-| --------------------------------------------------------------- | ---------------------------------------------------------- | ------------------------- | ------------------------ | ----------------- |
-| <up-component c="el-badge" value="new">data</up-component>      | Radio 列表                                                 | array                     | —                        | []                |
-| <up-component c="el-badge" value="new">component</up-component> | 组件名称                                                   | string                    | el-radio/el-radio-button | el-radio          |
-| <up-component c="el-badge" value="new">keyValue</up-component>  | Radio 键值                                                 | array                     | —                        | ['name', 'value'] |
-| value / v-model                                                 | 绑定值                                                     | string / number / boolean | —                        | —                 |
-| size                                                            | 单选框组尺寸，仅对按钮形式的 Radio 或带有边框的 Radio 有效 | string                    | medium / small / mini    | —                 |
-| disabled                                                        | 是否禁用                                                   | boolean                   | —                        | false             |
-| text-color                                                      | 按钮形式的 Radio 激活时的文本颜色                          | string                    | —                        | #ffffff           |
-| fill                                                            | 按钮形式的 Radio 激活时的填充色和边框色                    | string                    | —                        | #409EFF           |
+
+| 参数                                       | 说明                                                       | 类型                      | 可选值                   | 默认值            |
+| ------------------------------------------ | ---------------------------------------------------------- | ------------------------- | ------------------------ | ----------------- |
+| <up-badge value="new">data</up-badge>      | Radio 列表                                                 | array                     | —                        | []                |
+| <up-badge value="new">component</up-badge> | 组件名称                                                   | string                    | el-radio/el-radio-button | el-radio          |
+| <up-badge value="new">keyValue</up-badge>  | Radio 键值                                                 | array                     | —                        | ['name', 'value'] |
+| value / v-model                            | 绑定值                                                     | string / number / boolean | —                        | —                 |
+| size                                       | 单选框组尺寸，仅对按钮形式的 Radio 或带有边框的 Radio 有效 | string                    | medium / small / mini    | —                 |
+| disabled                                   | 是否禁用                                                   | boolean                   | —                        | false             |
+| text-color                                 | 按钮形式的 Radio 激活时的文本颜色                          | string                    | —                        | #ffffff           |
+| fill                                       | 按钮形式的 Radio 激活时的填充色和边框色                    | string                    | —                        | #409EFF           |
 
 ### Radio-group Events
-| 事件名称                                                                    | 说明                   | 回调参数                  |
-| --------------------------------------------------------------------------- | ---------------------- | ------------------------- |
-| change                                                                      | 绑定值变化时触发的事件 | 选中的 Radio label 值     |
-| <up-component c="el-badge" value="new">up:radio-group:change</up-component> | 绑定值变化时触发的事件 | 选中的 Radio label 值     |
-| <up-component c="el-badge" value="new">`up:radio:change`</up-component>     | 绑定值变化时触发的事件 | (value, item, index,data) |
 
-### <up-component component="el-badge" value="new">Radio-group Slots</up-component>
+| 事件名称                                               | 说明                   | 回调参数                  |
+| ------------------------------------------------------ | ---------------------- | ------------------------- |
+| change                                                 | 绑定值变化时触发的事件 | 选中的 Radio label 值     |
+| <up-badge value="new">up:radio-group:change</up-badge> | 绑定值变化时触发的事件 | 选中的 Radio label 值     |
+| <up-badge value="new">`up:radio:change`</up-badge>     | 绑定值变化时触发的事件 | (value, item, index,data) |
 
-| 参数    | 说明                                       |
-| ------- | ------------------------------------------ |
-| —       | 自定义Radio列表                            |
-| up:item | 自定义Radio的内容，参数为 { item, $index } |
+### <up-badge value="new">Radio-group Slots</up-badge>
+
+| 参数    | 说明                                          |
+| ------- | --------------------------------------------- |
+| —       | 自定义 Radio 列表                             |
+| up:item | 自定义 Radio 的内容，参数为 { item, \$index } |
 
 ### Radio-button Attributes
+
 | 参数     | 说明           | 类型            | 可选值 | 默认值 |
 | -------- | -------------- | --------------- | ------ | ------ |
 | label    | Radio 的 value | string / number | —      | —      |

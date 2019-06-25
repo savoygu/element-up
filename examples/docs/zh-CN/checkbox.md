@@ -1,16 +1,16 @@
 ## Checkbox 多选框
+
 一组备选项中进行多选
 
 #### :star::star::star:相对于 Element 所做的变动：
 
 :::tip
 
- 1. 组件书写形式发生变化：`<el-checkbox>`修改为`<up-checkbox>`，`<el-checkbox-group>`修改为`<up-checkbox-group>`
- 2. `up-checkbox-group`可以传入 `data` 属性来展示Checkbox列表，`data`中每一项 `item`的属性都会应用到Checkbox上。
- 3. 可以在`up-checkbox-group`上指定`component="el-checkbox-button"`来展示Checkbox Button列表。
- 4. 还提供了插槽`up:item`，用来自定义每一项的介绍，其中`slot-scope`接收`item, $index`属性。
-:::
-
+1.  组件书写形式发生变化：`<el-checkbox>`修改为`<up-checkbox>`，`<el-checkbox-group>`修改为`<up-checkbox-group>`
+2.  `up-checkbox-group`可以传入 `data` 属性来展示 Checkbox 列表，`data`中每一项 `item`的属性都会应用到 Checkbox 上。
+3.  可以在`up-checkbox-group`上指定`component="el-checkbox-button"`来展示 Checkbox Button 列表。
+4.  还提供了插槽`up:item`，用来自定义每一项的介绍，其中`slot-scope`接收`item, $index`属性。
+    :::
 
 ### 基础用法
 
@@ -33,6 +33,7 @@
   };
 </script>
 ```
+
 :::
 
 ### 禁用状态
@@ -57,6 +58,7 @@
   };
 </script>
 ```
+
 :::
 
 ### 多选框组
@@ -78,21 +80,22 @@
 
 <script>
   export default {
-    data () {
+    data() {
       return {
-        checkList: ['选中且禁用','复选框 A']
+        checkList: ['选中且禁用', '复选框 A']
       };
     }
   };
 </script>
 ```
+
 :::
 
-### <up-component c="el-badge" value="new">多选框组 - 属性、事件、slot</up-component>
+### <up-badge value="new">多选框组 - 属性、事件、slot</up-badge>
 
 适用于多个勾选框绑定到同一个数组的情景，通过是否勾选来表示这一组选项中选中的项。
 
-:::demo `up-checkbox-group`元素集合`data`也能把多个 checkbox 管理为一组，只需要在 Group 中使用`v-model`绑定`Array`类型的变量即可,其中`data`中`name`和`value`分别表示checkbox 按钮后的介绍和`up-checkbox`的`label`。可以通过`keyValue`来更改`data`中每一项的键值，还可以通过`slot=up:item`来自定义`up-checkbox`的介绍，另外，还提供了自定义事件`up:checkbox:change`和`up:checkbox-group:change`事件来响应变化，它们分别会传入参数`value, item, index, data`和`value`
+:::demo `up-checkbox-group`元素集合`data`也能把多个 checkbox 管理为一组，只需要在 Group 中使用`v-model`绑定`Array`类型的变量即可,其中`data`中`name`和`value`分别表示 checkbox 按钮后的介绍和`up-checkbox`的`label`。可以通过`keyValue`来更改`data`中每一项的键值，还可以通过`slot=up:item`来自定义`up-checkbox`的介绍，另外，还提供了自定义事件`up:checkbox:change`和`up:checkbox-group:change`事件来响应变化，它们分别会传入参数`value, item, index, data`和`value`
 
 ```html
 <template>
@@ -102,7 +105,8 @@
       :data="data"
       @change="handleChange"
       @up:checkbox:change="handleUpCheckboxChange"
-      @up:checkbox-group:change="handleUpCheckboxGroupChange">
+      @up:checkbox-group:change="handleUpCheckboxGroupChange"
+    >
     </up-checkbox-group>
   </div>
   <div style="margin-top: 20px;">
@@ -113,7 +117,9 @@
       @up:checkbox:change="handleUpCheckboxChange"
       @up:checkbox-group:change="handleUpCheckboxGroupChange"
     >
-      <template slot="up:item" slot-scope="{ item, $index }">{{item.name}} = {{$index}}</template>
+      <template slot="up:item" slot-scope="{ item, $index }"
+        >{{item.name}} = {{$index}}</template
+      >
     </up-checkbox-group>
   </div>
   <div style="margin-top: 20px;">
@@ -125,14 +131,16 @@
       @up:checkbox:change="handleUpCheckboxChange"
       @up:checkbox-group:change="handleUpCheckboxGroupChange"
     >
-      <template slot="up:item" slot-scope="{ item, $index }">{{item.name}} = {{$index}}</template>
+      <template slot="up:item" slot-scope="{ item, $index }"
+        >{{item.name}} = {{$index}}</template
+      >
     </up-checkbox-group>
   </div>
 </template>
 
 <script>
   export default {
-    data () {
+    data() {
       return {
         data: [
           { name: '复选框 A', value: '复选框 A' },
@@ -141,23 +149,30 @@
           { name: '禁用', value: '禁用', disabled: true },
           { name: '选中且禁用', value: '选中且禁用', disabled: true }
         ],
-        checkList: ['选中且禁用','复选框 A']
+        checkList: ['选中且禁用', '复选框 A']
       };
     },
     methods: {
-      handleChange (value) {
-        console.log('FROM handleChange: ', value)
+      handleChange(value) {
+        console.log('FROM handleChange: ', value);
       },
-      handleUpCheckboxChange (value, item, index, data) {
-        console.log('FROM [RADIO] handleUpCheckboxChange: ', value, item, index, data)
+      handleUpCheckboxChange(value, item, index, data) {
+        console.log(
+          'FROM [RADIO] handleUpCheckboxChange: ',
+          value,
+          item,
+          index,
+          data
+        );
       },
-      handleUpCheckboxGroupChange (value) {
-        console.log('FROM [RADIO GROUP] handleUpCheckboxGroupChange: ', value)
+      handleUpCheckboxGroupChange(value) {
+        console.log('FROM [RADIO GROUP] handleUpCheckboxGroupChange: ', value);
       }
     }
   };
 </script>
 ```
+
 :::
 
 ### indeterminate 状态
@@ -168,10 +183,20 @@
 
 ```html
 <template>
-  <up-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">全选</up-checkbox>
+  <up-checkbox
+    :indeterminate="isIndeterminate"
+    v-model="checkAll"
+    @change="handleCheckAllChange"
+    >全选</up-checkbox
+  >
   <div style="margin: 15px 0;"></div>
-  <up-checkbox-group v-model="checkedCities" @change="handleCheckedCitiesChange">
-    <up-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</up-checkbox>
+  <up-checkbox-group
+    v-model="checkedCities"
+    @change="handleCheckedCitiesChange"
+  >
+    <up-checkbox v-for="city in cities" :label="city" :key="city"
+      >{{city}}</up-checkbox
+    >
   </up-checkbox-group>
 </template>
 <script>
@@ -193,12 +218,14 @@
       handleCheckedCitiesChange(value) {
         let checkedCount = value.length;
         this.checkAll = checkedCount === this.cities.length;
-        this.isIndeterminate = checkedCount > 0 && checkedCount < this.cities.length;
+        this.isIndeterminate =
+          checkedCount > 0 && checkedCount < this.cities.length;
       }
     }
   };
 </script>
 ```
+
 :::
 
 ### 可选项目数量的限制
@@ -209,11 +236,10 @@
 
 ```html
 <template>
-  <up-checkbox-group
-    v-model="checkedCities"
-    :min="1"
-    :max="2">
-    <up-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</up-checkbox>
+  <up-checkbox-group v-model="checkedCities" :min="1" :max="2">
+    <up-checkbox v-for="city in cities" :label="city" :key="city"
+      >{{city}}</up-checkbox
+    >
   </up-checkbox-group>
 </template>
 <script>
@@ -236,33 +262,46 @@
 按钮样式的多选组合。
 
 :::demo 只需要把`up-checkbox`元素替换为`up-checkbox-button`元素即可。此外，Element 还提供了`size`属性。
+
 ```html
 <template>
   <div>
     <up-checkbox-group v-model="checkboxGroup1">
-      <up-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</up-checkbox-button>
+      <up-checkbox-button v-for="city in cities" :label="city" :key="city"
+        >{{city}}</up-checkbox-button
+      >
     </up-checkbox-group>
   </div>
   <div style="margin-top: 20px">
     <up-checkbox-group v-model="checkboxGroup2" size="medium">
-      <up-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</up-checkbox-button>
+      <up-checkbox-button v-for="city in cities" :label="city" :key="city"
+        >{{city}}</up-checkbox-button
+      >
     </up-checkbox-group>
   </div>
   <div style="margin-top: 20px">
     <up-checkbox-group v-model="checkboxGroup3" size="small">
-      <up-checkbox-button v-for="city in cities" :label="city" :disabled="city === '北京'" :key="city">{{city}}</up-checkbox-button>
+      <up-checkbox-button
+        v-for="city in cities"
+        :label="city"
+        :disabled="city === '北京'"
+        :key="city"
+        >{{city}}</up-checkbox-button
+      >
     </up-checkbox-group>
   </div>
   <div style="margin-top: 20px">
     <up-checkbox-group v-model="checkboxGroup4" size="mini" disabled>
-      <up-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</up-checkbox-button>
+      <up-checkbox-button v-for="city in cities" :label="city" :key="city"
+        >{{city}}</up-checkbox-button
+      >
     </up-checkbox-group>
   </div>
 </template>
 <script>
   const cityOptions = ['上海', '北京', '广州', '深圳'];
   export default {
-    data () {
+    data() {
       return {
         checkboxGroup1: ['上海'],
         checkboxGroup2: ['上海'],
@@ -271,14 +310,16 @@
         cities: cityOptions
       };
     }
-  }
+  };
 </script>
 ```
+
 :::
 
 ### 带有边框
 
 :::demo 设置`border`属性可以渲染为带有边框的多选框。
+
 ```html
 <template>
   <div>
@@ -286,8 +327,18 @@
     <up-checkbox v-model="checked2" label="备选项2" border></up-checkbox>
   </div>
   <div style="margin-top: 20px">
-    <up-checkbox v-model="checked3" label="备选项1" border size="medium"></up-checkbox>
-    <up-checkbox v-model="checked4" label="备选项2" border size="medium"></up-checkbox>
+    <up-checkbox
+      v-model="checked3"
+      label="备选项1"
+      border
+      size="medium"
+    ></up-checkbox>
+    <up-checkbox
+      v-model="checked4"
+      label="备选项2"
+      border
+      size="medium"
+    ></up-checkbox>
   </div>
   <div style="margin-top: 20px">
     <up-checkbox-group v-model="checkboxGroup1" size="small">
@@ -305,7 +356,7 @@
 
 <script>
   export default {
-    data () {
+    data() {
       return {
         checked1: true,
         checked2: false,
@@ -315,12 +366,14 @@
         checkboxGroup2: []
       };
     }
-  }
+  };
 </script>
 ```
+
 :::
 
 ### Checkbox Attributes
+
 | 参数            | 说明                                                                  | 类型                      | 可选值                | 默认值 |
 | --------------- | --------------------------------------------------------------------- | ------------------------- | --------------------- | ------ |
 | value / v-model | 绑定值                                                                | string / number / boolean | —                     | —      |
@@ -335,40 +388,43 @@
 | indeterminate   | 设置 indeterminate 状态，只负责样式控制                               | boolean                   | —                     | false  |
 
 ### Checkbox Events
+
 | 事件名称 | 说明                     | 回调参数   |
 | -------- | ------------------------ | ---------- |
 | change   | 当绑定值变化时触发的事件 | 更新后的值 |
 
 ### Checkbox-group Attributes
-| 参数                                                            | 说明                                                             | 类型    | 可选值                         | 默认值            |
-| --------------------------------------------------------------- | ---------------------------------------------------------------- | ------- | ------------------------------ | ----------------- |
-| <up-component c="el-badge" value="new">data</up-component>      | Checkbox 列表                                                    | array   | —                              | []                |
-| <up-component c="el-badge" value="new">component</up-component> | 组件名称                                                         | string  | el-checkbox/el-checkbox-button | el-checkbox       |
-| <up-component c="el-badge" value="new">keyValue</up-component>  | Checkbox 键值                                                    | array   | —                              | ['name', 'value'] |
-| value / v-model                                                 | 绑定值                                                           | array   | —                              | —                 |
-| size                                                            | 多选框组尺寸，仅对按钮形式的 Checkbox 或带有边框的 Checkbox 有效 | string  | medium / small / mini          | —                 |
-| disabled                                                        | 是否禁用                                                         | boolean | —                              | false             |
-| min                                                             | 可被勾选的 checkbox 的最小数量                                   | number  | —                              | —                 |
-| max                                                             | 可被勾选的 checkbox 的最大数量                                   | number  | —                              | —                 |
-| text-color                                                      | 按钮形式的 Checkbox 激活时的文本颜色                             | string  | —                              | #ffffff           |
-| fill                                                            | 按钮形式的 Checkbox 激活时的填充色和边框色                       | string  | —                              | #409EFF           |
+
+| 参数                                       | 说明                                                             | 类型    | 可选值                         | 默认值            |
+| ------------------------------------------ | ---------------------------------------------------------------- | ------- | ------------------------------ | ----------------- |
+| <up-badge value="new">data</up-badge>      | Checkbox 列表                                                    | array   | —                              | []                |
+| <up-badge value="new">component</up-badge> | 组件名称                                                         | string  | el-checkbox/el-checkbox-button | el-checkbox       |
+| <up-badge value="new">keyValue</up-badge>  | Checkbox 键值                                                    | array   | —                              | ['name', 'value'] |
+| value / v-model                            | 绑定值                                                           | array   | —                              | —                 |
+| size                                       | 多选框组尺寸，仅对按钮形式的 Checkbox 或带有边框的 Checkbox 有效 | string  | medium / small / mini          | —                 |
+| disabled                                   | 是否禁用                                                         | boolean | —                              | false             |
+| min                                        | 可被勾选的 checkbox 的最小数量                                   | number  | —                              | —                 |
+| max                                        | 可被勾选的 checkbox 的最大数量                                   | number  | —                              | —                 |
+| text-color                                 | 按钮形式的 Checkbox 激活时的文本颜色                             | string  | —                              | #ffffff           |
+| fill                                       | 按钮形式的 Checkbox 激活时的填充色和边框色                       | string  | —                              | #409EFF           |
 
 ### Checkbox-group Events
-| 事件名称                                                                       | 说明                     | 回调参数                  |
-| ------------------------------------------------------------------------------ | ------------------------ | ------------------------- |
-| change                                                                         | 当绑定值变化时触发的事件 | 更新后的值                |
-| <up-component c="el-badge" value="new">up:checkbox-group:change</up-component> | 绑定值变化时触发的事件   | 选中的 Checkbox label 值  |
-| <up-component c="el-badge" value="new">`up:checkbox:change`</up-component>     | 绑定值变化时触发的事件   | (value, item, index,data) |
 
-### <up-component component="el-badge" value="new">Checkbox-group Slots</up-component>
+| 事件名称                                                  | 说明                     | 回调参数                  |
+| --------------------------------------------------------- | ------------------------ | ------------------------- |
+| change                                                    | 当绑定值变化时触发的事件 | 更新后的值                |
+| <up-badge value="new">up:checkbox-group:change</up-badge> | 绑定值变化时触发的事件   | 选中的 Checkbox label 值  |
+| <up-badge value="new">`up:checkbox:change`</up-badge>     | 绑定值变化时触发的事件   | (value, item, index,data) |
 
-| 参数    | 说明                                          |
-| ------- | --------------------------------------------- |
-| —       | 自定义Checkbox列表                            |
-| up:item | 自定义Checkbox的内容，参数为 { item, $index } |
+### <up-badge component="el-badge" value="new">Checkbox-group Slots</up-badge>
 
+| 参数    | 说明                                             |
+| ------- | ------------------------------------------------ |
+| —       | 自定义 Checkbox 列表                             |
+| up:item | 自定义 Checkbox 的内容，参数为 { item, \$index } |
 
 ### Checkbox-button Attributes
+
 | 参数        | 说明                                                                  | 类型                      | 可选值 | 默认值 |
 | ----------- | --------------------------------------------------------------------- | ------------------------- | ------ | ------ |
 | label       | 选中状态的值（只有在`checkbox-group`或者绑定对象类型为`array`时有效） | string / number / boolean | —      | —      |

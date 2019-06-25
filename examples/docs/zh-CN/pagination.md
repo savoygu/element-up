@@ -2,6 +2,12 @@
 
 当数据量过多时，使用分页分解数据。
 
+#### :star::star::star:相对于 Element 所做的变动：
+
+:::tip
+组件书写形式发生变化：`<el-pagination>`修改为`<up-pagination>`
+:::
+
 ### 基础用法
 
 :::demo 设置`layout`，表示需要显示的内容，用逗号分隔，布局元素会依次显示。`prev`表示上一页，`next`为下一页，`pager`表示页码列表，除此以外还提供了`jumper`和`total`，`size`和特殊的布局符号`->`，`->`后的元素会靠右显示，`jumper`表示跳页元素，`total`表示总条目数，`size`用于设置每页显示的页码数量。

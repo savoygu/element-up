@@ -2,6 +2,14 @@
 
 用于展示操作进度，告知用户当前状态和预期。
 
+#### :star::star::star:相对于 Element 所做的变动：
+
+:::tip
+
+- 组件书写形式发生变化：`<el-progress>`修改为`<up-progress>`
+- 新增渐变条纹属性 `striped`
+  :::
+
 ### 线形进度条
 
 :::demo Progress 组件设置`percentage`属性即可，表示进度条对应的百分比，**必填**，必须在 0-100。通过 `format` 属性来指定进度条文字内容。
@@ -123,7 +131,7 @@
 
 :::
 
-### 线形进度条 — 渐变条纹
+### <up-badge value="new">线形进度条 — 渐变条纹</up-badge>
 
 :::demo
 

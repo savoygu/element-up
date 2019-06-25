@@ -2,9 +2,15 @@
 
 用于标记和选择。
 
+#### :star::star::star:相对于 Element 所做的变动：
+
+:::tip
+组件书写形式发生变化：`<el-tag>`修改为`<up-tag>`
+:::
+
 ### 基础用法
 
-:::demo 由`type`属性来选择tag的类型，也可以通过`color`属性来自定义背景色。
+:::demo 由`type`属性来选择 tag 的类型，也可以通过`color`属性来自定义背景色。
 
 ```html
 <up-tag>标签一</up-tag>
@@ -13,6 +19,7 @@
 <up-tag type="warning">标签四</up-tag>
 <up-tag type="danger">标签五</up-tag>
 ```
+
 :::
 
 ### 可移除标签
@@ -20,11 +27,7 @@
 :::demo 设置`closable`属性可以定义一个标签是否可移除。默认的标签移除时会附带渐变动画，如果不想使用，可以设置`disable-transitions`属性，它接受一个`Boolean`，true 为关闭。
 
 ```html
-<up-tag
-  v-for="tag in tags"
-  :key="tag.name"
-  closable
-  :type="tag.type">
+<up-tag v-for="tag in tags" :key="tag.name" closable :type="tag.type">
   {{tag.name}}
 </up-tag>
 
@@ -41,9 +44,10 @@
         ]
       };
     }
-  }
+  };
 </script>
 ```
+
 :::
 
 ### 动态编辑标签
@@ -51,13 +55,15 @@
 动态编辑标签可以通过点击标签关闭按钮后触发的 `close` 事件来实现
 
 :::demo
+
 ```html
 <up-tag
   :key="tag"
   v-for="tag in dynamicTags"
   closable
   :disable-transitions="false"
-  @close="handleClose(tag)">
+  @close="handleClose(tag)"
+>
   {{tag}}
 </up-tag>
 <up-input
@@ -70,7 +76,9 @@
   @blur="handleInputConfirm"
 >
 </up-input>
-<up-button v-else class="button-new-tag" size="small" @click="showInput">+ New Tag</up-button>
+<up-button v-else class="button-new-tag" size="small" @click="showInput"
+  >+ New Tag</up-button
+>
 
 <style>
   .up-tag + .up-tag {
@@ -120,9 +128,10 @@
         this.inputValue = '';
       }
     }
-  }
+  };
 </script>
 ```
+
 :::
 
 ### 不同尺寸
@@ -137,6 +146,7 @@ Tag 组件提供除了默认值以外的三种尺寸，可以在不同场景下�
 <up-tag size="small" closable>小型标签</up-tag>
 <up-tag size="mini" closable>超小标签</up-tag>
 ```
+
 :::
 
 ### 不同主题
@@ -144,6 +154,7 @@ Tag 组件提供除了默认值以外的三种尺寸，可以在不同场景下�
 Tag 组件提供了三个不同的主题：`dark`、`light` 和 `plain`
 
 :::demo 通过设置`effect`属性来改变主题，默认为 `light`
+
 ```html
 <div class="tag-group">
   <span class="tag-group__title">Dark</span>
@@ -151,7 +162,8 @@ Tag 组件提供了三个不同的主题：`dark`、`light` 和 `plain`
     v-for="item in items"
     :key="item.label"
     :type="item.type"
-    effect="dark">
+    effect="dark"
+  >
     {{ item.label }}
   </up-tag>
 </div>
@@ -161,7 +173,8 @@ Tag 组件提供了三个不同的主题：`dark`、`light` 和 `plain`
     v-for="item in items"
     :key="item.label"
     :type="item.type"
-    effect="plain">
+    effect="plain"
+  >
     {{ item.label }}
   </up-tag>
 </div>
@@ -171,7 +184,8 @@ Tag 组件提供了三个不同的主题：`dark`、`light` 和 `plain`
     v-for="item in items"
     :key="item.label"
     :type="item.type"
-    effect="light">
+    effect="light"
+  >
     {{ item.label }}
   </up-tag>
 </div>
@@ -187,14 +201,16 @@ Tag 组件提供了三个不同的主题：`dark`、`light` 和 `plain`
           { type: 'danger', label: '标签四' },
           { type: 'warning', label: '标签五' }
         ]
-      }
+      };
     }
-  }
+  };
 </script>
 ```
+
 :::
 
 ### Attributes
+
 | 参数                | 说明             | 类型    | 可选值                      | 默认值 |
 | ------------------- | ---------------- | ------- | --------------------------- | ------ |
 | type                | 类型             | string  | success/info/warning/danger | —      |
@@ -205,8 +221,8 @@ Tag 组件提供了三个不同的主题：`dark`、`light` 和 `plain`
 | size                | 尺寸             | string  | medium / small / mini       | —      |
 | effect              | 主题             | string  | dark / light / plain        | light  |
 
-
 ### Events
+
 | 事件名称 | 说明                  | 回调参数 |
 | -------- | --------------------- | -------- |
 | click    | 点击 Tag 时触发的事件 | —        |
