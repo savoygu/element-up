@@ -54,6 +54,9 @@ import Form from '../packages/form/index.js'
 import FormItem from '../packages/form-item/index.js'
 import TableColumn from '../packages/table-column/index.js'
 import Tag from '../packages/tag/index.js'
+import Tree from '../packages/tree/index.js'
+import Pagination from '../packages/pagination/index.js'
+import Badge from '../packages/badge/index.js'
 import locale from 'element-up/src/locale'
 import CollapseTransition from 'element-up/src/transitions/collapse-transition'
 
@@ -110,6 +113,9 @@ const components = [
   FormItem,
   TableColumn,
   Tag,
+  Tree,
+  Pagination,
+  Badge,
   CollapseTransition
 ]
 
@@ -193,5 +199,8 @@ export default {
   Form,
   FormItem,
   TableColumn,
-  Tag
+  Tag,
+  Tree,
+  Pagination,
+  Badge
 }
