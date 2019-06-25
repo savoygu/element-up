@@ -52,5 +52,8 @@
   "form": "./packages/form/index.js",
   "form-item": "./packages/form-item/index.js",
   "table-column": "./packages/table-column/index.js",
-  "tag": "./packages/tag/index.js"
+  "tag": "./packages/tag/index.js",
+  "tree": "./packages/tree/index.js",
+  "pagination": "./packages/pagination/index.js",
+  "badge": "./packages/badge/index.js"
 }

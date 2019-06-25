@@ -18,12 +18,6 @@ import Aside from 'element-ui/packages/aside'
 import Footer from 'element-ui/packages/footer'
 import Icon from 'element-ui/packages/icon'
 
-// Data
-import Tag from 'element-ui/packages/tag'
-import Tree from 'element-ui/packages/tree'
-import Pagination from 'element-ui/packages/pagination'
-import Badge from 'element-ui/packages/badge'
-
 // Notice
 import Alert from 'element-ui/packages/alert'
 
@@ -58,11 +52,6 @@ export default {
     [Icon.name]: Icon,
 
     [Alert.name]: Alert,
-
-    [Tag.name]: Tag,
-    [Tree.name]: Tree,
-    [Pagination.name]: Pagination,
-    [Badge.name]: Badge,
 
     [Card.name]: Card,
     [Divider.name]: Divider,
