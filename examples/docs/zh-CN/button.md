@@ -6,10 +6,11 @@
 
 :::tip
 
-1.  组件名称统一为`up-button`，通过`component`属性，传入`el-button`和`el-button-group`来做控制。
-2.  当`component`为`el-button-group`时， 可以传入`data`属性来展示按钮列表，`data`中每一项 `item` 的属性都会应用到按钮上。
-3.  在`data`中有两个特别的属性`attrs`和`listeners`，分别为按钮组中的按钮添加属性和绑定事件。如果存在同名属性，则`attrs`中的属性优先于`props`及`item`中的属性；如果存在同名事件，则`listeners`中的事件优先于在属性`component`为`el-button-group`的按钮组上绑定的事件。
-    :::
+1. 组件名称统一为`up-button`，通过`component`属性，传入`el-button`和`el-button-group`来做控制。
+2. 当`component`为`el-button-group`时， 可以传入`data`属性来展示按钮列表，`data`中每一项 `item` 的属性都会应用到按钮上。
+3. 在`data`中有两个特别的属性`attrs`和`listeners`，分别为按钮组中的按钮添加属性和绑定事件。如果存在同名属性，则`attrs`中的属性优先于`props`及`item`中的属性；如果存在同名事件，则`listeners`中的事件优先于在属性`component`为`el-button-group`的按钮组上绑定的事件。
+
+:::
 
 ### 基础用法
 

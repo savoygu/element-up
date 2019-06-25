@@ -6,11 +6,12 @@
 
 :::tip
 
-1.  组件书写形式发生变化：`<el-checkbox>`修改为`<up-checkbox>`，`<el-checkbox-group>`修改为`<up-checkbox-group>`
-2.  `up-checkbox-group`可以传入 `data` 属性来展示 Checkbox 列表，`data`中每一项 `item`的属性都会应用到 Checkbox 上。
-3.  可以在`up-checkbox-group`上指定`component="el-checkbox-button"`来展示 Checkbox Button 列表。
-4.  还提供了插槽`up:item`，用来自定义每一项的介绍，其中`slot-scope`接收`item, $index`属性。
-    :::
+1. 组件书写形式发生变化：`<el-checkbox>`修改为`<up-checkbox>`，`<el-checkbox-group>`修改为`<up-checkbox-group>`
+2. `up-checkbox-group`可以传入 `data` 属性来展示 Checkbox 列表，`data`中每一项 `item`的属性都会应用到 Checkbox 上。
+3. 可以在`up-checkbox-group`上指定`component="el-checkbox-button"`来展示 Checkbox Button 列表。
+4. 还提供了插槽`up:item`，用来自定义每一项的介绍，其中`slot-scope`接收`item, $index`属性。
+
+:::
 
 ### 基础用法
 

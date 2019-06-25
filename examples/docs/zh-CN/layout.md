@@ -6,11 +6,12 @@
 
 :::tip
 
-1.  重写了 `Row`, `Col` 的 `render` 函数。
-2.  当 `type = flex` 时，提供对 flex 相关 CSS 属性的全支持，可以查阅相关 props: `direction`、`wrap`、`content`。
-3.  为 `Col` 提供了 props `order` 属性，用来改变栅格排列顺序。
-4.  响应式布局中支持 `Number` 与 `Object` 的混合使用。
-    :::
+1. 重写了 `Row`, `Col` 的 `render` 函数。
+2. 当 `type = flex` 时，提供对 flex 相关 CSS 属性的全支持，可以查阅相关 props: `direction`、`wrap`、`content`。
+3. 为 `Col` 提供了 props `order` 属性，用来改变栅格排列顺序。
+4. 响应式布局中支持 `Number` 与 `Object` 的混合使用。
+
+:::
 
 ### 基础布局
 

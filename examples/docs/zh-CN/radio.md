@@ -6,11 +6,12 @@
 
 :::tip
 
-1.  组件书写形式发生变化：`<el-radio>`修改为`<up-radio>`，`<el-radio-group>`修改为`<up-radio-group>`
-2.  `up-radio-group`可以传入`data`属性来展示 Radio 列表，`data`中每一项 `item`的属性都会应用到 Radio 上。
-3.  可以在`up-radio-group`上指定`component="el-radio-button"`来展示 Radio Button 列表。
-4.  还提供了插槽`up:item`，用来自定义每一项的介绍，其中`slot-scope`接收`item, $index`属性。
-    :::
+1. 组件书写形式发生变化：`<el-radio>`修改为`<up-radio>`，`<el-radio-group>`修改为`<up-radio-group>`
+2. `up-radio-group`可以传入`data`属性来展示 Radio 列表，`data`中每一项 `item`的属性都会应用到 Radio 上。
+3. 可以在`up-radio-group`上指定`component="el-radio-button"`来展示 Radio Button 列表。
+4. 还提供了插槽`up:item`，用来自定义每一项的介绍，其中`slot-scope`接收`item, $index`属性。
+
+:::
 
 ### 基础用法
 

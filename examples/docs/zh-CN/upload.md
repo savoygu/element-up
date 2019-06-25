@@ -11,6 +11,7 @@
 ### 点击上传
 
 :::demo 通过 slot 你可以传入自定义的上传按钮类型和文字提示。可通过设置`limit`和`on-exceed`来限制上传文件的个数和定义超出限制时的行为。可通过设置`before-remove`来阻止文件移除操作。
+
 ```html
 <up-upload
   class="upload-demo"
@@ -21,15 +22,29 @@
   multiple
   :limit="3"
   :on-exceed="handleExceed"
-  :file-list="fileList">
+  :file-list="fileList"
+>
   <up-button size="small" type="primary">点击上传</up-button>
-  <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+  <div slot="tip" class="el-upload__tip">
+    只能上传jpg/png文件，且不超过500kb
+  </div>
 </up-upload>
 <script>
   export default {
     data() {
       return {
-        fileList: [{name: 'food.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}, {name: 'food2.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}]
+        fileList: [
+          {
+            name: 'food.jpeg',
+            url:
+              'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
+          },
+          {
+            name: 'food2.jpeg',
+            url:
+              'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
+          }
+        ]
       };
     },
     methods: {
@@ -40,15 +55,20 @@
         console.log(file);
       },
       handleExceed(files, fileList) {
-        this.$message.warning(`当前限制选择 3 个文件，本次选择了 ${files.length} 个文件，共选择了 ${files.length + fileList.length} 个文件`);
+        this.$msg.warning(
+          `当前限制选择 3 个文件，本次选择了 ${
+            files.length
+          } 个文件，共选择了 ${files.length + fileList.length} 个文件`
+        );
       },
       beforeRemove(file, fileList) {
-        return this.$confirm(`确定移除 ${ file.name }？`);
+        return this.$confirm(`确定移除 ${file.name}？`);
       }
     }
-  }
+  };
 </script>
 ```
+
 :::
 
 ### 用户头像上传
@@ -56,14 +76,16 @@
 使用 `before-upload` 限制用户上传的图片格式和大小。
 
 :::demo
+
 ```html
 <up-upload
   class="avatar-uploader"
   action="https://jsonplaceholder.typicode.com/posts/"
   :show-file-list="false"
   :on-success="handleAvatarSuccess"
-  :before-upload="beforeAvatarUpload">
-  <img v-if="imageUrl" :src="imageUrl" class="avatar">
+  :before-upload="beforeAvatarUpload"
+>
+  <img v-if="imageUrl" :src="imageUrl" class="avatar" />
   <i v-else class="el-icon-plus avatar-uploader-icon"></i>
 </up-upload>
 
@@ -76,7 +98,7 @@
     overflow: hidden;
   }
   .avatar-uploader .el-upload:hover {
-    border-color: #409EFF;
+    border-color: #409eff;
   }
   .avatar-uploader-icon {
     font-size: 28px;
@@ -109,17 +131,18 @@
         const isLt2M = file.size / 1024 / 1024 < 2;
 
         if (!isJPG) {
-          this.$message.error('上传头像图片只能是 JPG 格式!');
+          this.$msg.error('上传头像图片只能是 JPG 格式!');
         }
         if (!isLt2M) {
-          this.$message.error('上传头像图片大小不能超过 2MB!');
+          this.$msg.error('上传头像图片大小不能超过 2MB!');
         }
         return isJPG && isLt2M;
       }
     }
-  }
+  };
 </script>
 ```
+
 :::
 
 ### 照片墙
@@ -127,16 +150,18 @@
 使用 `list-type` 属性来设置文件列表的样式。
 
 :::demo
+
 ```html
 <up-upload
   action="https://jsonplaceholder.typicode.com/posts/"
   list-type="picture-card"
   :on-preview="handlePictureCardPreview"
-  :on-remove="handleRemove">
+  :on-remove="handleRemove"
+>
   <i class="el-icon-plus"></i>
 </up-upload>
-<up-dialog :visible.sync="dialogVisible">
-  <img width="100%" :src="dialogImageUrl" alt="">
+<up-dialog v-model="dialogVisible">
+  <img width="100%" :src="dialogImageUrl" alt="" />
 </up-dialog>
 <script>
   export default {
@@ -155,14 +180,16 @@
         this.dialogVisible = true;
       }
     }
-  }
+  };
 </script>
 ```
+
 :::
 
 ### 图片列表缩略图
 
 :::demo
+
 ```html
 <up-upload
   class="upload-demo"
@@ -170,15 +197,29 @@
   :on-preview="handlePreview"
   :on-remove="handleRemove"
   :file-list="fileList"
-  list-type="picture">
+  list-type="picture"
+>
   <up-button size="small" type="primary">点击上传</up-button>
-  <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+  <div slot="tip" class="el-upload__tip">
+    只能上传jpg/png文件，且不超过500kb
+  </div>
 </up-upload>
 <script>
   export default {
     data() {
       return {
-        fileList: [{name: 'food.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}, {name: 'food2.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}]
+        fileList: [
+          {
+            name: 'food.jpeg',
+            url:
+              'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
+          },
+          {
+            name: 'food2.jpeg',
+            url:
+              'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
+          }
+        ]
       };
     },
     methods: {
@@ -189,9 +230,10 @@
         console.log(file);
       }
     }
-  }
+  };
 </script>
 ```
+
 :::
 
 ### 上传文件列表控制
@@ -199,26 +241,35 @@
 通过 `on-change` 钩子函数来对列表进行控制
 
 :::demo
+
 ```html
 <up-upload
   class="upload-demo"
   action="https://jsonplaceholder.typicode.com/posts/"
   :on-change="handleChange"
-  :file-list="fileList">
+  :file-list="fileList"
+>
   <up-button size="small" type="primary">点击上传</up-button>
-  <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+  <div slot="tip" class="el-upload__tip">
+    只能上传jpg/png文件，且不超过500kb
+  </div>
 </up-upload>
 <script>
   export default {
     data() {
       return {
-        fileList: [{
-          name: 'food.jpeg',
-          url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
-        }, {
-          name: 'food2.jpeg',
-          url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
-        }]
+        fileList: [
+          {
+            name: 'food.jpeg',
+            url:
+              'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
+          },
+          {
+            name: 'food2.jpeg',
+            url:
+              'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
+          }
+        ]
       };
     },
     methods: {
@@ -226,30 +277,37 @@
         this.fileList = fileList.slice(-3);
       }
     }
-  }
+  };
 </script>
 ```
+
 :::
 
 ### 拖拽上传
 
 :::demo
+
 ```html
 <up-upload
   class="upload-demo"
   drag
   action="https://jsonplaceholder.typicode.com/posts/"
-  multiple>
+  multiple
+>
   <i class="el-icon-upload"></i>
   <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-  <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
+  <div class="el-upload__tip" slot="tip">
+    只能上传jpg/png文件，且不超过500kb
+  </div>
 </up-upload>
 ```
+
 :::
 
 ### 手动上传
 
 :::demo
+
 ```html
 <up-upload
   class="upload-demo"
@@ -258,16 +316,36 @@
   :on-preview="handlePreview"
   :on-remove="handleRemove"
   :file-list="fileList"
-  :auto-upload="false">
+  :auto-upload="false"
+>
   <up-button slot="trigger" size="small" type="primary">选取文件</up-button>
-  <up-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传到服务器</up-button>
-  <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+  <up-button
+    style="margin-left: 10px;"
+    size="small"
+    type="success"
+    @click="submitUpload"
+    >上传到服务器</up-button
+  >
+  <div slot="tip" class="el-upload__tip">
+    只能上传jpg/png文件，且不超过500kb
+  </div>
 </up-upload>
 <script>
   export default {
     data() {
       return {
-        fileList: [{name: 'food.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}, {name: 'food2.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}]
+        fileList: [
+          {
+            name: 'food.jpeg',
+            url:
+              'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
+          },
+          {
+            name: 'food2.jpeg',
+            url:
+              'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
+          }
+        ]
       };
     },
     methods: {
@@ -281,12 +359,14 @@
         console.log(file);
       }
     }
-  }
+  };
 </script>
 ```
+
 :::
 
 ### Attribute
+
 | 参数             | 说明                                                                                                                                 | 类型                               | 可选值                    | 默认值 |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------- | ------------------------- | ------ |
 | action           | 必选参数，上传的地址                                                                                                                 | string                             | —                         | —      |
@@ -315,12 +395,14 @@
 | on-exceed        | 文件超出个数限制时的钩子                                                                                                             | function(files, fileList)          | —                         | -      |
 
 ### Slot
+
 | name    | 说明                 |
 | ------- | -------------------- |
 | trigger | 触发文件选择框的内容 |
 | tip     | 提示说明文字         |
 
 ### Methods
+
 | 方法名     | 说明                                                        | 参数                                |
 | ---------- | ----------------------------------------------------------- | ----------------------------------- |
 | clearFiles | 清空已上传的文件列表（该方法不支持在 before-upload 中调用） | —                                   |

@@ -4,8 +4,8 @@
     <slot></slot>
     <slot slot="footer" name="footer">
       <template v-if="hasFooter">
-        <el-button @click="onCancel">{{ cancelButtonText}}</el-button>
-        <el-button type="primary" @click="onOk">{{ confirmButtonText }}</el-button>
+        <up-button @click="onCancel">{{ cancelButtonText}}</up-button>
+        <up-button type="primary" @click="onOk">{{ confirmButtonText }}</up-button>
       </template>
     </slot>
   </el-dialog>
