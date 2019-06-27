@@ -1,5 +1,5 @@
 <template>
-  <component :is="component" :class="classes" v-bind="attrs" v-on="listeners">
+  <component :is="component" :class="classes" v-bind="attrs" v-on="listeners" :type="type">
     <slot>
       <up-button
         v-for="(item, index) in data"
@@ -38,7 +38,8 @@ export default {
     data: {
       type: Array,
       default: () => []
-    }
+    },
+    type: String
   },
 
   computed: {
