@@ -167,6 +167,31 @@
               "title": "Badge 标记"
             }
           ]
+        },
+        {
+          "groupName": "Notice",
+          "list": [
+            {
+              "path": "/alert",
+              "title": "Alert 警告"
+            },
+            {
+              "path": "/loading",
+              "title": "Loading 加载"
+            },
+            {
+              "path": "/message",
+              "title": "Message 消息提示"
+            },
+            {
+              "path": "/message-box",
+              "title": "MessageBox 弹框"
+            },
+            {
+              "path": "/notification",
+              "title": "Notification 通知"
+            }
+          ]
         }
       ]
     }

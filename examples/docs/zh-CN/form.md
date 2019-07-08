@@ -19,7 +19,9 @@
 
 ```html
 <up-form ref="form" :model="form" label-width="80px">
-  <up-form-item-input label="活动名称" v-model="form.name"></up-form-item-input>
+  <up-form-item-input label="活动名称" v-model="form.name">
+    <i slot="up:input:suffix" class="el-input__icon el-icon-date"></i>
+  </up-form-item-input>
   <!-- <up-form-item label="活动名称">
     <up-input v-model="form.name"></up-input>
   </up-form-item> -->

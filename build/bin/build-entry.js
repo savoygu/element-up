@@ -32,7 +32,7 @@ const install = function (Vue, opts = {}) {
     zIndex: opts.zIndex || 2000
   }
 
-  Vue.prototype.$msg = Message
+  Vue.prototype.$msg = Msg
   Vue.prototype.$page = Page
 }
 
@@ -64,7 +64,7 @@ ComponentNames.forEach(name => {
     package: name
   }))
 
-  if (['Message', 'Page'].indexOf(componentName) === -1) {
+  if (['Msg', 'Page'].indexOf(componentName) === -1) {
     installTemplate.push(render(INSTALL_COMPONENT_TEMPLATE, {
       name: componentName,
       component: name

@@ -14,7 +14,7 @@ import Checkbox from '../packages/checkbox/index.js'
 import CheckboxButton from '../packages/checkbox-button/index.js'
 import CheckboxGroup from '../packages/checkbox-group/index.js'
 import FormItemCheckbox from '../packages/form-item-checkbox/index.js'
-import Message from '../packages/message/index.js'
+import Msg from '../packages/msg/index.js'
 import Radio from '../packages/radio/index.js'
 import RadioButton from '../packages/radio-button/index.js'
 import RadioGroup from '../packages/radio-group/index.js'
@@ -132,7 +132,7 @@ const install = function (Vue, opts = {}) {
     zIndex: opts.zIndex || 2000
   }
 
-  Vue.prototype.$msg = Message
+  Vue.prototype.$msg = Msg
   Vue.prototype.$page = Page
 }
 
@@ -160,7 +160,7 @@ export default {
   CheckboxButton,
   CheckboxGroup,
   FormItemCheckbox,
-  Message,
+  Msg,
   Radio,
   RadioButton,
   RadioGroup,

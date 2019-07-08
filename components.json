@@ -13,7 +13,7 @@
   "checkbox-button": "./packages/checkbox-button/index.js",
   "checkbox-group": "./packages/checkbox-group/index.js",
   "form-item-checkbox": "./packages/form-item-checkbox/index.js",
-  "message": "./packages/message/index.js",
+  "msg": "./packages/msg/index.js",
   "radio": "./packages/radio/index.js",
   "radio-button": "./packages/radio-button/index.js",
   "radio-group": "./packages/radio-group/index.js",
