@@ -57,6 +57,7 @@ import Tag from '../packages/tag/index.js'
 import Tree from '../packages/tree/index.js'
 import Pagination from '../packages/pagination/index.js'
 import Badge from '../packages/badge/index.js'
+import DateRanges from '../packages/date-ranges/index.js'
 import locale from 'element-up/src/locale'
 import CollapseTransition from 'element-up/src/transitions/collapse-transition'
 
@@ -116,6 +117,7 @@ const components = [
   Tree,
   Pagination,
   Badge,
+  DateRanges,
   CollapseTransition
 ]
 
@@ -202,5 +204,6 @@ export default {
   Tag,
   Tree,
   Pagination,
-  Badge
+  Badge,
+  DateRanges
 }

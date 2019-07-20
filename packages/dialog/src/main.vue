@@ -4,7 +4,7 @@
     <slot></slot>
     <slot slot="footer" name="footer">
       <template v-if="hasFooter">
-        <up-button @click="onCancel">{{ cancelButtonText}}</up-button>
+        <up-button @click="onCancel">{{ cancelButtonText }}</up-button>
         <up-button type="primary" @click="onOk">{{ confirmButtonText }}</up-button>
       </template>
     </slot>
@@ -13,6 +13,7 @@
 
 <script>
 import Dialog from 'element-ui/packages/dialog'
+import Button from 'element-up/packages/button'
 import createVModel from 'element-up/src/mixins/createVModel'
 
 export default {
@@ -23,7 +24,8 @@ export default {
   ],
 
   components: {
-    [Dialog.name]: Dialog
+    [Dialog.name]: Dialog,
+    [Button.name]: Button
   },
 
   props: {

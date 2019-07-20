@@ -1,0 +1,503 @@
+// @import "element-ui/packages/theme-chalk/src/date-ranges.scss";
+@import "element-ui/packages/theme-chalk/src/common/var.scss";
+@import "sass-bem/_bem.scss";
+
+@include b(up-date-table) {
+  font-size: 12px;
+  user-select: none;
+
+  td {
+    width: 32px;
+    height: 30px;
+    padding: 4px 0;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+
+    & div {
+      height: 30px;
+      padding: 3px 0;
+      box-sizing: border-box;
+    }
+
+    & span {
+      width: 24px;
+      height: 24px;
+      display: block;
+      margin: 0 auto;
+      line-height: 24px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+    }
+
+    &.next-month,
+    &.prev-month {
+      color: $--datepicker-off-font-color;
+    }
+
+    &.today {
+      position: relative;
+      span {
+        color: $--color-primary;
+        font-weight: bold;
+      }
+      &.start-date span,
+      &.end-date span {
+        color: $--color-white;
+      }
+    }
+
+    &.available:hover {
+      color: $--datepicker-hover-font-color;
+    }
+
+    &.in-range div {
+      background-color: $--datepicker-inrange-background-color;
+      &:hover {
+        background-color: $--datepicker-inrange-hover-background-color;
+      }
+    }
+
+    &.current:not(.disabled) span {
+      color: $--color-white;
+      background-color: $--datepicker-active-color;
+    }
+    &.start-date div,
+    &.end-date div {
+      color: $--color-white;
+    }
+
+    &.start-date span,
+    &.end-date span {
+      background-color: $--datepicker-active-color;
+    }
+
+    &.start-date div {
+      margin-left: 5px;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+    }
+
+    &.end-date div {
+      margin-right: 5px;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+
+    &.disabled div {
+      background-color: $--background-color-base;
+      opacity: 1;
+      cursor: not-allowed;
+      color: $--color-text-placeholder;
+    }
+
+    &.selected div {
+      margin-left: 5px;
+      margin-right: 5px;
+      background-color: $--datepicker-inrange-background-color;
+      border-radius: 15px;
+      &:hover {
+        background-color: $--datepicker-inrange-hover-background-color;
+      }
+    }
+
+    &.selected span {
+      background-color: $--datepicker-active-color;
+      color: $--color-white;
+      border-radius: 15px;
+    }
+
+    &.week {
+      font-size: 80%;
+      color: $--datepicker-header-font-color;
+    }
+  }
+
+  th {
+    padding: 5px;
+    color: $--datepicker-header-font-color;
+    font-weight: 400;
+    border-bottom: solid 1px $--border-color-lighter;
+  }
+}
+
+@include b(up-picker-panel) {
+  color: $--color-text-regular;
+  border: 1px solid $--datepicker-border-color;
+  box-shadow: $--box-shadow-light;
+  background: $--color-white;
+  border-radius: $--border-radius-base;
+  line-height: 30px;
+  margin: 5px 0;
+
+  @include e((body, body-wrapper)) {
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+  @include e(content) {
+    position: relative;
+    margin: 15px;
+  }
+
+  @include e(footer) {
+    border-top: 1px solid $--datepicker-inner-border-color;
+    padding: 4px;
+    text-align: right;
+    background-color: $--color-white;
+    position: relative;
+    font-size: 0;
+  }
+
+  @include e(shortcut) {
+    display: block;
+    width: 100%;
+    border: 0;
+    background-color: transparent;
+    line-height: 28px;
+    font-size: 14px;
+    color: $--datepicker-font-color;
+    padding-left: 12px;
+    text-align: left;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      color: $--datepicker-hover-font-color;
+    }
+
+    &.active {
+      background-color: #e6f1fe;
+      color: $--datepicker-active-color;
+    }
+  }
+
+  @include e(btn) {
+    border: 1px solid #dcdcdc;
+    color: #333;
+    line-height: 24px;
+    border-radius: 2px;
+    padding: 0 20px;
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    font-size: 12px;
+
+    &[disabled] {
+      color: #cccccc;
+      cursor: not-allowed;
+    }
+  }
+
+  @include e(icon-btn) {
+    font-size: 12px;
+    color: $--datepicker-icon-color;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+    margin-top: 8px;
+
+    &:hover {
+      color: $--datepicker-hover-font-color;
+    }
+
+    @include when(disabled) {
+      color: $--font-color-disabled-base;
+
+      &:hover {
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  @include e(link-btn) {
+    vertical-align: middle;
+  }
+}
+
+@include b(up-date-ranges-picker) {
+  width: 646px;
+
+  &.has-sidebar {
+    width: 756px;
+  }
+
+  table {
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  .el-picker-panel__body {
+    min-width: 513px;
+  }
+
+  .el-picker-panel__content {
+    margin: 0;
+  }
+
+  @include e(header) {
+    position: relative;
+    text-align: center;
+    height: 28px;
+
+    [class*=arrow-left] {
+      float: left;
+    }
+
+    [class*=arrow-right] {
+      float: right;
+    }
+
+    div {
+      font-size: 16px;
+      font-weight: 500;
+      margin-right: 50px;
+    }
+  }
+
+  @include e(content) {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 16px;
+
+    @include is(left) {
+      border-right: 1px solid $--datepicker-inner-border-color;
+    }
+    .el-date-range-picker__header {
+
+      div {
+        margin-left: 50px;
+        margin-right: 50px;
+      }
+    }
+  }
+}
+
+@include b(up-date-editor) {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+
+  &.up-input,
+  &.up-input__inner {
+    width: 220px;
+  }
+
+  &.up-input__inner {
+    -webkit-appearance: none;
+    background-color: $--input-background-color;
+    background-image: none;
+    border-radius: $--input-border-radius;
+    border: $--input-border;
+    box-sizing: border-box;
+    color: $--input-font-color;
+    display: inline-block;
+    font-size: inherit;
+    height: $--input-height;
+    line-height: $--input-height;
+    outline: none;
+    padding: 0 15px;
+    transition: $--border-transition-base;
+    width: 100%;
+
+    &::placeholder {
+      color: $--input-placeholder-color;
+    }
+
+    &:hover {
+      border-color: $--input-hover-border;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $--input-focus-border;
+    }
+  }
+
+  @include m(daterange) {
+    &.up-input,
+    &.up-input__inner {
+      width: 350px;
+    }
+  }
+
+  .el-icon-circle-close {
+    cursor: pointer;
+  }
+
+  .up-input__icon {
+    height: 100%;
+    width: 25px;
+    text-align: center;
+    transition: all .3s;
+    line-height: $--input-height;
+
+    &:after {
+      content: '';
+      height: 100%;
+      width: 0;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .up-range__icon {
+    font-size: 14px;
+    margin-left: -5px;
+    color: $--color-text-placeholder;
+    float: left;
+    line-height: 32px;
+  }
+
+  .up-range-input {
+    appearance: none;
+    border: none;
+    outline: none;
+    display: inline-block;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 39%;
+    text-align: center;
+    font-size: $--font-size-base;
+    color: $--color-text-regular;
+
+    &::placeholder {
+      color: $--color-text-placeholder;
+    }
+  }
+
+  .up-range-separator {
+    display: inline-block;
+    height: 100%;
+    padding: 0 5px;
+    margin: 0;
+    text-align: center;
+    line-height: 32px;
+    font-size: 14px;
+    width: 5%;
+    color: $--color-text-primary;
+  }
+
+  .up-range__close-icon {
+    font-size: 14px;
+    color: $--color-text-placeholder;
+    width: 25px;
+    display: inline-block;
+    float: right;
+    line-height: 32px;
+  }
+}
+
+@include b(up-ranges-editor) {
+  &.up-input__inner {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+  }
+
+  .up-range-input {
+    line-height: 1;
+  }
+
+  @include when(active) {
+    border-color: $--color-primary;
+
+    &:hover {
+      border-color: $--color-primary;
+    }
+  }
+
+  @include m(medium) {
+    &.up-input__inner {
+      height: $--input-medium-height;
+    }
+
+    .up-range-separator {
+      line-height: 28px;
+      font-size: $--input-medium-font-size;
+    }
+
+    .up-range-input {
+      font-size: $--input-medium-font-size;
+    }
+
+    .up-range__icon,
+    .up-range__close-icon {
+      line-height: 28px;
+    }
+  }
+
+  @include m(small) {
+    &.up-input__inner {
+      height: $--input-small-height;
+    }
+
+    .up-range-separator {
+      line-height: 24px;
+      font-size: $--input-small-font-size;
+    }
+
+    .up-range-input {
+      font-size: $--input-small-font-size;
+    }
+
+    .up-range__icon,
+    .up-range__close-icon {
+      line-height: 24px;
+    }
+  }
+
+  @include m(mini) {
+    &.up-input__inner {
+      height: $--input-mini-height;
+    }
+
+    .up-range-separator {
+      line-height: 20px;
+      font-size: $--input-mini-font-size;
+    }
+
+    .up-range-input {
+      font-size: $--input-mini-font-size;
+    }
+
+    .up-range__icon,
+    .up-range__close-icon {
+      line-height: 20px;
+    }
+  }
+
+  @include when(disabled) {
+    background-color: $--input-disabled-fill;
+    border-color: $--input-disabled-border;
+    color: $--input-disabled-color;
+    cursor: not-allowed;
+
+    &:hover, &:focus {
+      border-color: $--input-disabled-border;
+    }
+
+    input {
+      background-color: $--input-disabled-fill;
+      color: $--input-disabled-color;
+      cursor: not-allowed;
+      &::placeholder {
+        color: $--input-disabled-placeholder-color;
+      }
+    }
+
+    .up-range-separator {
+      color: $--input-disabled-color;
+    }
+  }
+}
