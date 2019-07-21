@@ -208,7 +208,7 @@
       color: $--datepicker-hover-font-color;
     }
 
-    @include when(disabled) {
+    @include is(disabled) {
       color: $--font-color-disabled-base;
 
       &:hover {
@@ -409,7 +409,7 @@
     line-height: 1;
   }
 
-  @include when(active) {
+  @include is(active) {
     border-color: $--color-primary;
 
     &:hover {
@@ -477,7 +477,7 @@
     }
   }
 
-  @include when(disabled) {
+  @include is(disabled) {
     background-color: $--input-disabled-fill;
     border-color: $--input-disabled-border;
     color: $--input-disabled-color;
