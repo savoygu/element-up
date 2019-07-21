@@ -1,5 +1,5 @@
 <template>
-  <component :is="component" :class="classes" v-bind="attrs" v-on="listeners" :type="type">
+  <component :is="component" :class="classes" v-bind="attrs" v-on="listeners" :type="type" :native-type="nativeType">
     <slot>
       <up-button
         v-for="(item, index) in data"
@@ -39,7 +39,14 @@ export default {
       type: Array,
       default: () => []
     },
-    type: String
+    type: {
+      type: String,
+      default: 'default'
+    },
+    nativeType: {
+      type: String,
+      default: 'button'
+    }
   },
 
   computed: {
