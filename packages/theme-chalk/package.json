@@ -1,6 +1,6 @@
 {
   "name": "element-up-theme-chalk",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "Element-up component chalk theme",
   "main": "lib/index.css",
   "style": "lib/index.css",
