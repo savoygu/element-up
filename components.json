@@ -56,5 +56,6 @@
   "tree": "./packages/tree/index.js",
   "pagination": "./packages/pagination/index.js",
   "badge": "./packages/badge/index.js",
-  "date-ranges": "./packages/date-ranges/index.js"
+  "date-ranges": "./packages/date-ranges/index.js",
+  "loading": "./packages/loading/index.js"
 }

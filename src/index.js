@@ -58,6 +58,7 @@ import Tree from '../packages/tree/index.js'
 import Pagination from '../packages/pagination/index.js'
 import Badge from '../packages/badge/index.js'
 import DateRanges from '../packages/date-ranges/index.js'
+import Loading from '../packages/loading/index.js'
 import locale from 'element-up/src/locale'
 import CollapseTransition from 'element-up/src/transitions/collapse-transition'
 
@@ -129,11 +130,14 @@ const install = function (Vue, opts = {}) {
     Vue.component(component.name, component)
   })
 
+  Vue.use(Loading.directive)
+
   Vue.prototype.$ELEMENT = {
     size: opts.size || '',
     zIndex: opts.zIndex || 2000
   }
 
+  Vue.prototype.$loading = Loading.service
   Vue.prototype.$msg = Msg
   Vue.prototype.$page = Page
 }
@@ -148,6 +152,7 @@ export default {
   i18n: locale.i18n,
   install,
   CollapseTransition,
+  Loading,
   Breadcrumb,
   Dropdown,
   FormItemSelect,

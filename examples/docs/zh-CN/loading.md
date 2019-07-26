@@ -10,11 +10,13 @@
 
 ```html
 <template>
-  <el-table v-loading="loading" :data="tableData" style="width: 100%">
+  <up-table :page="page" v-loading="loading" style="width: 100%;" :width-columns="{ date: 180, name: 180 }">
+  </up-table>
+  <!-- <el-table v-loading="loading" :data="tableData" style="width: 100%">
     <el-table-column prop="date" label="日期" width="180"> </el-table-column>
     <el-table-column prop="name" label="姓名" width="180"> </el-table-column>
     <el-table-column prop="address" label="地址"> </el-table-column>
-  </el-table>
+  </el-table> -->
 </template>
 
 <style>
@@ -27,23 +29,30 @@
   export default {
     data() {
       return {
-        tableData: [
-          {
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄'
+        page: new this.$page({
+          header: {
+            date: '日期',
+            name: '姓名',
+            address: '地址'
           },
-          {
-            date: '2016-05-02',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄'
-          },
-          {
-            date: '2016-05-04',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄'
-          }
-        ],
+          data: [
+            {
+              date: '2016-05-03',
+              name: '王小虎',
+              address: '上海市普陀区金沙江路 1518 弄'
+            },
+            {
+              date: '2016-05-02',
+              name: '王小虎',
+              address: '上海市普陀区金沙江路 1518 弄'
+            },
+            {
+              date: '2016-05-04',
+              name: '王小虎',
+              address: '上海市普陀区金沙江路 1518 弄'
+            }
+          ]
+        }),
         loading: true
       };
     }
@@ -61,41 +70,46 @@
 
 ```html
 <template>
-  <el-table
+  <up-table
     v-loading="loading"
     element-loading-text="拼命加载中"
     element-loading-spinner="el-icon-loading"
     element-loading-background="rgba(0, 0, 0, 0.8)"
-    :data="tableData"
+    :page="page"
     style="width: 100%"
+    :width-columns="{ date: 180, name: 180 }"
   >
-    <el-table-column prop="date" label="日期" width="180"> </el-table-column>
-    <el-table-column prop="name" label="姓名" width="180"> </el-table-column>
-    <el-table-column prop="address" label="地址"> </el-table-column>
-  </el-table>
+  </up-table>
 </template>
 
 <script>
   export default {
     data() {
       return {
-        tableData: [
-          {
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄'
+        page: new this.$page({
+          header: {
+            date: '日期',
+            name: '姓名',
+            address: '地址'
           },
-          {
-            date: '2016-05-02',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄'
-          },
-          {
-            date: '2016-05-04',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄'
-          }
-        ],
+          data: [
+            {
+              date: '2016-05-03',
+              name: '王小虎',
+              address: '上海市普陀区金沙江路 1518 弄'
+            },
+            {
+              date: '2016-05-02',
+              name: '王小虎',
+              address: '上海市普陀区金沙江路 1518 弄'
+            },
+            {
+              date: '2016-05-04',
+              name: '王小虎',
+              address: '上海市普陀区金沙江路 1518 弄'
+            }
+          ]
+        }),
         loading: true
       };
     }
@@ -113,16 +127,16 @@
 
 ```html
 <template>
-  <el-button
+  <up-button
     type="primary"
     @click="openFullScreen"
     v-loading.fullscreen.lock="fullscreenLoading"
   >
     指令方式
-  </el-button>
-  <el-button type="primary" @click="openFullScreen">
+  </up-button>
+  <up-button type="primary" @click="openFullScreen">
     服务方式
-  </el-button>
+  </up-button>
 </template>
 
 <script>
@@ -162,7 +176,7 @@
 Loading 还可以以服务的方式调用。引入 Loading 服务：
 
 ```javascript
-import { Loading } from 'element-ui';
+import { Loading } from 'element-up';
 ```
 
 在需要调用时：

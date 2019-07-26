@@ -27,11 +27,14 @@ const install = function (Vue, opts = {}) {
     Vue.component(component.name, component)
   })
 
+  Vue.use(Loading.directive)
+
   Vue.prototype.$ELEMENT = {
     size: opts.size || '',
     zIndex: opts.zIndex || 2000
   }
 
+  Vue.prototype.$loading = Loading.service
   Vue.prototype.$msg = Msg
   Vue.prototype.$page = Page
 }
@@ -46,6 +49,7 @@ export default {
   i18n: locale.i18n,
   install,
   CollapseTransition,
+  Loading,
 {{list}}
 }
 `
@@ -64,14 +68,14 @@ ComponentNames.forEach(name => {
     package: name
   }))
 
-  if (['Msg', 'Page'].indexOf(componentName) === -1) {
+  if (['Loading', 'Msg', 'Page'].indexOf(componentName) === -1) {
     installTemplate.push(render(INSTALL_COMPONENT_TEMPLATE, {
       name: componentName,
       component: name
     }))
   }
 
-  listTemplate.push(`  ${componentName}`)
+  if (componentName !== 'Loading') listTemplate.push(`  ${componentName}`)
 })
 
 var template = render(MAIN_TEMPLATE, {
