@@ -18,9 +18,7 @@ export default function Msg (method, message, title, options) {
   // 校验消息类型合法性
   if (!~methods.indexOf(method)) {
     throw new Error(
-      `你输入的消息类型 "${method}" 不正确, 正确的消息类型有: ${methods.join(
-        ', '
-      )}`
+      `你输入的消息类型 "${method}" 不正确, 正确的消息类型有: ${methods.join(', ')}`
     )
   }
 
@@ -36,6 +34,8 @@ function messageHandler (Constructor, method, type) {
 
       if (typeof message === 'object' && type) {
         message = { ...message, type }
+      } else if (typeof message === 'string') {
+        message = { message, type }
       }
 
       return Constructor(message)
@@ -49,7 +49,7 @@ function messageHandler (Constructor, method, type) {
 
 types.forEach(type => {
   Msg[type] = function (method, message, title, options) {
-    return messageHandler(method2ClassMap[method], type)(message, title, {
+    return messageHandler(method2ClassMap[method], method, type)(message, title, {
       ...options,
       type
     })

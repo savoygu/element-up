@@ -10,12 +10,12 @@
 
 ```html
 <template>
-  <el-button plain @click="open1">
+  <up-button plain @click="open1">
     可自动关闭
-  </el-button>
-  <el-button plain @click="open2">
+  </up-button>
+  <up-button plain @click="open2">
     不会自动关闭
-  </el-button>
+  </up-button>
 </template>
 
 <script>
@@ -56,18 +56,18 @@
 
 ```html
 <template>
-  <el-button plain @click="open1">
+  <up-button plain @click="open1">
     成功
-  </el-button>
-  <el-button plain @click="open2">
+  </up-button>
+  <up-button plain @click="open2">
     警告
-  </el-button>
-  <el-button plain @click="open3">
+  </up-button>
+  <up-button plain @click="open3">
     消息
-  </el-button>
-  <el-button plain @click="open4">
+  </up-button>
+  <up-button plain @click="open4">
     错误
-  </el-button>
+  </up-button>
 </template>
 
 <script>
@@ -117,18 +117,18 @@
 
 ```html
 <template>
-  <el-button plain @click="open1">
+  <up-button plain @click="open1">
     右上角
-  </el-button>
-  <el-button plain @click="open2">
+  </up-button>
+  <up-button plain @click="open2">
     右下角
-  </el-button>
-  <el-button plain @click="open3">
+  </up-button>
+  <up-button plain @click="open3">
     左下角
-  </el-button>
-  <el-button plain @click="open4">
+  </up-button>
+  <up-button plain @click="open4">
     左上角
-  </el-button>
+  </up-button>
 </template>
 
 <script>
@@ -179,9 +179,9 @@
 
 ```html
 <template>
-  <el-button plain @click="open">
+  <up-button plain @click="open">
     偏移的消息
-  </el-button>
+  </up-button>
 </template>
 
 <script>
@@ -209,9 +209,9 @@
 
 ```html
 <template>
-  <el-button plain @click="open">
+  <up-button plain @click="open">
     使用 HTML 片段
-  </el-button>
+  </up-button>
 </template>
 
 <script>
@@ -243,9 +243,9 @@
 
 ```html
 <template>
-  <el-button plain @click="open">
+  <up-button plain @click="open">
     隐藏关闭按钮
-  </el-button>
+  </up-button>
 </template>
 
 <script>
@@ -299,6 +299,6 @@ import { Notification } from 'element-ui';
 ### 方法
 
 调用 `Notification` 或 `this.$notify` 会返回当前 Notification 的实例。如果需要手动关闭实例，可以调用它的 `close` 方法。
-| 方法名 | 说明 |
-| ---- | ---- |
-| close | 关闭当前的 Notification |
+| 方法名 | 说明                    |
+| ------ | ----------------------- |
+| close  | 关闭当前的 Notification |

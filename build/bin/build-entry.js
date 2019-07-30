@@ -36,6 +36,12 @@ const install = function (Vue, opts = {}) {
 
   Vue.prototype.$loading = Loading.service
   Vue.prototype.$msg = Msg
+  Vue.prototype.$message = Msg.message
+  Vue.prototype.$msgbox = Msg.msgbox
+  Vue.prototype.$alert = Msg.alert
+  Vue.prototype.$confirm = Msg.confirm
+  Vue.prototype.$prompt = Msg.prompt
+  Vue.prototype.$notify = Msg.notify
   Vue.prototype.$page = Page
 }
 

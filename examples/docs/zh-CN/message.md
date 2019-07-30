@@ -10,8 +10,8 @@
 
 ```html
 <template>
-  <el-button :plain="true" @click="open">打开消息提示</el-button>
-  <el-button :plain="true" @click="openVn">VNode</el-button>
+  <up-button :plain="true" @click="open">打开消息提示</up-button>
+  <up-button :plain="true" @click="openVn">VNode</up-button>
 </template>
 
 <script>
@@ -45,10 +45,10 @@
 
 ```html
 <template>
-  <el-button :plain="true" @click="open2">成功</el-button>
-  <el-button :plain="true" @click="open3">警告</el-button>
-  <el-button :plain="true" @click="open1">消息</el-button>
-  <el-button :plain="true" @click="open4">错误</el-button>
+  <up-button :plain="true" @click="open2">成功</up-button>
+  <up-button :plain="true" @click="open3">警告</up-button>
+  <up-button :plain="true" @click="open1">消息</up-button>
+  <up-button :plain="true" @click="open4">错误</up-button>
 </template>
 
 <script>
@@ -89,10 +89,10 @@
 
 ```html
 <template>
-  <el-button :plain="true" @click="open1">消息</el-button>
-  <el-button :plain="true" @click="open2">成功</el-button>
-  <el-button :plain="true" @click="open3">警告</el-button>
-  <el-button :plain="true" @click="open4">错误</el-button>
+  <up-button :plain="true" @click="open1">消息</up-button>
+  <up-button :plain="true" @click="open2">成功</up-button>
+  <up-button :plain="true" @click="open3">警告</up-button>
+  <up-button :plain="true" @click="open4">错误</up-button>
 </template>
 
 <script>
@@ -143,7 +143,7 @@
 
 ```html
 <template>
-  <el-button :plain="true" @click="openCenter">文字居中</el-button>
+  <up-button :plain="true" @click="openCenter">文字居中</up-button>
 </template>
 
 <script>
@@ -170,7 +170,7 @@
 
 ```html
 <template>
-  <el-button :plain="true" @click="openHTML">使用 HTML 片段</el-button>
+  <up-button :plain="true" @click="openHTML">使用 HTML 片段</up-button>
 </template>
 
 <script>
@@ -225,6 +225,6 @@ import { Message } from 'element-ui';
 ### 方法
 
 调用 `Message` 或 `this.$message` 会返回当前 Message 的实例。如果需要手动关闭实例，可以调用它的 `close` 方法。
-| 方法名 | 说明 |
-| ---- | ---- |
-| close | 关闭当前的 Message |
+| 方法名 | 说明               |
+| ------ | ------------------ |
+| close  | 关闭当前的 Message |
