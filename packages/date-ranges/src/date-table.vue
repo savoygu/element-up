@@ -171,20 +171,12 @@ export default {
       this.markRange(this.minDate, this.maxDate)
     },
     minDate (newVal, oldVal) {
-      // console.log('FROM [date-table] minDate: ', newVal, oldVal)
       if (Array.isArray(newVal) && ((Array.isArray(oldVal) && !isEqualArray(newVal, oldVal)) || !Array.isArray(oldVal))) {
-        // newVal.forEach((item, index) => {
-        //   this.markRange(item, this.maxDate[index])
-        // })
         this.markRange(newVal, this.maxDate)
       }
     },
     maxDate (newVal, oldVal) {
-      // console.log('FROM [date-table] maxDate: ', newVal, oldVal)
       if (Array.isArray(newVal) && ((Array.isArray(oldVal) && !isEqualArray(newVal, oldVal)) || !Array.isArray(oldVal))) {
-        // newVal.forEach((item, index) => {
-        //   this.markRange(this.minDate[index], item)
-        // })
         this.markRange(this.minDate, newVal)
       }
     }

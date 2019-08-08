@@ -537,7 +537,6 @@ export default {
     },
 
     handlePick (val) {
-      console.log(val)
       const { minDate, maxDate } = val
       const mergedValue = mergeDates(minDate, maxDate)
       const normalizedValue = normalizeDates(mergedValue)

@@ -53,7 +53,7 @@ export default {
       // return date < new Date()
     },
     handlePick (value) {
-      console.log(value)
+      // console.log(value)
     }
   }
 }
