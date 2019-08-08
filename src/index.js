@@ -63,6 +63,7 @@ import MenuItem from '../packages/menu-item/index.js'
 import MenuItemGroup from '../packages/menu-item-group/index.js'
 import Tabs from '../packages/tabs/index.js'
 import TabPane from '../packages/tab-pane/index.js'
+import BreadcrumbItem from '../packages/breadcrumb-item/index.js'
 import locale from 'element-up/src/locale'
 import CollapseTransition from 'element-up/src/transitions/collapse-transition'
 
@@ -127,6 +128,7 @@ const components = [
   MenuItemGroup,
   Tabs,
   TabPane,
+  BreadcrumbItem,
   CollapseTransition
 ]
 
@@ -228,5 +230,6 @@ export default {
   MenuItem,
   MenuItemGroup,
   Tabs,
-  TabPane
+  TabPane,
+  BreadcrumbItem
 }

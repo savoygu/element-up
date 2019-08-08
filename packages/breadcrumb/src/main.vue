@@ -1,15 +1,17 @@
 <template>
   <el-breadcrumb v-bind="$attrs">
-    <el-breadcrumb-item
-      v-bind="{
-        ...$attrs,
-        ...(typeof item === 'string' ? {} : item)
-      }"
-      v-for="(item, index) in data"
-      :key="index"
-    >
-      <slot v-bind="{ item, $index: index }">{{ typeof item === 'string' ? item: item[valueKey] }}</slot>
-    </el-breadcrumb-item>
+    <slot>
+      <el-breadcrumb-item
+        v-bind="{
+          ...$attrs,
+          ...(typeof item === 'string' ? {} : item)
+        }"
+        v-for="(item, index) in data"
+        :key="index"
+      >
+        <slot name="up:item" v-bind="{ item, $index: index }">{{ typeof item === 'string' ? item : item[valueKey] }}</slot>
+      </el-breadcrumb-item>
+    </slot>
   </el-breadcrumb>
 </template>
 

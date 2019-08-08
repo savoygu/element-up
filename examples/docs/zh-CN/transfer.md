@@ -124,11 +124,11 @@
       @change="handleChange"
       :data="data"
     >
-      <el-button class="transfer-footer" slot="left-footer" size="small"
-        >操作</el-button
+      <up-button class="transfer-footer" slot="left-footer" size="small"
+        >操作</up-button
       >
-      <el-button class="transfer-footer" slot="right-footer" size="small"
-        >操作</el-button
+      <up-button class="transfer-footer" slot="right-footer" size="small"
+        >操作</up-button
       >
     </up-transfer>
   </div>
@@ -152,11 +152,11 @@
       :data="data"
     >
       <span slot-scope="{ option }">{{ option.key }} - {{ option.label }}</span>
-      <el-button class="transfer-footer" slot="left-footer" size="small"
-        >操作</el-button
+      <up-button class="transfer-footer" slot="left-footer" size="small"
+        >操作</up-button
       >
-      <el-button class="transfer-footer" slot="right-footer" size="small"
-        >操作</el-button
+      <up-button class="transfer-footer" slot="right-footer" size="small"
+        >操作</up-button
       >
     </up-transfer>
   </div>
