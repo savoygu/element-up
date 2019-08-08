@@ -62,5 +62,6 @@
   "menu-item-group": "./packages/menu-item-group/index.js",
   "tabs": "./packages/tabs/index.js",
   "tab-pane": "./packages/tab-pane/index.js",
-  "breadcrumb-item": "./packages/breadcrumb-item/index.js"
+  "breadcrumb-item": "./packages/breadcrumb-item/index.js",
+  "page-header": "./packages/page-header/index.js"
 }
