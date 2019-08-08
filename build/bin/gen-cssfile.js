@@ -20,7 +20,7 @@ themes.forEach((theme) => {
   var indexContent = isSCSS ? '@import "./base.scss";\n' : '@import "./base.css";\n'
   // var indexContent = ''
   Components.forEach(function (key) {
-    if (['submenu', 'page'].indexOf(key) > -1) return
+    if (['page'].indexOf(key) > -1) return
     var fileName = key + (isSCSS ? '.scss' : '.css')
     indexContent += '@import "./' + fileName + '";\n'
     var filePath = path.resolve(basepath, theme, 'src', fileName)

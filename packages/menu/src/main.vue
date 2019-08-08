@@ -1,6 +1,8 @@
 <template>
   <el-menu ref="elMenu" class="up-menu" v-bind="$attrs" v-on="$listeners">
-    <component :is="component" :data="data" v-bind="$attrs" v-on="$listeners"></component>
+    <slot>
+      <component :is="component" :data="data" v-bind="$attrs" v-on="$listeners"></component>
+    </slot>
   </el-menu>
 </template>
 

@@ -59,6 +59,8 @@ import Pagination from '../packages/pagination/index.js'
 import Badge from '../packages/badge/index.js'
 import DateRanges from '../packages/date-ranges/index.js'
 import Loading from '../packages/loading/index.js'
+import MenuItem from '../packages/menu-item/index.js'
+import MenuItemGroup from '../packages/menu-item-group/index.js'
 import locale from 'element-up/src/locale'
 import CollapseTransition from 'element-up/src/transitions/collapse-transition'
 
@@ -119,6 +121,8 @@ const components = [
   Pagination,
   Badge,
   DateRanges,
+  MenuItem,
+  MenuItemGroup,
   CollapseTransition
 ]
 
@@ -216,5 +220,7 @@ export default {
   Tree,
   Pagination,
   Badge,
-  DateRanges
+  DateRanges,
+  MenuItem,
+  MenuItemGroup
 }

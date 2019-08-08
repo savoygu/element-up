@@ -57,9 +57,7 @@
   },
   "unpkg": "lib/index.js",
   "style": "lib/theme-chalk/index.css",
-  "dependencies": {
-    "lodash": "^4.17.11"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "element-ui": "^2.7.2",
     "vue": "^2.6.10"
@@ -92,7 +90,7 @@
     "cp-cli": "^2.0.0",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
-    "element-ui": "^2.7.2",
+    "element-ui": "^2.11.1",
     "eslint": "^5.8.0",
     "eslint-loader": "^2.1.2",
     "eslint-plugin-vue": "^5.0.0",

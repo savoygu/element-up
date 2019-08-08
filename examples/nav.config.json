@@ -192,6 +192,35 @@
               "title": "Notification 通知"
             }
           ]
+        },
+        {
+          "groupName": "Navigation",
+          "list": [
+            {
+              "path": "/menu",
+              "title": "NavMenu 导航菜单"
+            },
+            {
+              "path": "/tabs",
+              "title": "Tabs 标签页"
+            },
+            {
+              "path": "/breadcrumb",
+              "title": "Breadcrumb 面包屑"
+            },
+            {
+              "path": "/page-header",
+              "title": "PageHeader 页头"
+            },
+            {
+              "path": "/dropdown",
+              "title": "Dropdown 下拉菜单"
+            },
+            {
+              "path": "/steps",
+              "title": "Steps 步骤条"
+            }
+          ]
         }
       ]
     }
