@@ -59,5 +59,7 @@
   "date-ranges": "./packages/date-ranges/index.js",
   "loading": "./packages/loading/index.js",
   "menu-item": "./packages/menu-item/index.js",
-  "menu-item-group": "./packages/menu-item-group/index.js"
+  "menu-item-group": "./packages/menu-item-group/index.js",
+  "tabs": "./packages/tabs/index.js",
+  "tab-pane": "./packages/tab-pane/index.js"
 }
