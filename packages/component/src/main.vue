@@ -19,10 +19,6 @@ import Footer from 'element-ui/packages/footer'
 import Icon from 'element-ui/packages/icon'
 
 // Other
-import Divider from 'element-ui/packages/divider'
-import Calendar from 'element-ui/packages/calendar'
-import Image from 'element-ui/packages/image'
-import Backtop from 'element-ui/packages/backtop'
 import createVModel from 'element-up/src/mixins/createVModel'
 import rewroteContainer from './container'
 
@@ -45,33 +41,7 @@ export default {
     [Main.name]: Main,
     [Aside.name]: Aside,
     [Footer.name]: Footer,
-    [Icon.name]: Icon,
-
-    [Divider.name]: Divider,
-    [Calendar.name]: Calendar,
-    [Image.name]: Image,
-    [Backtop.name]: Backtop
-    // 'el-radio': () => import('element-ui/packages/radio'),
-    // 'el-checkbox': () => import('element-ui/packages/checkbox'),
-    // 'el-alert': () => import('element-ui/packages/alert'),
-    // 'el-link': () => import('element-ui/packages/link'),
-    // 'el-input': () => import('element-ui/packages/input'),
-    // 'el-input-number': () => import('element-ui/packages/input-number'),
-    // 'el-cascader': () => import('element-ui/packages/cascader'),
-    // 'el-switch': () => import('element-ui/packages/switch'),
-    // 'el-date-picker': () => import('element-ui/packages/date-picker'),
-    // 'el-upload': () => import('element-ui/packages/upload'),
-    // 'el-rate': () => import('element-ui/packages/rate'),
-    // 'el-color-picker': () => import('element-ui/packages/color-picker'),
-    // 'el-transfer': () => import('element-ui/packages/transfer'),
-    // 'el-tag': () => import('element-ui/packages/tag'),
-    // 'el-tree': () => import('element-ui/packages/tree'),
-    // 'el-pagination': () => import('element-ui/packages/pagination'),
-    // 'el-badge': () => import('element-ui/packages/badge'),
-    // 'el-scrollbar': () => import('element-ui/packages/scrollbar'),
-    // 'el-row': () => import('element-ui/packages/row'),
-    // 'el-col': () => import('element-ui/packages/col'),
-    // 'el-icon': () => import('element-ui/packages/icon')
+    [Icon.name]: Icon
   },
 
   props: {

@@ -65,5 +65,9 @@
   "breadcrumb-item": "./packages/breadcrumb-item/index.js",
   "page-header": "./packages/page-header/index.js",
   "card": "./packages/card/index.js",
-  "carousel-item": "./packages/carousel-item/index.js"
+  "carousel-item": "./packages/carousel-item/index.js",
+  "divider": "./packages/divider/index.js",
+  "calendar": "./packages/calendar/index.js",
+  "image": "./packages/image/index.js",
+  "backtop": "./packages/backtop/index.js"
 }

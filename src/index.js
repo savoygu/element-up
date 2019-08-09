@@ -67,6 +67,10 @@ import BreadcrumbItem from '../packages/breadcrumb-item/index.js'
 import PageHeader from '../packages/page-header/index.js'
 import Card from '../packages/card/index.js'
 import CarouselItem from '../packages/carousel-item/index.js'
+import Divider from '../packages/divider/index.js'
+import Calendar from '../packages/calendar/index.js'
+import Image from '../packages/image/index.js'
+import Backtop from '../packages/backtop/index.js'
 import locale from 'element-up/src/locale'
 import CollapseTransition from 'element-up/src/transitions/collapse-transition'
 
@@ -135,6 +139,10 @@ const components = [
   PageHeader,
   Card,
   CarouselItem,
+  Divider,
+  Calendar,
+  Image,
+  Backtop,
   CollapseTransition
 ]
 
@@ -240,5 +248,9 @@ export default {
   BreadcrumbItem,
   PageHeader,
   Card,
-  CarouselItem
+  CarouselItem,
+  Divider,
+  Calendar,
+  Image,
+  Backtop
 }
