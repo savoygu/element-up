@@ -27,6 +27,7 @@ const install = function (Vue, opts = {}) {
     Vue.component(component.name, component)
   })
 
+  Vue.use(InfiniteScroll)
   Vue.use(Loading.directive)
 
   Vue.prototype.$ELEMENT = {
@@ -74,7 +75,7 @@ ComponentNames.forEach(name => {
     package: name
   }))
 
-  if (['Loading', 'Msg', 'Page'].indexOf(componentName) === -1) {
+  if (['Loading', 'Msg', 'Page', 'InfiniteScroll'].indexOf(componentName) === -1) {
     installTemplate.push(render(INSTALL_COMPONENT_TEMPLATE, {
       name: componentName,
       component: name

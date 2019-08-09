@@ -71,6 +71,8 @@ import Divider from '../packages/divider/index.js'
 import Calendar from '../packages/calendar/index.js'
 import Image from '../packages/image/index.js'
 import Backtop from '../packages/backtop/index.js'
+import Drawer from '../packages/drawer/index.js'
+import InfiniteScroll from '../packages/infinite-scroll/index.js'
 import locale from 'element-up/src/locale'
 import CollapseTransition from 'element-up/src/transitions/collapse-transition'
 
@@ -143,6 +145,7 @@ const components = [
   Calendar,
   Image,
   Backtop,
+  Drawer,
   CollapseTransition
 ]
 
@@ -154,6 +157,7 @@ const install = function (Vue, opts = {}) {
     Vue.component(component.name, component)
   })
 
+  Vue.use(InfiniteScroll)
   Vue.use(Loading.directive)
 
   Vue.prototype.$ELEMENT = {
@@ -252,5 +256,7 @@ export default {
   Divider,
   Calendar,
   Image,
-  Backtop
+  Backtop,
+  Drawer,
+  InfiniteScroll
 }
