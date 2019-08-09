@@ -16,7 +16,6 @@ import Header from 'element-ui/packages/header'
 import Main from 'element-ui/packages/main'
 import Aside from 'element-ui/packages/aside'
 import Footer from 'element-ui/packages/footer'
-import Icon from 'element-ui/packages/icon'
 
 // Other
 import createVModel from 'element-up/src/mixins/createVModel'
@@ -40,8 +39,7 @@ export default {
     [Header.name]: Header,
     [Main.name]: Main,
     [Aside.name]: Aside,
-    [Footer.name]: Footer,
-    [Icon.name]: Icon
+    [Footer.name]: Footer
   },
 
   props: {
