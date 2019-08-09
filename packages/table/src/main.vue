@@ -88,7 +88,7 @@ export default {
         currentPage: 1,
         pageSize: 10,
         total: 0,
-        loading: true
+        loading: false
       })
     },
     expand: Boolean,
