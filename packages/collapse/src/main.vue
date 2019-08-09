@@ -14,7 +14,7 @@
         <slot v-if="$slots.title" name="title"></slot>
         <slot v-else name="title" v-bind="{ item, $index: index }"></slot>
       </template>
-      <slot v-bind="{ item, index }"></slot>
+      <slot name="up:item" v-bind="{ item, $index: index }"></slot>
     </el-collapse-item>
   </el-collapse>
 </template>
@@ -25,7 +25,7 @@ import CollapseItem from 'element-ui/packages/collapse-item'
 import createVModel from 'element-up/src/mixins/createVModel'
 
 export default {
-  name: 'UpCollapse™',
+  name: 'UpCollapse',
 
   mixins: [
     createVModel('currentValue')
