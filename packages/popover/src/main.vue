@@ -1,5 +1,5 @@
 <template>
-  <el-popover v-model="visible" class="up-popover" v-bind="$attrs" v-on="$listeners">
+  <el-popover ref="elPopover" v-model="visible" class="up-popover" v-bind="$attrs" v-on="$listeners">
     <slot></slot>
     <template v-if="hasFooter">
       <slot name="footer">
