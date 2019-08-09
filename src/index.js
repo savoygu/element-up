@@ -65,6 +65,7 @@ import Tabs from '../packages/tabs/index.js'
 import TabPane from '../packages/tab-pane/index.js'
 import BreadcrumbItem from '../packages/breadcrumb-item/index.js'
 import PageHeader from '../packages/page-header/index.js'
+import Card from '../packages/card/index.js'
 import locale from 'element-up/src/locale'
 import CollapseTransition from 'element-up/src/transitions/collapse-transition'
 
@@ -131,6 +132,7 @@ const components = [
   TabPane,
   BreadcrumbItem,
   PageHeader,
+  Card,
   CollapseTransition
 ]
 
@@ -234,5 +236,6 @@ export default {
   Tabs,
   TabPane,
   BreadcrumbItem,
-  PageHeader
+  PageHeader,
+  Card
 }

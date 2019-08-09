@@ -63,5 +63,6 @@
   "tabs": "./packages/tabs/index.js",
   "tab-pane": "./packages/tab-pane/index.js",
   "breadcrumb-item": "./packages/breadcrumb-item/index.js",
-  "page-header": "./packages/page-header/index.js"
+  "page-header": "./packages/page-header/index.js",
+  "card": "./packages/card/index.js"
 }

@@ -18,11 +18,7 @@ import Aside from 'element-ui/packages/aside'
 import Footer from 'element-ui/packages/footer'
 import Icon from 'element-ui/packages/icon'
 
-// Notice
-import Alert from 'element-ui/packages/alert'
-
 // Other
-import Card from 'element-ui/packages/card'
 import Divider from 'element-ui/packages/divider'
 import Calendar from 'element-ui/packages/calendar'
 import Image from 'element-ui/packages/image'
@@ -51,9 +47,6 @@ export default {
     [Footer.name]: Footer,
     [Icon.name]: Icon,
 
-    [Alert.name]: Alert,
-
-    [Card.name]: Card,
     [Divider.name]: Divider,
     [Calendar.name]: Calendar,
     [Image.name]: Image,
