@@ -31,7 +31,7 @@ export default class Page {
     this.data = this.data.filter(v => data.indexOf(v[field]) < 0)
   }
 
-  resetData ({ currentPage = CURRENT_PAGE, pageSize = PAGE_SIZE }) {
+  resetData ({ currentPage = CURRENT_PAGE, pageSize = PAGE_SIZE } = {}) {
     this.loading = true
     if (this.data.length > 0) {
       this.data.splice(0)

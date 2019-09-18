@@ -19,7 +19,7 @@
           change: handleCarouselChange
         }"
       >
-        <slot slot-scope="props" v-bind="props"></slot>
+        <slot slot="up:item" slot-scope="props" v-bind="props"></slot>
       </up-carousel>
     </up-dialog>
   </div>
