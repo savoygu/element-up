@@ -1,19 +1,20 @@
 @import "element-ui/packages/theme-chalk/src/form.scss";
 @import "element-ui/packages/theme-chalk/src/checkbox.scss";
+@import "sass-bem/_bem.scss";
 
-@include b(form-item-checkbox) {
+@include b(up-form-item-checkbox) {
   @include e(all) {
     margin-top: -1px;
   }
 
-  @include when(inline) {
+  @include is(inline) {
     .el-form-item__content {
       display: flex;
     }
   }
 
   .el-checkbox-group {
-    @include when(checkbox-button) {
+    @include is(checkbox-button) {
       .el-checkbox-button {
         &:first-child {
           .el-checkbox-button__inner {
@@ -21,7 +22,7 @@
             border-radius: 0;
           }
 
-          @include when(checked) {
+          @include is(checked) {
             box-shadow: -1px 0 0 0 #8cc5ff !important;
           }
         }
@@ -29,9 +30,9 @@
     }
   }
 
-  @include when(separate) {
+  @include is(separate) {
     .el-checkbox-button {
-      @include when(checkbox-button) {
+      @include is(checkbox-button) {
         margin-right: 16px;
 
         .el-checkbox-button__inner {
@@ -41,7 +42,7 @@
     }
 
     .el-checkbox {
-      @include when(checkbox) {
+      @include is(checkbox) {
         margin-right: 50px;
       }
     }
@@ -50,7 +51,7 @@
   &.is-with-all,
   &.is-separate {
     .el-checkbox-group {
-      @include when(checkbox-button) {
+      @include is(checkbox-button) {
         .el-checkbox-button {
           &:first-child {
             .el-checkbox-button__inner {
@@ -58,7 +59,7 @@
               border-radius: 4px 0 0 4px;
             }
 
-            @include when(checked) {
+            @include is(checked) {
               box-shadow: none !important;
             }
           }
