@@ -1,6 +1,6 @@
 <template>
   <el-form-item
-    class="up-form-item-checkbox el-form-item-checkbox"
+    class="up-form-item-checkbox"
     :class="{ 'is-inline': inline, 'is-separate': separate, 'is-with-all': !withAll }"
     ref="elFormItem"
     v-bind="$attrs"
@@ -11,7 +11,7 @@
     </template>
     <component
       v-if="withAll"
-      class="el-form-item-checkbox__all"
+      class="up-form-item-checkbox__all"
       :is="component"
       :indeterminate="isIndeterminate"
       :class="{
@@ -114,7 +114,7 @@ export default {
   methods: {
     getCheckAllStatus (value = []) {
       const checkedCount = value.length
-      const checkAll = checkedCount === this.data.length
+      const checkAll = this.data.length > 0 && checkedCount === this.data.length
       const isIndeterminate = checkedCount > 0 && checkedCount < this.data.length
 
       return {
