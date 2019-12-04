@@ -74,6 +74,8 @@ import Backtop from '../packages/backtop/index.js'
 import Drawer from '../packages/drawer/index.js'
 import InfiniteScroll from '../packages/infinite-scroll/index.js'
 import Icon from '../packages/icon/index.js'
+import Option from '../packages/option/index.js'
+import OptionGroup from '../packages/option-group/index.js'
 import locale from 'element-up/src/locale'
 import CollapseTransition from 'element-up/src/transitions/collapse-transition'
 
@@ -148,6 +150,8 @@ const components = [
   Backtop,
   Drawer,
   Icon,
+  Option,
+  OptionGroup,
   CollapseTransition
 ]
 
@@ -261,5 +265,7 @@ export default {
   Backtop,
   Drawer,
   InfiniteScroll,
-  Icon
+  Icon,
+  Option,
+  OptionGroup
 }

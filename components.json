@@ -72,5 +72,7 @@
   "backtop": "./packages/backtop/index.js",
   "drawer": "./packages/drawer/index.js",
   "infinite-scroll": "./packages/infinite-scroll/index.js",
-  "icon": "./packages/icon/index.js"
+  "icon": "./packages/icon/index.js",
+  "option": "./packages/option/index.js",
+  "option-group": "./packages/option-group/index.js"
 }
