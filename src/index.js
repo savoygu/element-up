@@ -76,6 +76,8 @@ import InfiniteScroll from '../packages/infinite-scroll/index.js'
 import Icon from '../packages/icon/index.js'
 import Option from '../packages/option/index.js'
 import OptionGroup from '../packages/option-group/index.js'
+import DropdownMenu from '../packages/dropdown-menu/index.js'
+import DropdownItem from '../packages/dropdown-item/index.js'
 import locale from 'element-up/src/locale'
 import CollapseTransition from 'element-up/src/transitions/collapse-transition'
 
@@ -152,6 +154,8 @@ const components = [
   Icon,
   Option,
   OptionGroup,
+  DropdownMenu,
+  DropdownItem,
   CollapseTransition
 ]
 
@@ -267,5 +271,7 @@ export default {
   InfiniteScroll,
   Icon,
   Option,
-  OptionGroup
+  OptionGroup,
+  DropdownMenu,
+  DropdownItem
 }

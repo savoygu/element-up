@@ -74,5 +74,7 @@
   "infinite-scroll": "./packages/infinite-scroll/index.js",
   "icon": "./packages/icon/index.js",
   "option": "./packages/option/index.js",
-  "option-group": "./packages/option-group/index.js"
+  "option-group": "./packages/option-group/index.js",
+  "dropdown-menu": "./packages/dropdown-menu/index.js",
+  "dropdown-item": "./packages/dropdown-item/index.js"
 }
